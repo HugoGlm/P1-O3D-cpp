@@ -1,0 +1,9 @@
+﻿  Convertiseur.cpp
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(26,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(30,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(34,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(38,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(42,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(46,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\GUIL2804\source\repos\MyFirstProject\Convertiseur\Convertiseur.cpp(99): warning C4717: 'SelectUnit': recursive on all control paths, function will cause runtime stack overflow
+  Convertiseur.vcxproj -> C:\Users\GUIL2804\source\repos\MyFirstProject\x64\Debug\Convertiseur.exe

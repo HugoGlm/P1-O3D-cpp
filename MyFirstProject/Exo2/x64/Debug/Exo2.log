@@ -1,0 +1,28 @@
+﻿  Exo2.cpp
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(20,5): error C2065: 'cin': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(22,5): error C2065: 'cin': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(27,6): error C2182: 'Less': this use of 'void' is not valid
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(27,11): error C2065: 'string': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(27,18): error C2146: syntax error: missing ')' before identifier '_loclabel'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(28,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(28,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(33,6): error C2182: 'Time': this use of 'void' is not valid
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(33,11): error C2065: 'string': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(33,18): error C2146: syntax error: missing ')' before identifier '_loclabel'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(34,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(34,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(39,14): error C2146: syntax error: missing ')' before identifier '_loclabel'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(39,7): error C2182: 'string': this use of 'void' is not valid
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(39,14): error C2146: syntax error: missing ';' before identifier '_loclabel'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(39,23): error C2059: syntax error: ')'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(40,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(41,5): error C2065: 'numberless': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(41,18): error C2065: 'numberone': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(41,30): error C2065: 'numbertwo': undeclared identifier
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(41,39): error C2059: syntax error: ';'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(42,10): error C2143: syntax error: missing ';' before '<<'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(42,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(43,1): error C2059: syntax error: '}'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(43,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(46,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\GUIL2804\source\repos\MyFirstProject\Exo2\Exo2.cpp(46,1): error C2447: '{': missing function header (old-style formal list?)
