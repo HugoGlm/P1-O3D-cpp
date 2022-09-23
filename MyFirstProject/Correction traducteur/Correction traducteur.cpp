@@ -1,36 +1,47 @@
 #include <iostream>
 using namespace std;
 
-string firstWordFr = "avion", secondWordFr = "arbre",
-       firstWordEn = "plane", secondWordEn = "tree";
+const int sizeTab = 5;
+string tabFr[sizeTab] = { "avion", "arbre", "pomme", "eau", "chevre" },
+       tabEn[sizeTab] = { "plane", "tree", "apple", "water", "goat"};
 string lastInput;
 bool isFrenchTranslation = false;
 
 string GetModeWords(bool _frMode)
 {
-    if (isFrenchTranslation)
+    string _word = "";
+    if (_frMode)
     {
-        return "words are : " + firstWordEn + ", " + secondWordEn;
+        for (int i = 0; i < sizeTab; i++)
+        {
+            string _endWord = (i == sizeTab-1) ? "." : ", ";
+            _word += tabEn[i] + _endWord;
+        }
+        return " Word are : " + _word;
     }
-    else 
-        return "Les mots sont  : " + firstWordFr + ", " + secondWordFr;
+    else
+    {
+        for (int i = 0; i < sizeTab; i++)
+        {
+            string _endWord = (i == sizeTab-1) ? "." : ", ";
+            _word += tabFr[i] + _endWord;
+        }
+        return " Les mots sont : " + _word;
+    }
 }
-
 void InitTranslator(bool _frMode)
 {
     cout << GetModeWords(_frMode) << endl;
 }
-
 string IsValidWord(string _input)
 {
-    if (_input == firstWordFr)
-        return firstWordEn;
-    if (_input == secondWordFr)
-        return secondWordEn;
-    if (_input == firstWordEn)
-        return firstWordFr;
-    if (_input == secondWordEn)
-        return secondWordFr;
+    for (int i = 0; i < sizeTab; i++)
+    {
+        if (_input == tabFr[i])
+            return  tabEn[i];
+        if (_input == tabEn[i])
+            return tabFr[i];
+    }
 }
 
 string InputMode()

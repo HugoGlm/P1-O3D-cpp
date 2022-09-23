@@ -21,9 +21,9 @@ void IsValidGuess(int _min, int _max)
     if (numberGuess < _min || numberGuess > _max)
         SetGuessNumber(_min, _max);
 }
-void GuessGame()
+void GuessGame(int _min, int _max)
 {
-    cout << "Choose number between " << minGuess << " and " << maxGuess << endl;
+    cout << "Choose number between " << _min << " and " << _max << endl;
     int _number = 0;
     cin >> _number;
     gameAttempt++;
@@ -32,26 +32,26 @@ void GuessGame()
         if (gameAttempt >= gameAttemptMax)
         {
             cout << "You lose ! No more try \n";
-            SetGuessNumber(minGuess, maxGuess);
-            GuessGame();
+            SetGuessNumber(_min, _max);
+            GuessGame(minGuess, maxGuess);
         }
     }
     if (_number < numberGuess)
     {
         cout << "More !\n";
-        GuessGame();
+        GuessGame(minGuess, maxGuess);
     }
     else if (_number > numberGuess)
     {
         cout << "less !\n";
-        GuessGame();
+        GuessGame(minGuess, maxGuess);
     }
     else if (_number == numberGuess)
     {
         cout << "It's win !\n";
         cout << gameAttempt << " attempt !\n";
-        SetGuessNumber(minGuess, maxGuess);
-        GuessGame();
+        SetGuessNumber(_min, _max);
+        GuessGame(minGuess, maxGuess);
     }
 
 }
@@ -59,5 +59,5 @@ int main()
 {
     SetGuessNumber(minGuess, maxGuess);
     IsValidGuess(minGuess, maxGuess);
-    GuessGame();
+    GuessGame(minGuess, maxGuess);
 }
