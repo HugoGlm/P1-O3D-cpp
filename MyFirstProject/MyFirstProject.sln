@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ternaire", "Ternaire\Ternai
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tab loop", "Tableaux\Tableaux.vcxproj", "{D402EF74-4F53-4BD4-B3C0-EFD3533380A4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mon programme", "Mon programme\Mon programme.vcxproj", "{1D3FFB63-5146-4190-8619-64F7DBA93722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -181,6 +183,14 @@ Global
 		{D402EF74-4F53-4BD4-B3C0-EFD3533380A4}.Release|x64.Build.0 = Release|x64
 		{D402EF74-4F53-4BD4-B3C0-EFD3533380A4}.Release|x86.ActiveCfg = Release|Win32
 		{D402EF74-4F53-4BD4-B3C0-EFD3533380A4}.Release|x86.Build.0 = Release|Win32
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Debug|x64.ActiveCfg = Debug|x64
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Debug|x64.Build.0 = Debug|x64
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Debug|x86.ActiveCfg = Debug|Win32
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Debug|x86.Build.0 = Debug|Win32
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Release|x64.ActiveCfg = Release|x64
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Release|x64.Build.0 = Release|x64
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Release|x86.ActiveCfg = Release|Win32
+		{1D3FFB63-5146-4190-8619-64F7DBA93722}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

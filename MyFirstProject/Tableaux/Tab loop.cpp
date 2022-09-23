@@ -30,4 +30,12 @@ int main()
 		cout << _exemple[i] << endl;
 		//do something 
 	}
+	//boucle
+	int b = 45;
+	bool _canRun = true;
+	for (int i = 0, j = b; i < 100; i++, j+=10)
+	{
+		cout << "i : " << i << endl;
+		cout << "j : " << j << endl;
+	}
 }
