@@ -85,7 +85,7 @@ int Calcul(int _number)
 {
 	for (int i = 1; i <= 10; i++)
 	{
-		calcul = _number * i;
+		_number * i;
 	}
 	return calcul;
 }
@@ -94,7 +94,7 @@ int Text(int _number)
 {
 	for (int i = 1; i <= 10; i++)
 	{
-		cout << _number << " * " << i << " : " << calcul << endl;
+		cout << _number << " * " << i << " : " << Calcul() << endl;
 	}
 	return result;
 }
