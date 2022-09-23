@@ -6,16 +6,20 @@ int numberGuess = 0,
     maxGuess = 100,
     gameAttempt = 0,
     gameAttemptMax = 30;
-bool useLimitGame = true;
+bool useLimitGame = false;
 #pragma endregion
 void SetGuessNumber(int _min, int _max)
 {
     gameAttempt = 0;
     cout << "Set number between " << _min << " and " << _max << endl;
     cin >> numberGuess;
-    if (numberGuess < minGuess || numberGuess > maxGuess)
-        SetGuessNumber(_min, _max);
     system("CLS");
+}
+
+void IsValidGuess(int _min, int _max)
+{
+    if (numberGuess < _min || numberGuess > _max)
+        SetGuessNumber(_min, _max);
 }
 void GuessGame()
 {
@@ -54,5 +58,6 @@ void GuessGame()
 int main()
 {
     SetGuessNumber(minGuess, maxGuess);
+    IsValidGuess(minGuess, maxGuess);
     GuessGame();
 }
