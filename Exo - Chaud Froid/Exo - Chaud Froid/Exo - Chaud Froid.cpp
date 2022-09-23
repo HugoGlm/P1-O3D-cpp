@@ -14,7 +14,7 @@ void SetGuessNumber(int _min, int _max)
     cout << "Set number between " << _min << " and " << _max << endl;
     cin >> numberGuess;
     if (numberGuess < minGuess || numberGuess > maxGuess)
-        SetGuessNumber(minGuess, maxGuess);
+        SetGuessNumber(_min, _max);
     system("CLS");
 }
 void GuessGame()
