@@ -1,18 +1,8 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int x, y, tebleMulti;
-
-//int Menu()
-//{
-//	int tableMulti, calcul, option;
-//    cout << "Choose option : table of multiplication (tablemulti)\n calculator(calcul)\n";
-//    cin >> option;
-//	if (option == calcul)
-//		cout << ResultCalcul();
-//	else if (option == tebleMulti)
-//		cout <<  TitleTable();
-//}
+int x, y, sign;
 
 #pragma region Calculator
 int Add(int _a, int _b)
@@ -35,15 +25,10 @@ int Div(int _a, int _b)
 	return _a / _b;
 }
 
-void FirstNumber()
+void Number()
 {
 	cout << "Number One : ";
 	cin >> x;
-	cout << "\n";
-}
-
-void LastNumber()
-{
 	cout << "Number Two : ";
 	cin >> y;
 	cout << "\n";
@@ -54,15 +39,27 @@ void TitleCalculator()
 	cout << "calculator \n";
 }
 
+void ChooseOperator()
+{
+	cout << "Choose operator +, -, *, / : \n";
+	char _input;
+	cin >> _input;
+
+	if (_input == '+')
+		cout << "Add : " << Add(x, y) << "\n";
+	else if (_input == '-')
+		cout << "Substract : " << Substract(x, y) << "\n";
+	else if (_input == '*')
+		cout << "Multiply : " << Multiply(x, y) << "\n";
+	else if (_input == '/')
+		cout << "Div : " << Div(x, y) << "\n";
+}
+
 void ResultCalcul()
 {
 	TitleCalculator();
-	FirstNumber();
-	LastNumber();
-	cout << "Add : " << Add(x, y) << "\n";
-	cout << "Substract : " << Substract(x, y) << "\n";
-	cout << "Multiply : " << Multiply(x, y) << "\n";
-	cout << "Div : " << Div(x, y) << "\n";
+	Number();
+	ChooseOperator();
 }
 #pragma endregion
 
@@ -71,7 +68,7 @@ int numberChoose, calcul, result;
 
 void TitleTable()
 {
-    cout << "Menu table of multiplication\n";
+    cout << "Menu table of multiplication\n" << endl;
 }
 
 void ChooseNumber()
@@ -83,32 +80,37 @@ void ChooseNumber()
 
 int Calcul(int _number)
 {
+	cout << "You choose the table of " << _number << endl;
+
 	for (int i = 1; i <= 10; i++)
 	{
-		_number * i;
+		cout << _number << " * 1 : " <<  _number * i << endl;
 	}
 	return calcul;
-}
-
-int Text(int _number)
-{
-	for (int i = 1; i <= 10; i++)
-	{
-		cout << _number << " * " << i << " : " << Calcul() << endl;
-	}
-	return result;
 }
 
 void ResultTableOfMultiplication()
 {
 	ChooseNumber();
 	Calcul(numberChoose);
-	Text(numberChoose);
 }
 #pragma endregion
 
-int main()
+void Menu()
 {
-    //Menu();
-	ResultTableOfMultiplication();
+    cout << "Choose option : table of multiplication (t)\n calculator (c)\n";
+	char _option;
+    cin >> _option;
+
+	if (_option == 'c')
+		ResultCalcul();
+	else if (_option == 't')
+		ResultTableOfMultiplication();
+	else
+		Menu();
+}
+
+void main()
+{
+    Menu();
 }
