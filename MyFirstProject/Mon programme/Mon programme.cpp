@@ -2,7 +2,13 @@
 #include <string>
 using namespace std;
 
-int x, y, sign;
+#pragma region parameter cacul
+int x, y;
+int tab[4] = {'+', '-', '*', '/'};
+#pragma endregion
+#pragma region parameter table of multiplication
+int numberChoose, calcul, result;
+#pragma endregion
 
 #pragma region Calculator
 int Add(int _a, int _b)
@@ -22,7 +28,7 @@ int Multiply(int _a, int _b)
 
 int Div(int _a, int _b)
 {
-	return _a / _b;
+	return _b == 0 ? 0 : _a / _b;
 }
 
 void Number()
@@ -45,13 +51,13 @@ void ChooseOperator()
 	char _input;
 	cin >> _input;
 
-	if (_input == '+')
+	if (_input == tab[0])
 		cout << "Add : " << Add(x, y) << "\n";
-	else if (_input == '-')
+	else if (_input == tab[1])
 		cout << "Substract : " << Substract(x, y) << "\n";
-	else if (_input == '*')
+	else if (_input == tab[2])
 		cout << "Multiply : " << Multiply(x, y) << "\n";
-	else if (_input == '/')
+	else if (_input == tab[3])
 		cout << "Div : " << Div(x, y) << "\n";
 }
 
@@ -64,8 +70,6 @@ void ResultCalcul()
 #pragma endregion
 
 #pragma region Table of multiplication
-int numberChoose, calcul, result;
-
 void TitleTable()
 {
     cout << "Menu table of multiplication\n" << endl;
@@ -78,15 +82,14 @@ void ChooseNumber()
 	cin >> numberChoose;
 }
 
-int Calcul(int _number)
+void Calcul(int _number)
 {
 	cout << "You choose the table of " << _number << endl;
 
 	for (int i = 1; i <= 10; i++)
 	{
-		cout << _number << " * 1 : " <<  _number * i << endl;
+		cout << _number << " * "<< i << " : " << _number * i << endl;
 	}
-	return calcul;
 }
 
 void ResultTableOfMultiplication()
