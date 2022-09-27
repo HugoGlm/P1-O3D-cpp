@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Exo tab 2D.cpp">
+    <ClCompile Include="Morpion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
