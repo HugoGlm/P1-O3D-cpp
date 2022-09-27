@@ -1,4 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Exo tab 2D.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Morpion.cpp
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Exo tab 2D\Morpion.cpp(62): warning C4717: 'Move': recursive on all control paths, function will cause runtime stack overflow
-  Exo tab 2D.vcxproj -> C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\x64\Debug\Morpion.exe
+C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Exo tab 2D\Morpion.cpp(67,40): error C2440: 'initializing': cannot convert from 'std::string' to 'char'
+C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Exo tab 2D\Morpion.cpp(67,13): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Exo tab 2D\Morpion.cpp(69,2): error C2143: syntax error: missing ';' before '}'

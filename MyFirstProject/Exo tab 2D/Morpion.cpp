@@ -4,10 +4,10 @@ using namespace std;
 
 const HANDLE _hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-const int sizeTab = 3, init = 0;
+const int sizeTab = 3;
 int shift,
-isPlayer1,
-cursor[2];
+	isPlayer1,
+	cursor[2];
 string Logo = " _ ";
 string Tab[sizeTab][sizeTab] = 
 							   {
@@ -34,49 +34,45 @@ void SetTab()
 	SetConsoleTextAttribute(_hConsole, 7); // white
 }
 
-void Move()
-{
-	char _input;
-	cin >> _input;
-	int x = 1, y = 1;
 
-	cursor[0] = x;
-	cursor[1] = y;
-	SetTab();
 
-	if (_input == 'z')
-		x = x == 0 ? 0 : x - 1;
-	else if (_input == 's')
-		x = x == 2 ? 2 : x + 1;
-	else if (_input == 'q')
-		y = y == 0 ? 0 : y - 1;
-	else if (_input == 'd')
-		y = y == 2 ? 2 : y + 1;
-
-	cursor[0] = x;
-	cursor[1] = y;
-
-	system("CLS");
-	SetTab();
-	Move();
-}
-
-void Player()
+void PlayerTurn()
 {
 	isPlayer1 = !isPlayer1;
 	int _color = (isPlayer1) ? 4 : 3; // 4 = red and 3 = cyan
 	SetConsoleTextAttribute(_hConsole, _color);
-	cout << "You can move (with z, q, s , d)\n";
+	cout << " Player " << isPlayer1 << " can move (with z, q, s , d) and press p for place\n";
 }
 
-void SetGame()
+void Move()
 {
-	Player();
+	char _input;
+	cin >> _input;
+
+	PlayerTurn();
+	SetTab();
+
+	if(_input == 'z')
+		cursor[0] = cursor[0] == 0 ? 0 : cursor[0] - 1;
+	else if(_input == 's')
+		cursor[0] = cursor[0] == 2 ? 2 : cursor[0] + 1;
+	else if(_input == 'q')
+		cursor[1] = cursor[1] == 0 ? 0 : cursor[1] - 1;
+	else if(_input == 'd')
+		cursor[1] = cursor[1] == 2 ? 2 : cursor[1] + 1;
+	else if (_input == 'p')
+	{
+		isPlayer1 = !isPlayer1;
+		char _place = (isPlayer1) ? 'X' : 'O';
+	}
+
+	system("CLS");
+	PlayerTurn();
 	SetTab();
 	Move();
 }
 
 int main()
 {
-	SetGame();
+	Move();
 }

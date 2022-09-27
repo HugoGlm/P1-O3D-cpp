@@ -45,7 +45,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hang", "ahang\ahang.vcxproj
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2D tab", "2D tab\2D tab.vcxproj", "{1307D70F-D508-4CBB-AAFF-50362C5F14AC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exo tab 2D", "Exo tab 2D\Exo tab 2D.vcxproj", "{398F687A-7E49-44F4-95DD-94B0B682B01A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Morpion", "Exo tab 2D\Exo tab 2D.vcxproj", "{398F687A-7E49-44F4-95DD-94B0B682B01A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Correction Morpion", "Correction Morpion\Correction Morpion.vcxproj", "{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,14 @@ Global
 		{398F687A-7E49-44F4-95DD-94B0B682B01A}.Release|x64.Build.0 = Release|x64
 		{398F687A-7E49-44F4-95DD-94B0B682B01A}.Release|x86.ActiveCfg = Release|Win32
 		{398F687A-7E49-44F4-95DD-94B0B682B01A}.Release|x86.Build.0 = Release|Win32
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Debug|x64.ActiveCfg = Debug|x64
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Debug|x64.Build.0 = Debug|x64
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Debug|x86.ActiveCfg = Debug|Win32
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Debug|x86.Build.0 = Debug|Win32
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Release|x64.ActiveCfg = Release|x64
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Release|x64.Build.0 = Release|x64
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Release|x86.ActiveCfg = Release|Win32
+		{1D1A2419-C1F4-4528-B8C6-D3433DA4BDCB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
