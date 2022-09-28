@@ -4,31 +4,24 @@
 using namespace std;
 
 const int row = 5, column = 5;
-char grid[row][column];
-char content[row][column] =
-                            {
+char grid[row][column] = {
                                 {'S', 'H', 'T', 'E', 'T'},
                                 {'T', 'H', 'E', 'T', 'E'},
                                 {'H', 'H', 'T', 'H', 'W'},
                                 {'H', 'E', 'H', 'H', 'E'},
                                 {'H', 'H', 'H', 'T', 'T'},
-                            };
+                            };                           
 #pragma region Variable 
 int exitRow = 3, exitColumn = 5, currentLocationX = 0, currentLocationY = 0;
-int playerLife = 100,
+int playerLife = 150,
     maxDamage = 20,
     lifeEnnemy = 100,
-    maxBonusLife = 10,
+    maxBonusLife = 40,
     damageEnnemy,
     damageWeapon,
-    damage1,
-    damage2,
-    damage3,
-    damage4,
-    damage5,
     weapon;
 string inventory[5] = {"punch", "stick", "sword", "gun", "lightning"};
-int damage[5] = { 20, 40, 50, 65, 80 };
+int damage[5] = {20, 40, 50, 65, 80};
 #pragma endregion
 void Init()
 {
@@ -39,7 +32,7 @@ void Init()
             grid[y][x] = '-';
         }
     }
-    grid[exitRow][exitColumn] = 'E';
+    grid[exitRow][exitColumn] = 'W';
     grid[currentLocationY][currentLocationX] = 'X';
 }
 void ReadTemple()
@@ -96,17 +89,6 @@ void SetCursor()
         grid[currentLocationY][currentLocationX] = 'X';
     cout << "Cursor location is at : " << currentLocationX << "," << currentLocationY << endl;
 }
-void SetPlayerEffect()
-{
-    bool _damage = content[currentLocationY][currentLocationX];
-    playerLife += _damage ? -maxDamage : maxBonusLife;
-
-    playerLife = playerLife < 0 ? 0 :
-        playerLife > 100 ? 100 :
-        playerLife;
-
-    cout << "Player life is : " << playerLife << " PV " << endl;
-}
 bool LooseGame()
 {
     return playerLife == 0;
@@ -122,19 +104,21 @@ void CheckEndGame()
     else if (WinGame())
         cout << "You Win\n";
 }
-int ChooseWeapon()
+int ChooseWeapon(int _input)
 {
-    srand((unsigned int)time(NULL));
-    if (weapon == '1')
-        return damageWeapon = damage[0];
-    else if (weapon == '2')
-        return damageWeapon = damage[1];
-    else if (weapon == '3')
-        return damageWeapon = damage[2];
-    else if (weapon == '4')
-        return damageWeapon = damage[3];
-    else if (weapon == '5')
-        return damageWeapon = damage[4];
+    if (_input == '1')
+        damageWeapon = damage[0];
+    else if (_input == '2')
+        damageWeapon = damage[1];
+    else if (_input == '3')
+        damageWeapon = damage[2];
+    else if (_input == '4')
+        damageWeapon = damage[3];
+    else if (_input == '5')
+        damageWeapon = damage[4];
+    cout << damageWeapon << endl;
+    cout << damage[0];
+    return damageWeapon;
 }
 void Inventory()
 {
@@ -144,12 +128,12 @@ void Inventory()
          << "4 - " << inventory[3] << ", with " << damage[3] << " pts of damage." << endl
          << "5 - " << inventory[4] << ", with " << damage[4] << " pts of damage." << endl;
     cin >> weapon;
-    ChooseWeapon();
+    ChooseWeapon(weapon);
 }
 int Ennemy()
 {
     srand((unsigned int)time(NULL));
-    damageEnnemy = rand() % 30;
+    damageEnnemy = rand() % (30 - 20 + 1) + 20;
     return damageEnnemy;
 }
 void Fight()
@@ -165,18 +149,34 @@ void Fight()
     if (lifeEnnemy >= 0 && playerLife >= 0)
         Fight();
 }
+void SetPlayerEffect()
+{
+    //bool _damage = grid[currentLocationY][currentLocationX];
+    //playerLife += _damage ? -maxDamage : maxBonusLife;
+
+    if (grid[row][column] == 'E')
+        Fight();
+    else if (grid[row][column] == 'T')
+        playerLife = playerLife - maxDamage;
+    else if (grid[row][column] == 'H')
+        playerLife = playerLife + maxBonusLife;
+
+    playerLife = playerLife < 0 ? 0 :
+        playerLife > 150 ? 150 :
+        playerLife;
+
+    cout << "Player life is : " << playerLife << " PV " << endl;
+}
 int main()
 {
 
-    Fight();
-   /* Init();
+    //Fight();
+    Init();
     while (true)
     {
         ReadTemple();
         SetPlayerEffect();
         CheckEndGame();
         SetCursor();
-    }*/
+    }
 }
-
-
