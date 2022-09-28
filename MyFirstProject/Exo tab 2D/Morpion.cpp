@@ -33,9 +33,6 @@ void SetTab()
 	}
 	SetConsoleTextAttribute(_hConsole, 7); // white
 }
-
-
-
 void PlayerTurn()
 {
 	isPlayer1 = !isPlayer1;
@@ -43,7 +40,6 @@ void PlayerTurn()
 	SetConsoleTextAttribute(_hConsole, _color);
 	cout << " Player " << isPlayer1 << " can move (with z, q, s , d) and press p for place\n";
 }
-
 void Move()
 {
 	char _input;
