@@ -5,9 +5,11 @@ using namespace std;
 
 const HANDLE _hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
- const int sizeTab = 6;
- int cursor[2],
+const int sizeTab = 6;
+int cursor[2],
 	 minLife = 0,
+	 lifeTrap = 20,
+	 lifeHeal = 20,
 	 life = 100;
 string Logo = " - ";
 #pragma region Tab
@@ -34,6 +36,10 @@ void ColorConsole()
 }
 void SetTab()
 {
+
+	Title();
+	ColorConsole();
+
 	for (int x = 0; x < sizeTab; x++)
 	{
 		for (int y = 0; y < sizeTab; y++)
@@ -47,10 +53,37 @@ void SetTab()
 		}
 		cout << endl;
 	}
-	if (cursor[0] == 0 && cursor[1] == 1)
+	
+}
+void Trap()
+{
+	#pragma region Position Trap
+	if (cursor[0] == 0 && cursor[1] == 1 || cursor[0] == 0 && cursor[1] == 4 
+		|| cursor[0] == 1 && cursor[1] == 3 || cursor[0] == 2 && cursor[1] == 2
+		|| cursor[0] == 2 && cursor[1] == 4 || cursor[0] == 3 && cursor[1] == 1 || 
+		cursor[0] == 3 && cursor[1] == 4 || cursor[0] == 3 && cursor[1] == 5 || 
+		cursor[0] == 4 && cursor[1] == 2 || cursor[0] == 5 && cursor[1] == 0 || 
+		cursor[0] == 5 && cursor[1] == 5)
+	#pragma endregion
 	{
-		life = life - 20;
+		life = life - lifeTrap;
 		life = life < 0 ? 0 : life;
+	}
+}
+void Heal()
+{
+	#pragma region Position Heal
+	if (cursor[0] == 0 && cursor[1] == 2 || cursor[0] == 0 && cursor[1] == 5
+		|| cursor[0] == 1 && cursor[1] == 1 || cursor[0] == 1 && cursor[1] == 4
+		|| cursor[0] == 2 && cursor[1] == 0 || cursor[0] == 2 && cursor[1] == 1 ||
+		cursor[0] == 2 && cursor[1] == 3 || cursor[0] == 2 && cursor[1] == 5 ||
+		cursor[0] == 3 && cursor[1] == 2 || cursor[0] == 4 && cursor[1] == 1 ||
+		cursor[0] == 4 && cursor[1] == 4 || cursor[0] == 5 && cursor[1] == 2 ||
+		cursor[0] == 5 && cursor[1] == 4)
+#pragma endregion
+	{
+		life = life + lifeHeal;
+		life = life > 100 ? 100 : life;
 	}
 }
 void Move()
@@ -71,20 +104,25 @@ void Move()
 
 	system("CLS");
 }
+void GameOver()
+{
+	if (life == 0)
+	{
+		"Game Over ! You Died !\n";
+	}
+}
 void SetLife()
 {
-	cout << "Your life : " << life << endl;
-}
-void trap()
-{
+	Trap();
+	Heal();
 
+	cout << "Your life : " << life << endl;
+	GameOver();
 }
 int main()
 {
 	while (true)
 	{
-		Title();
-		ColorConsole();
 		SetTab();
 		SetLife();
 		Move();
