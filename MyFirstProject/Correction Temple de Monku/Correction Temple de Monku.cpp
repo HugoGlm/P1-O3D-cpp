@@ -5,12 +5,22 @@ using namespace std;
 
 const int row = 4, column = 4;
 char grid[row][column];
-bool content[row][column] =
+
+int content[row][column] =
                             {
-                                {true, false, true, false},
-                                {true, false, true, false},
-                                {true, false, true, false},
-                                {true, false, true, false}
+                                {1, 0, 0, 1},
+                                {0, 0, 1, 0},
+                                {1, 0, 1, 1},
+                                {0, 0, 0, 1}
+                            };
+
+string inventory[5][2] =
+                            {
+                                {"Arme 1", "10"},
+                                {"Arme 2", "20"},
+                                {"Arme 3", "30"},
+                                {"Arme 4", "40"},
+                                {"Arme 5", "50"},
                             };
 int exitRow = 3, exitColumn = 3, currentLocationX = 0, currentLocationY = 0;
 int playerLife = 100,
@@ -83,6 +93,11 @@ void SetCursor()
         grid[currentLocationY][currentLocationX] = 'X';
     cout << "Cursor location is at : " << currentLocationX << "," << currentLocationY << endl;
 }
+void SetPlayerDamage(int _dmg)
+{
+    playerLife -= _dmg;
+    playerLife = playerLife < 0 ? 0 : playerLife;
+}
 void SetPlayerEffect()
 {
     bool _damage = content[currentLocationY][currentLocationX];
@@ -109,8 +124,41 @@ void CheckEndGame()
     else if(WinGame())
         cout << "You Win\n";
 }
+int PickWeapon()
+{
+    int _select = 0;
+    string _fullID = "";
+    for (size_t i = 0; i < 5; i++)
+    {
+        for (size_t j = 0; j < 2; j++)
+        {
+            _fullID += " " + inventory[i][j];
+        }
+        cout << i + 1 << " - " << _fullID << endl;
+        _fullID = "";
+    }
+    while(_select <= 0 || _select > 5)
+        cin >> _select;
+    return stoi(inventory[_select - 1][1]);
+}
+void Fight()
+{
+    srand((unsigned int)time(NULL));
+    int _eDamage = rand() % (20 - 10 + 1) + 10, _eLife = 100;
+    while (_eLife > 0 && playerLife > 0)
+    {
+        _eLife -= PickWeapon();
+        _eLife = _eLife < 0 ? 0 : _eLife;
+        SetPlayerDamage(_eDamage);
+        cout << "e life: " << _eLife << endl;
+        cout << "Y life : " << playerLife << endl;
+        cout << "e damage : " << _eDamage << endl;
+        CheckEndGame();
+    }
+}
 int main()
 {
+    Fight();
     Init();
     while (true)
     {

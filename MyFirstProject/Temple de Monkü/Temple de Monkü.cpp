@@ -3,6 +3,22 @@
 #include <string>
 using namespace std;
 
+#pragma region Proto
+void Init();
+void ReadTemple();
+void SetCursor();
+void CheckEndGame();
+int ChooseWeapon(int );
+void Inventory();
+void Fight();
+void SetPlayerEffect();
+
+bool LooseGame();
+bool WinGame();
+
+int Ennemy();
+#pragma endregion
+
 const int row = 5, column = 5;
 char grid[row][column] = {
                                 {'S', 'H', 'T', 'E', 'T'},
@@ -169,8 +185,6 @@ void SetPlayerEffect()
 }
 int main()
 {
-
-    //Fight();
     Init();
     while (true)
     {
