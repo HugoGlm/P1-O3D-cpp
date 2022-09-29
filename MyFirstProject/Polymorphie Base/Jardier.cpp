@@ -1,85 +1,93 @@
 #include <iostream>
+#include<Windows.h>
 #include <string>
 using namespace std;
 
-int cursor[2];
-const int fieldSize = 5;
-char garden[fieldSize][fieldSize] =
-									{
-										{'A', 'X', 'A', 'X', 'A'},
-										{'A', 'A', 'X', 'A', 'X'},
-										{'X', 'A', 'X', 'A', 'A'},
-										{'X', 'A', 'A', 'A', 'X'},
-										{'A', 'X', 'A', 'X', 'A'}
-									};
+const HANDLE _hconsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+const int gardenSize = 3;
+int garden[gardenSize][gardenSize];
+int currentX = 0, currentY = 0;
+
 #pragma region Proto
-void CutTree();
-void PlantTree();
-void Gardener();
-void SetGarden();
+void InitGarden();
+void ReadGarden(int _garden[gardenSize][gardenSize]);
+void MovePlayer();
+void SetCursor();
+string GetCursorLocation();
 #pragma endregion
 
-
-void SetGarden()
+string GetCursorLocation()
 {
-	for (int y = 0; y < fieldSize; y++)
-	{
-		string _tmpLine;
-		for (int x = 0; x < fieldSize; x++)
-		{
-			_tmpLine += garden[y][x];
-		}
-		cout << _tmpLine << endl;
-	}
+    return "Current location is at : (y = " + to_string(currentY) + ", x = " + to_string(currentX) + ")";
 }
-void Gardener()
+void SetCursor()
 {
-    cout << "Move with z, q, s, d)" << endl;
     char _input;
-    bool _isValid = false;
-    while (!_isValid)
+    bool _isValidInput = false;
+    while (!_isValidInput)
     {
         cin >> _input;
-        _isValid = _input == 's' ||
-            _input == 'z' ||
-            _input == 'q' ||
-            _input == 'd';
+        _isValidInput = _input == 'z' || _input == 's' || _input == 'd' || _input == 'q';
     }
-    bool _left = _input == 'q',
-        _right = _input == 'd',
-        _up = _input == 'z',
-        _down = _input == 's';
-    if (_left)
+    if (_input == 'q')
     {
-        cursor[0]--;
-        cursor[0] = cursor[0] < 0 ? 0 : cursor[0];
+        currentX--;
+        currentX = currentX < 0 ? 0 : currentX;
     }
-    else if (_right)
+    else if (_input == 'd')
     {
-        cursor[0]++;
-        cursor[0] = cursor[0] > fieldSize - 1 ? fieldSize - 1 : cursor[0];
+        currentX++;
+        currentX = currentX > gardenSize - 1 ? gardenSize - 1 : currentX;
     }
-    else if (_up)
+    else if (_input == 'z')
     {
-        cursor[1]--;
-        cursor[1] = cursor[1] < 0 ? 0 : cursor[1];
+        currentY--;
+        currentY = currentY < 0 ? 0 : currentY;
     }
-    else if (_down)
+    else if (_input == 's')
     {
-        cursor[1]++;
-        cursor[1] = cursor[1] > fieldSize - 1 ? fieldSize - 1 : cursor[1];
+        currentY++;
+        currentY = currentY > gardenSize - 1 ? gardenSize - 1 : currentY;
+    }
+    cout << GetCursorLocation() << endl;
+}
+void MovePlayer()
+{
+    char _result = garden[currentY][currentX];
+    garden[currentY][currentX] = _result == 1 ? 0 : 1;
+}
+void InitGarden()
+{
+    srand((unsigned int)time(NULL));
+    for (int i = 0; i < gardenSize; i++)
+    {
+        for (int j = 0; j < gardenSize; j++)
+        {
+            garden[j][i] = rand() % 2;
+        }
     }
 }
-void CutTree()
+void ReadGarden(int _garden[gardenSize][gardenSize])
 {
-
-}
-void PlantTree()
-{
-
+    string _tmp;
+    for (int y = 0; y < gardenSize; y++)
+    {
+        for (int x = 0; x < gardenSize; x++)
+        {
+            _tmp += _garden[y][x] == 1 ? " A " : " C ";
+        }
+        _tmp += "\n";
+    }
+    cout << _tmp << endl;
 }
 int main()
 {
-	SetGarden();
-    Gardener();
+    InitGarden();
+    while (true)
+    {
+        ReadGarden(garden);
+        SetCursor();
+        MovePlayer();
+    }
 }

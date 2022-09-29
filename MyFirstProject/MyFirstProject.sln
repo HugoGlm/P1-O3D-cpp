@@ -55,7 +55,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Correction Temple de Monku"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Random", "Random\Random.vcxproj", "{17F42732-5656-452D-B43E-697040D2CE96}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Polymorphie Base", "Polymorphie Base\Polymorphie Base.vcxproj", "{6B811061-F8F8-436A-8490-B0E08EDD95B9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jardinier", "Polymorphie Base\Polymorphie Base.vcxproj", "{6B811061-F8F8-436A-8490-B0E08EDD95B9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pointeur", "pointeur\pointeur.vcxproj", "{A1219435-7A15-4313-90A7-4A9406083ED7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -281,6 +283,14 @@ Global
 		{6B811061-F8F8-436A-8490-B0E08EDD95B9}.Release|x64.Build.0 = Release|x64
 		{6B811061-F8F8-436A-8490-B0E08EDD95B9}.Release|x86.ActiveCfg = Release|Win32
 		{6B811061-F8F8-436A-8490-B0E08EDD95B9}.Release|x86.Build.0 = Release|Win32
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Debug|x64.ActiveCfg = Debug|x64
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Debug|x64.Build.0 = Debug|x64
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Debug|x86.ActiveCfg = Debug|Win32
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Debug|x86.Build.0 = Debug|Win32
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Release|x64.ActiveCfg = Release|x64
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Release|x64.Build.0 = Release|x64
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Release|x86.ActiveCfg = Release|Win32
+		{A1219435-7A15-4313-90A7-4A9406083ED7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
