@@ -39,8 +39,23 @@ void Location() // localiser une nouvelle adresse et la libere apres
     cout << *_integer << endl;
     delete _integer;
 }
+void Adresse(int _a)
+{
+    cout << "--- adresse de l'entier ---\n";
+    cout << &_a << endl;
+}
+void MultiplyAdresse(int _a)
+{
+    cout << "--- Double de l'adresse ---\n";
+    int* _integer = new int(5);
+    cout << _integer << endl;
+    cout << *_integer << endl;
+    *_integer = *_integer * 2;
+    cout << *_integer << endl;
+    delete _integer;
+}
 int main()
 {
-    SwapAB(ptrA, ptrB);
-    Location();
+    Adresse(a);
+    MultiplyAdresse(a);
 }
