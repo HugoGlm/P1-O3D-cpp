@@ -4,6 +4,7 @@
 using namespace std;
 const HANDLE _hconsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
+#pragma region parameter
 const int sizeLaby = 6;
 string map[sizeLaby] =
                 {
@@ -16,11 +17,9 @@ string map[sizeLaby] =
                 };
 int player[2] = {5, 6};
 int out[2] = {0, 7};
-
+#pragma endregion
 #pragma region proto
 void SetLaby();
-void Player();
-void Game();
 void MovePlayer();
 void Win();
 #pragma endregion
@@ -60,7 +59,7 @@ void MovePlayer()
     else if (_input == 's')
     {
         if (map[player[0] + 1][player[1]] != '#')
-            player[0] = player[0] == 15 ? 15 : player[0] + 1;
+            player[0] = player[0] == 5 ? 5 : player[0] + 1;
     }
     else if (_input == 'q')
     {
