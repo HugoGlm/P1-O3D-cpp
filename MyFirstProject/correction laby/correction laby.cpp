@@ -9,6 +9,15 @@ int currentY = 0,
     currentX = 0;
 char currentInput = 'a';
 
+char** t = new char* [10];
+for (int i = 0; i < 10; i++)
+{
+    t[i] = new char(0);  //cree un char de valeur 0 ou 'a' si on ceut new char ('a')
+    t[i] = new char[10]; // cree un nouveau tab de 10
+}
+
+delete[] t;
+
 string map[mapSize] =
                 {
                     "#######s#######",
@@ -30,28 +39,27 @@ void GetInputValue();
 
 bool Init()
 {
-    bool find = false;
     for (int y = 0; y < mapSize; y++)
     {
-        int length = map[y].length();
+        const int length = map[y].length();
         for (int x = 0; x < length; x++)
         {
             if (map[y][x] == 'e')
             {
                 currentY = y;
                 currentX = x;
-                find = true;
+                return true;
             }
 
         }
     }
-    return find;
+    return false;
 }
 void Display()
 {
     for (int y = 0; y < mapSize; y++)
     {
-        int length = map[y].length();
+        const int length = map[y].length();
         for (int x = 0; x < length; x++)
         {
             if (currentX == x && currentY == y)
@@ -85,8 +93,8 @@ void ReadInput()
 }
 bool GetNextMove(int _y, int _x)
 {
-    bool _yOutOfRange = _y < 0 || _y > mapSize;
-    bool _xOutOfRange = _x < 0 || _x > map[_y].length();
+    const bool _yOutOfRange = _y < 0 || _y > mapSize;
+    const bool _xOutOfRange = _x < 0 || _x > map[_y].length();
     if (_yOutOfRange || _xOutOfRange) 
         return false;
     return map[_y][_x] != wall;
