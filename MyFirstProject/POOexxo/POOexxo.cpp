@@ -44,18 +44,21 @@ class Player : public Entity
 {
 private:
     std::string nickName = "";
+    Entity* ent = new Entity;
 public:
     Player() = default;
     Player(std::string _name)
     {
         nickName = _name;
     }
-
+    ~Player()
+    {
+        delete ent;
+    }
     std::string NickName() const
     {
         return nickName;
     }
-
     void Draw() override
     {
         std::cout << "Draw Player" << std::endl;
