@@ -34,11 +34,21 @@ protected:
 	Node* node = nullptr;
 public:
 	List() = default;
+	List(int* tab)
+	{
+		List* list = new List();
+		list->AddFirst(tab[0]);
+		for (int i = 0; i < 9; i++)
+		{
+			list->AddAfter(tab[i + 1], i);
+		}
+		list->Display();
+	}
 	void Display() {
 		Node* _node = node;
 		while (_node != nullptr)
 		{
-			cout << _node->GetData();
+			cout << _node->GetData() << " ";
 			_node = _node->GetNext();
 		}
 		cout << endl;
@@ -191,13 +201,6 @@ public:
 };
 int main()
 {
-	List l = List();
-
-	l.AddFirst(1);
-	l.AddAfter(2, 0);
-	l.AddBefore(3, 1);
-	l.AddAfter(4, 2);
-	l.AddLast(5);
-
-	l.Display();
+	int tab[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	List* l = new List(tab);
 }
