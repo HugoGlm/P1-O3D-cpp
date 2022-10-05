@@ -11,7 +11,7 @@ private:
 public:
     List(initializer_list<T> _tab)
     {
-        tab = new T[_tab.size()];
+        tab = new T[_tab.size()];   
         count = _tab.size();
         int index = 0;
         for (T _item : _tab)
