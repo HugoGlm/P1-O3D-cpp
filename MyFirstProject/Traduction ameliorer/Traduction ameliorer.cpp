@@ -4,19 +4,17 @@
 #include "StringUtils.h"
 #include "Path.h"
 #include "Directory.h"
+#include "File.h"
+#include "FileReader.h"
+#include "FileWriter.h"
+#include "FileStream.h"
+#include <vector>
+#include <map>
 
 int main()
 {
-    /*if (Directory::Exist(Environment::CurrentDirectory()))
-        Utils::log("Exist !");
-    Directory::Create(Path::GetPath("C:\\Test"));
-    if (!Directory::Exist("C:\\Test"))
-        Utils::log("Test doesn't exist !");
-    else
-        Utils::log("Test exist !");
-
-    if (Directory::Delete("C:\\Test"))
-        Utils::log("Test deleted!");*/
-
-    Directory d = Directory(Environment::CurrentDirectory());
+#pragma region french
+    FileStream* _french = File::Create("C:\\Users\\GUIL2804\\source\\repos\\P1-O3D-cpp\\MyFirstProject\\Traduction ameliorer\\fr");
+    
+#pragma endregion
 }

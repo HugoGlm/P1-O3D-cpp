@@ -130,6 +130,11 @@
   <ItemGroup>
     <ClCompile Include="Directory.cpp" />
     <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="FileStream.cpp" />
+    <ClCompile Include="FileWriter.cpp" />
+    <ClCompile Include="Language.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="Traduction ameliorer.cpp" />
@@ -138,6 +143,11 @@
   <ItemGroup>
     <ClInclude Include="Directory.h" />
     <ClInclude Include="Environment.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FileStream.h" />
+    <ClInclude Include="FileWriter.h" />
+    <ClInclude Include="Language.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Utils.h" />
