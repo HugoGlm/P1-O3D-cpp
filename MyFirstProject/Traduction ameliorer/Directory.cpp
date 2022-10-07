@@ -8,7 +8,7 @@ Directory::Directory(const string& _path)
 {
 	path = Path::GetPath(_path);
 	name = path.substr(path.find_last_of('/')+1);
-	Utils::log(name);
+	Utils::Log(name);
 }
 #pragma endregion
 #pragma region methods

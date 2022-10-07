@@ -138,6 +138,7 @@
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="Traduction ameliorer.cpp" />
+    <ClCompile Include="TranslateManager.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="Language.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="TranslateManager.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

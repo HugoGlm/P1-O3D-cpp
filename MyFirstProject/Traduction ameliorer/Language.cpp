@@ -5,6 +5,10 @@
 #include "FileStream.h"
 #include <vector>
 #include "FileReader.h"
+#include "FileWriter.h"
+#include <map>
+#include <string>
+using namespace std;
 
 Language::Language(const string& _languageName)
 {
@@ -39,4 +43,18 @@ string Language::GetMessage(const string& _key) const
 	if (!allMessages.contains(_key))
 		return "";
 	return allMessages.at(_key);
+}
+void Language::AddMessageToFile(const string& _key, const string& _message)
+{
+	if (!stream->IsValid())
+		return;
+	stream->Writer()->Write(_key + ": " + _message);
+}
+string Language::LanguageName() const
+{
+	return languageName;
+}
+string Language::FilePath() const
+{
+	return filePath;
 }

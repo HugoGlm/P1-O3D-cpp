@@ -10,11 +10,10 @@
 #include "FileStream.h"
 #include <vector>
 #include <map>
+#include <string>
+#include "TranslateManager.h"
 
 int main()
 {
-#pragma region french
-    FileStream* _french = File::Create("C:\\Users\\GUIL2804\\source\\repos\\P1-O3D-cpp\\MyFirstProject\\Traduction ameliorer\\fr");
-    
-#pragma endregion
+	TranslateManager manager = TranslateManager();
 }
