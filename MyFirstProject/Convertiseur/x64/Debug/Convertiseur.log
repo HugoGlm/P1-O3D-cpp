@@ -1,9 +1,0 @@
-﻿  Convertiseur.cpp
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(16,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(20,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(24,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(28,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(32,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(36,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\Convertiseur\Convertiseur.cpp(89): warning C4717: 'SelectUnit': recursive on all control paths, function will cause runtime stack overflow
-  Convertiseur.vcxproj -> C:\Users\GUIL2804\source\repos\P1-O3D-cpp\MyFirstProject\x64\Debug\Convertiseur.exe
