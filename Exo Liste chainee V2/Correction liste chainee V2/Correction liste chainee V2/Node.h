@@ -12,7 +12,7 @@ public:
 	Node(const T& _data, Node* _next = nullptr, Node* _prev = nullptr);
 	Node* Next() const;
 	Node* Prev() const;
-	T Data() const;
+	T& Data() ;
 	void SetNext(Node* next);
 	void SetPrev(Node* prev);
 
@@ -38,7 +38,7 @@ Node<T>* Node<T>::Prev() const
 	return prev;
 }
 template<typename T>
-T Node<T>::Data() const
+T& Node<T>::Data()
 {
 	return data;
 }

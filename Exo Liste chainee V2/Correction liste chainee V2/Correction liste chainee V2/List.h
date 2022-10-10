@@ -36,6 +36,7 @@ public:
 	void AddAfter(const T& _index, const T& _item);
 	void Display();
 	int Count() const;
+	T& At(const int& _index);
 #pragma endregion
 };
 
@@ -208,5 +209,17 @@ template<typename T>
 int List<T>::Count() const
 {
 	return count;
+}
+template<typename T>
+T& List<T>::At(const int& _index)
+{
+	if (_index < 0 || _index > count)
+		throw std::out_of_range("out of range !");
+	Node<T>* _head = head;
+	for (int i = 0; i < _index && _head->Next() != nullptr; i++)
+	{
+		_head = _head->Next();
+	}
+	return _head->Data();
 }
 #pragma endregion

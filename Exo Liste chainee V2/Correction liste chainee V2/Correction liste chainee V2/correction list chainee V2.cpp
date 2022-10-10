@@ -6,6 +6,17 @@
 int main()
 {
     List<int> list = List<int>();
+    list.AddLast(0);
+    list.AddLast(1);
 
-    list.Display();
+    try
+    {
+        list.At(10);
+    }
+    catch (const std::exception& e)
+    {
+        cout << e.what() << endl;
+    }
+    
+    return 0;
 }
