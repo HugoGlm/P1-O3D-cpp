@@ -107,7 +107,7 @@ void List<T>::Remove(const T& _item)
 	RemoveAt(_index);
 }
 template<typename T>
-void List<T>::RemoveAt( const int& _index)
+void List<T>::RemoveAt(const int& _index)
 {
 	T* _tmp = tab;
 	tab = new T[count - 1];
