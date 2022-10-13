@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+
 class Utils
 {
 public:
@@ -7,6 +8,7 @@ public:
 	static T Clamp(const T& _value, const T& _min, const T& _max);
     template<typename T>
     static T UserChoice(const std::string& _msg);
+    static void Log(std::string _str);
 };
 
 template<typename T>
