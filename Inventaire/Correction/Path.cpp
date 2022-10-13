@@ -1,25 +1,11 @@
 #include "Path.h"
-
-std::string Path::Combine(const std::string& _a, const std::string& _b)
-{
-    return GetPath(_a + DirectorySeparatorChar + _b);
-}
-
-std::string Path::Combine(const std::string& _a, const std::string& _b, const std::string& _c)
-{
-    return GetPath(_a + DirectorySeparatorChar + _b + DirectorySeparatorChar + _c);
-}
+#include "StringUtils.h"
 
 std::string Path::GetPath(const std::string& _path)
 {
-    std::string _result = _path;
-    StingUtils::Replace(_result, '\\', '/');
-    return _result;
+    return StringUtils::Replace(_path, '\\', '/');
 }
-
-std::string Path::GetDirectoryPath(const std::string& _path)
+std::string Path::Combine(const std::string& _a, const std::string& _b, const std::string& _c)
 {
-    const std::string _result = GetPath(_path);
-    const int _index = _result.find_last_of('/');
-    return _result.substr(0, _index);
+    return _a + '/' + _b + '/' + _c;
 }

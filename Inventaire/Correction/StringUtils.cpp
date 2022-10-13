@@ -2,18 +2,25 @@
 #include <algorithm>
 #include <iostream>
 
-void StringUtils::Replace(std::string& _str, const char& _old, const char& _newValue)
+std::string StringUtils::Replace(const std::string& _str, const char& _old, const char& _new)
 {
-	std::ranges::replace(_str, _old, _newValue);
-}
-
-void StringUtils::Replace(std::string& _str, const std::string& _old, const std::string& _newValue)
-{
-
-	size_t _startPos = 0;
-	while ((_startPos = _str.find(_old, _startPos)) != std::string::npos)
+	std::string _result = _str;
+	const size_t _size = _result.size();
+	for (size_t i = 0; i < _size; i++)
 	{
-		_str.replace(_startPos, _old.length(), _newValue);
-		_startPos += _old.length();
+		if (_result[i] == _old)
+			_result[i] = _new;
 	}
+	return _result;
+}
+std::string StringUtils::Replace(const std::string& _str, const std::string& _old, const std::string& _new)
+{
+	std::string _result = _str;
+	size_t _startPos = 0;
+	while ((_startPos = _result.find(_old, _startPos)) != std::string::npos)
+	{
+		_result.replace(_startPos, _old.size(), _new);
+		_startPos += _new.size();
+	}
+	return _result;
 }

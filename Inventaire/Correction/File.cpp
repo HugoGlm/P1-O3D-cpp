@@ -1,32 +1,16 @@
 #include "File.h"
-#include "Path.h"
-#include "Directory.h"
-#include "FileStream.h"
 #include <fstream>
 
 #pragma region constructor
-File::File(const std::string& _path)
-{
-    path = _path;
-}
-File::File(const File& _copy)
-{
-    path = _copy.path;
-}
-#pragma endregion 
-#pragma region methods
-bool File::Exist(const std::string& _path)
+std::vector<std::string> File::GetAllLines(const std::string& _path)
 {
     std::ifstream _stream = std::ifstream(_path);
-    const bool _exist = _stream.good();
-    _stream.close();
-    return _exist;
-}
-FileStream* File::Create(const std::string& _path)
-{
-    const std::string& _directoryPath = Path::GetDirectoryPath(_path);
-    if (!Directory::Exist(_directoryPath))
-        Directory::Create(_directoryPath);
-    return new FileStream(_path);
+    if (!_stream.good())
+        throw std::exception("invalid path or path not found ! ");
+    std::vector<std::string> _result = std::vector<std::string>();
+    std::string _line = "";
+    while (std::getline(_stream, _line))
+        _result.push_back(_line);
+    return _result;
 }
 #pragma endregion
