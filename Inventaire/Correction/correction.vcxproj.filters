@@ -55,9 +55,6 @@
     <Filter Include="Utils\StringUtils">
       <UniqueIdentifier>{2bb9477b-0823-4023-9cd1-e8afea92ec7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Player\Movement">
-      <UniqueIdentifier>{54ab1c97-9005-4f41-8f24-4651ad2b2775}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="correction.cpp">
@@ -111,9 +108,6 @@
     <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="Movement.cpp">
-      <Filter>Player\Movement</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Potion.h">
@@ -163,9 +157,6 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Movement.h">
-      <Filter>Player\Movement</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

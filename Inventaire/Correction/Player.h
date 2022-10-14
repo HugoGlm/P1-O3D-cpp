@@ -2,7 +2,6 @@
 #include "Entity.h"
 
 class CInventory;
-class Utils;
 
 class Player : public Entity
 {

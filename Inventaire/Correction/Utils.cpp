@@ -1,7 +1,7 @@
 #include "Utils.h"
 #include <iostream>
 
-void Utils::Log(std::string _str)
+void Utils::Log(const std::string& _msg)
 {
-	std::cout << "[Log] => " << _str << std::endl;
+	std::cout << "[Log] => " << _msg << std::endl;
 }

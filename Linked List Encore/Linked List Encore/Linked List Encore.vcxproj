@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{61E99980-7EE3-4742-9B50-0D6DD959CD73}</ProjectGuid>
-    <RootNamespace>correction</RootNamespace>
+    <ProjectGuid>{cf671df2-6b5d-4aa2-a909-af17905cefe3}</ProjectGuid>
+    <RootNamespace>LinkedListEncore</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,41 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Case.cpp" />
-    <ClCompile Include="CInventory.cpp" />
-    <ClCompile Include="CItem.cpp" />
-    <ClCompile Include="correction.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Environment.cpp" />
-    <ClCompile Include="File.cpp" />
-    <ClCompile Include="HealPotion.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="MapDataBase.cpp" />
-    <ClCompile Include="Path.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Potion.cpp" />
-    <ClCompile Include="StringUtils.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Vector2.cpp" />
-    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="Linked List Encore.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Case.h" />
-    <ClInclude Include="CInventory.h" />
-    <ClInclude Include="CItem.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Environment.h" />
-    <ClInclude Include="File.h" />
-    <ClInclude Include="HealPotion.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="MapDataBase.h" />
-    <ClInclude Include="Path.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Potion.h" />
-    <ClInclude Include="StringUtils.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="Vector2.h" />
-    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

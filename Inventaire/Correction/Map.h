@@ -4,6 +4,7 @@
 
 class Case;
 class Player;
+class Vector2;
 
 class Map
 {
@@ -23,10 +24,15 @@ public:
 	~Map();
 #pragma endregion
 #pragma region methods
-public:
+private:
 	void Init();
+public:
 	void Display();
 	bool IsValid();
+	Case* GetCaseAtPosition(const Vector2& _position);
+	Player* GetPlayer() const;
+	Case* Enter() const;
+	Case* Exit() const;
 #pragma endregion
 };
 

@@ -13,11 +13,10 @@
 Map::Map(const std::string& _mapName)
 {
 	mapName = _mapName;
+	player = new Player(Utils::UserChoice<std::string>("Enter username : "), this,new Vector2(0, 0));
 	Init();
 	if (!IsValid())
 		return;
-	player = new Player(Utils::UserChoice<std::string>("Enter user name : "), this, enter->Position());
-	
 }
 Map::Map(const Map& _copy)
 {
@@ -43,7 +42,10 @@ void Map::Init()
 			Vector2* _position = new Vector2(x, y);
 			Case* _case = new Case(_line[x], _position);
 			if (_case->IsEnter())
+			{
 				enter = _case;
+				player->Position()->Set(*_position);
+			}
 			else if (_case->IsExit())
 				exit = _case;
 			cases.push_back(_case);
@@ -65,5 +67,27 @@ void Map::Display()
 bool Map::IsValid()
 {
 	return enter != nullptr && exit != nullptr;
+}
+Case* Map::GetCaseAtPosition(const Vector2& _position)
+{
+	const size_t _size = cases.size();
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (cases[i]->Position()->Equals(&_position))
+			return cases[i];
+	};
+	return nullptr;
+}
+Player* Map::GetPlayer() const
+{
+	return player;
+}
+Case* Map::Enter() const
+{
+	return enter;
+}
+Case* Map::Exit() const
+{
+	return exit;
 }
 #pragma endregion
