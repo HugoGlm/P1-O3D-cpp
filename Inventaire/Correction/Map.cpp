@@ -16,7 +16,7 @@ Map::Map(const std::string& _mapName)
 	Init();
 	if (!IsValid())
 		return;
-	player = new Player(Utils::UserChoice<std::string>("Enter user name : "), enter->Position());
+	player = new Player(Utils::UserChoice<std::string>("Enter user name : "), this, enter->Position());
 	
 }
 Map::Map(const Map& _copy)

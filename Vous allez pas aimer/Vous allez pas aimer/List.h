@@ -8,8 +8,8 @@ class List
 {
 #pragma region f/p
 private:
-	T* head = nullptr;
-	T* last = nullptr;
+	Node* head = nullptr;
+	Node* last = nullptr;
 #pragma endregion
 #pragma region constructor
 public:
@@ -28,6 +28,7 @@ public:
 	void Remove(T _item);
 	void RemoveAt(T _item);
 	void RemoveAll(T _item);
+	void Display();
 #pragma endregion
 };
 
@@ -55,14 +56,11 @@ template<typename T>
 inline void List<T>::AddFirst(T _item)
 {
 	_tmp = list;
-	List list = new List();
-	if (count == 0)
-		count++;
-	else
-	{
-		Node* Next->head;
-		Node* Prev->item;
-	}
+	Node* node = new Node();
+	if (head == nullptr)
+		head = node;
+	next->SetNext(_head);
+	head = node;
 	count++;
 }
 template<typename T>
@@ -85,6 +83,7 @@ inline int List<T>::count()
 template<typename T>
 inline void List<T>::Clear()
 {
+	count = 0;
 	delete[] list;
 }
 template<typename T>
@@ -97,6 +96,10 @@ inline void List<T>::RemoveAt(T _item)
 }
 template<typename T>
 inline void List<T>::RemoveAll(T _item)
+{
+}
+template<typename T>
+inline void List<T>::Display()
 {
 }
 #pragma endregion

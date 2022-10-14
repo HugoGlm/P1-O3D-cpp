@@ -35,4 +35,16 @@ bool Vector2::Equals(const Vector2* _other) const
 {
 	return x == _other->x && y == _other->y;
 }
+Vector2 Vector2::operator+=(const Vector2& _other)
+{
+	x += _other.x;
+	y += _other.y;
+	return *this;
+}
+Vector2 Vector2::operator-=(const Vector2& _other)
+{
+	x -= _other.x;
+	y -= _other.y;
+	return *this;
+}
 #pragma endregion

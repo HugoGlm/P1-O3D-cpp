@@ -2,22 +2,24 @@
 #include <string>
 
 class Vector2;
+class Map;
 
 class Entity
 {
 #pragma region f/p
-private:
+public:
 	std::string name = "";
 	float life = 0.0f;
 	float maxLife = 100.0f;
 	float mana = 0.0f;
 	float maxMana = 100.0f;
 	Vector2* position = nullptr;
+	Map* currentMap = nullptr;
 #pragma endregion
 #pragma region constructor
 public:
 	Entity() = default;
-	Entity(const std::string& _name, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
+	Entity(const std::string& _name, Map* _currentMap, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
 	Entity(const Entity& _copy);
 	virtual ~Entity();
 #pragma endregion
@@ -41,6 +43,8 @@ public:
 	void TakeDamage(const float _dmg);
 	void AddMana(const float _value);
 	void DecreaseMana(const float _value);
+	Map* GetMap() const;
+	virtual void Move() = 0;
 #pragma endregion
 };
 

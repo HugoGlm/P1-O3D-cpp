@@ -22,7 +22,7 @@ T Utils::Clamp(const T& _value, const T& _min, const T& _max)
 }
 
 template<typename T>
-inline T Utils::UserChoice(const std::string& _msg)
+T Utils::UserChoice(const std::string& _msg)
 {
     T _res = T();
     std::cout << _msg << std::endl;
