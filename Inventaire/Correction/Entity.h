@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Vector2.h"
 
 class Vector2;
 class Map;
@@ -19,7 +20,7 @@ public:
 #pragma region constructor
 public:
 	Entity() = default;
-	Entity(const std::string& _name, Map* _currentMap, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
+	Entity(const std::string& _name, Vector2* _position = new Vector2(0, 0), const float _maxLife = 100.0f, const float _maxMana = 100.0f);
 	Entity(const Entity& _copy);
 	virtual ~Entity();
 #pragma endregion
@@ -44,6 +45,7 @@ public:
 	void AddMana(const float _value);
 	void DecreaseMana(const float _value);
 	Map* GetMap() const;
+	void SetMap(Map* _map);
 	virtual void Move() = 0;
 #pragma endregion
 };

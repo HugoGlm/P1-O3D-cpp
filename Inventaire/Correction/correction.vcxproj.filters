@@ -55,6 +55,15 @@
     <Filter Include="Utils\StringUtils">
       <UniqueIdentifier>{2bb9477b-0823-4023-9cd1-e8afea92ec7e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map\Case">
+      <UniqueIdentifier>{545fde15-401f-4dcb-9031-7455317cbdec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\MapDataBase">
+      <UniqueIdentifier>{972829e0-d7aa-45a3-8c4e-5f91346d9352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\MapLoader">
+      <UniqueIdentifier>{ac5feed3-f4fb-478f-a250-6dbdf5ef9f0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="correction.cpp">
@@ -87,14 +96,8 @@
     <ClCompile Include="File.cpp">
       <Filter>File</Filter>
     </ClCompile>
-    <ClCompile Include="MapDataBase.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
     <ClCompile Include="Path.cpp">
       <Filter>Path</Filter>
-    </ClCompile>
-    <ClCompile Include="Case.cpp">
-      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>Vector</Filter>
@@ -107,6 +110,15 @@
     </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Case.cpp">
+      <Filter>Map\Case</Filter>
+    </ClCompile>
+    <ClCompile Include="MapDataBase.cpp">
+      <Filter>Map\MapDataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="MapLoader.cpp">
+      <Filter>Map\MapLoader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,14 +149,8 @@
     <ClInclude Include="File.h">
       <Filter>File</Filter>
     </ClInclude>
-    <ClInclude Include="MapDataBase.h">
-      <Filter>Map</Filter>
-    </ClInclude>
     <ClInclude Include="Path.h">
       <Filter>Path</Filter>
-    </ClInclude>
-    <ClInclude Include="Case.h">
-      <Filter>Map</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>Vector</Filter>
@@ -157,6 +163,15 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Case.h">
+      <Filter>Map\Case</Filter>
+    </ClInclude>
+    <ClInclude Include="MapDataBase.h">
+      <Filter>Map\MapDataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="MapLoader.h">
+      <Filter>Map\MapLoader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

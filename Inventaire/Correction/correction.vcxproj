@@ -138,6 +138,7 @@
     <ClCompile Include="HealPotion.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapDataBase.cpp" />
+    <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="HealPotion.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapDataBase.h" />
+    <ClInclude Include="MapLoader.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
