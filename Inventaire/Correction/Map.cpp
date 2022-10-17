@@ -92,6 +92,10 @@ Case* Map::Exit() const
 {
 	return exit;
 }
+Case* Map::Mob() const
+{
+	return mob;
+}
 std::string Map::MapName() const
 {
 	return mapName;

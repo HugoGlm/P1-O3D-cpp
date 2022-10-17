@@ -123,7 +123,7 @@
     <ClCompile Include="MapLoader.cpp">
       <Filter>Map\MapLoader</Filter>
     </ClCompile>
-    <ClCompile Include="mob.cpp">
+    <ClCompile Include="Mob.cpp">
       <Filter>Mob</Filter>
     </ClCompile>
   </ItemGroup>
@@ -179,7 +179,7 @@
     <ClInclude Include="MapLoader.h">
       <Filter>Map\MapLoader</Filter>
     </ClInclude>
-    <ClInclude Include="mob.h">
+    <ClInclude Include="Mob.h">
       <Filter>Mob</Filter>
     </ClInclude>
   </ItemGroup>

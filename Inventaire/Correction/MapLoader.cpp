@@ -10,13 +10,14 @@
 #pragma region constructor 
 MapLoader::MapLoader(const MapLoader& _copy)
 {
-
+	maps = _copy.maps;
+	count = _copy.count;
 }
 MapLoader::~MapLoader()
 {
-
+	maps.clear();
+	count = 0;
 }
-
 #pragma endregion 
 #pragma region methods
 void MapLoader::Load()

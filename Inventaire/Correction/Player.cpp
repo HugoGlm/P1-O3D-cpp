@@ -4,6 +4,7 @@
 #include "Vector2.h"
 #include "Case.h"
 #include "Map.h"
+#include "Mob.h"
 
 #pragma region constructor / destructor
 Player::Player(const std::string& _name, Vector2* _position, const float _maxLife, const float _maxMana)
@@ -50,5 +51,7 @@ void Player::Move()
 	if (_case == nullptr || _case->IsWall())
 		return;
 	Position()->Set(_position);
+	if (_case->HasMob())
+		;
 }
 #pragma endregion

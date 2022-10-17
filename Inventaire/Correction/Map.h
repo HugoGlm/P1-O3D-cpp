@@ -36,6 +36,7 @@ public:
 	Player* GetPlayer() const;
 	Case* Enter() const;
 	Case* Exit() const;
+	Case* Mob() const;
 	std::string MapName() const;
 #pragma endregion
 };

@@ -28,7 +28,6 @@ bool Case::HasMob() const
 bool Case::IsEnter() const
 {
 	return caseValue == MapDataBase::Enter;
-
 }
 bool Case::IsExit() const
 {
