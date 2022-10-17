@@ -64,6 +64,9 @@
     <Filter Include="Map\MapLoader">
       <UniqueIdentifier>{ac5feed3-f4fb-478f-a250-6dbdf5ef9f0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mob">
+      <UniqueIdentifier>{a5fe5f18-7ca1-4f82-99f8-775001b344f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="correction.cpp">
@@ -120,6 +123,9 @@
     <ClCompile Include="MapLoader.cpp">
       <Filter>Map\MapLoader</Filter>
     </ClCompile>
+    <ClCompile Include="mob.cpp">
+      <Filter>Mob</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Potion.h">
@@ -172,6 +178,9 @@
     </ClInclude>
     <ClInclude Include="MapLoader.h">
       <Filter>Map\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="mob.h">
+      <Filter>Mob</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
