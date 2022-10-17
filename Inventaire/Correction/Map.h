@@ -15,6 +15,7 @@ private:
 	std::string mapPath = "";
 	Case* enter = nullptr;
 	Case* exit = nullptr;
+	Case* mob = nullptr;
 	Player* player = nullptr;
 #pragma endregion
 #pragma region constructor

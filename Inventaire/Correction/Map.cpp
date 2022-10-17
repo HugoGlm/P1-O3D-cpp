@@ -42,6 +42,8 @@ void Map::Init()
 				enter = _case;
 			else if (_case->IsExit())
 				exit = _case;
+			else if (_case->HasMob())
+				mob = _case;
 			cases.push_back(_case);
 		}
 		cases.push_back(new Case('\n', new Vector2(-1, -1))); //TODO

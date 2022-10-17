@@ -12,10 +12,4 @@ public:
 	static const char Mob = 'm';
 	static const char Player = 'p';
 #pragma endregion 
-#pragma region constructor
-public:
-	
-#pragma endregion 
-#pragma region methods
-#pragma endregion 
 };
