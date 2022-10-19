@@ -45,10 +45,16 @@ List<T>::List()
 template<typename T>
 List<T>::List(std::initializer_list<T> _tab)
 {
+	count = _tab.size();
+	tab = new T[count];
+	for (const T _item : _tab)
+		Add(_item);
 }
 template<typename T>
 List<T>::List(const List& _copy)
 {
+	for (int i = 0; i < _copy.count; i++)
+		Add(_copy.tab[i]);
 }
 template<typename T>
 List<T>::~List()
@@ -106,7 +112,7 @@ void List<T>::RemoveAt(const int& _index)
 	tab = new T[count - 1];
 	for (int i = 0; i < _index; i++)
 		tab[i] = _tmp[i];
-	for (size_t i = 0; i < count; i++)
+	for (size_t i = _index + 1; i < count; i++)
 		tab[i - 1] = _tmp[i];
 	count--;
 }
