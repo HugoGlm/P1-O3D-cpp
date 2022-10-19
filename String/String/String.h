@@ -27,8 +27,11 @@ public:
     String& Trim(String& _str);
     bool IsNullOrEmpty();
     bool Contains(const String& _str);
-    int LastIndexOf(const char _char);
     int FirstIndexOf(const char _char);
-#pragma endregion 
+    int LastIndexOf(const char _char);
+#pragma endregion
+#pragma region operator
+public:
+    operator const char*();
+#pragma endregion
 };
-

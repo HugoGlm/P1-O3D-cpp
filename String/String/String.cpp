@@ -45,9 +45,9 @@ String String::ToLower() const
     (const char*)_str;
     String _string = String(_str);
     return _string;
-}   
+}
 String String::ToUpper() const
-{   
+{
     char* _str = nullptr;
     _str = new char[size];
     for (int i = 0; i < size; i++)
@@ -60,5 +60,25 @@ String String::ToUpper() const
     (const char*)_str;
     String _string = String(_str);
     return _string;
+}
+bool String::Contains(const String& _str)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (string[i] == _str[0])
+        {
+            for (int j = size; j < _str.size(); j++)
+            { 
+                return true;
+            }
+        }
+    }
+    return false;
+}
+#pragma endregion
+#pragma region operator
+String::operator const char* ()
+{
+    return string;
 }
 #pragma endregion
