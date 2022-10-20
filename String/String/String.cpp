@@ -1,4 +1,10 @@
 #include "String.h"
+#include "String.h"
+#include "String.h"
+#include "String.h"
+#include "String.h"
+#include "String.h"
+#include "String.h"
 #include <String>
 
 #pragma region constructor
