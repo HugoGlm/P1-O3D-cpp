@@ -1,4 +1,6 @@
 #include "Menu.h"
+#include "Menu.h"
+#include "Menu.h"
 #include <iostream>
 
 #pragma region constructor
@@ -11,6 +13,9 @@ Menu::Menu(const std::string& _name, const std::string& _lastName, const int& _a
 	departureDate = _departureDate;
 	count = _count;
 }
+Menu::Menu(const std::string& _title)
+{
+}
 Menu::Menu(const Menu& _copy)
 {
 	name = _copy.name;
@@ -19,6 +24,9 @@ Menu::Menu(const Menu& _copy)
 	arrivalDate = _copy.arrivalDate;
 	departureDate = _copy.departureDate;
 	count = _copy.count;
+}
+Menu::~Menu()
+{
 }
 #pragma endregion
 #pragma region methods
