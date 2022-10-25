@@ -7,10 +7,10 @@ class GameMorpion
 {
 #pragma region f/p
 private:
-	char board[3][7] = { {'|',' ','|',' ','|',' ','|'},
-						 {'|',' ','|',' ','|',' ','|'},
-						 {'|',' ','|',' ','|',' ','|'}
-						};
+	std::string board[3][7] = { {"|"," ","|"," ","|"," ","|"},
+								{"|"," ","|"," ","|"," ","|"},
+								{"|"," ","|"," ","|"," ","|"}
+						      };
 	bool isFirstPlayer = true;
 #pragma endregion         
 #pragma region constructor

@@ -37,25 +37,72 @@ void GameMorpion::SetNextPlayer()
 }
 void GameMorpion::ChoosePlace()
 {
-	#pragma region Input
-	int _input1 = board[3][2];
-	int _input2 = board[3][4];
-	int _input3 = board[3][6];
-	int _input4 = board[2][2];
-	int _input5 = board[2][4];
-	int _input6 = board[2][6];
-	int _input7 = board[1][2];
-	int _input8 = board[1][4];
-	int _input9 = board[3][6];
-#pragma endregion
-
 	int _input;
 	std::cin >> _input;
 
-	
+	switch (_input)
+	{
+	case 1:
+		if(isFirstPlayer)
+			Utils::Replace(board[2][1], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[2][1], ' ', 'O'); 
+		break;
+	case 2:
+		if (isFirstPlayer)
+			Utils::Replace(board[2][3], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[2][3], ' ', 'O');
+		break;
+	case 3:
+		if (isFirstPlayer)
+			Utils::Replace(board[2][5], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[2][5], ' ', 'O');
+		break;
+	case 4:
+		if (isFirstPlayer)
+			Utils::Replace(board[1][1], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[1][1], ' ', 'O');
+		break;
+	case 5:
+		if (isFirstPlayer)
+			Utils::Replace(board[1][3], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[1][3], ' ', 'O');
+		break;
+	case 6:
+		if (isFirstPlayer)
+			Utils::Replace(board[1][5], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[1][5], ' ', 'O');
+		break;
+	case 7:
+		if (isFirstPlayer)
+			Utils::Replace(board[0][1], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[0][1], ' ', 'O');
+		break;
+	case 8:
+		if (isFirstPlayer)
+			Utils::Replace(board[0][3], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[0][3], ' ', 'O');
+		break;
+	case 9:
+		if (isFirstPlayer)
+			Utils::Replace(board[0][5], ' ', 'X');
+		else if (!isFirstPlayer)
+			Utils::Replace(board[0][5], ' ', 'O');
+		break;
+	default:
+		break;
+	}
 }
 void GameMorpion::Start()
 {
 	ReadBoard();
+	ChoosePlace();
 }
 #pragma endregion

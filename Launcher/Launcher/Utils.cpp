@@ -1,4 +1,5 @@
 #include "Utils.h"
+#include "Utils.h"
 #include <windows.h>
 
 #define DEBUG
@@ -133,6 +134,10 @@ void Utils::LogTitle(const std::string& _title)
 {
 	UnderlineAndDisplay("\t\t" + _title);
 }
+std::string Utils::UnderLine(const std::string& _str)
+{
+	return std::string();
+}
 void Utils::ClearConsole()
 {
 	system("cls");
@@ -152,17 +157,6 @@ std::string Utils::Replace(const std::string& _str, const char& _old, const char
 	{
 		if (_result[i] == _old)
 			_result[i] = _new;
-	}
-	return _result;
-}
-std::string Utils::Replace(const std::string& _str, const std::string& _old, const std::string& _new)
-{
-	std::string _result = _str;
-	size_t _startPos = 0;
-	while ((_startPos = _result.find(_old, _startPos)) != std::string::npos)
-	{
-		_result.replace(_startPos, _old.size(), _new);
-		_startPos += _new.size();
 	}
 	return _result;
 }
