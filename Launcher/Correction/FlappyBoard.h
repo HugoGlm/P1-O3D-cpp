@@ -28,7 +28,6 @@ private:
 public:
 	std::vector<int> GetBoard() const;
 	void ShowBoard() const;
-	void ShowBird() const;
 	void ShowSide() const;
 	void Reset();
 	int& At(const int _index);

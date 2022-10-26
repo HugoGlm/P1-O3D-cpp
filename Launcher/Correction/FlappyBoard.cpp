@@ -46,20 +46,6 @@ void FlappyBoard::ShowBoard() const
         std::cout << "±";
     }
 }
-void FlappyBoard::ShowBird() const
-{
-    char bird[2][6] = { '/','-','-','o','\\',' ',
-                        '|','_','_','_',' ','>' };
-    Utils::SetCursorPosistion(5, 5);
-    for (int i = 0; i < 2; i++)
-    {
-        for (int j = 0; j < 6; j++)
-        { 
-            std::cout << bird[i][j];
-        }
-        Utils::SetCursorPosistion(5, 6);
-    }
-}
 void FlappyBoard::ShowSide() const
 {
     Utils::SetCursorPosistion(75, 2);

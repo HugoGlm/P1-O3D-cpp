@@ -25,7 +25,7 @@ public:
 #pragma endregion
 #pragma region Utils
 public:
-	int CinNoBlock();
+	static int CinNoBlock();
 	static std::string UnderLine(const std::string& _str);
 	template<typename T>
 	static T UserChoice(const std::string& _msg = "");
