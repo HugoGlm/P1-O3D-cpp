@@ -25,6 +25,7 @@ public:
 #pragma endregion
 #pragma region Utils
 public:
+	static void SetCursor(const bool _visible, const int _size);
 	static int CinNoBlock();
 	static std::string UnderLine(const std::string& _str);
 	template<typename T>

@@ -23,9 +23,12 @@ public:
 public:
 	virtual void OnStart() override;
 	virtual void OnUpdate() override;
-	void ShowBird() const;
-	void EraseBird() const;
-	void MoveBird() const;
+	void MoveBird();
+	bool GameOver();
+	int PlusYPos();
+	int MoinsYPos();
+	void ShowBird(const int& _yPos);
+	void EraseBird(const int& _yPos);
 	virtual void OnEnd() override;
 	virtual void DisplayMenu() override;
 	virtual std::string GameName() const override;

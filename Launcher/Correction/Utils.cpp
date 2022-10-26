@@ -64,6 +64,16 @@ void Utils::LoadingBar(const std::string& _msg)
 		_progress += 0.00155f;
 	}
 }
+void Utils::SetCursor(const bool _visible, const int _size)
+{
+	int _currentSize = _size;
+	if (_currentSize == 0)
+		_currentSize = 20;
+	CONSOLE_CURSOR_INFO _cursorInfo = {};
+	_cursorInfo.bVisible = _visible;
+	_cursorInfo.dwSize = _currentSize;
+	SetConsoleCursorInfo(console, &_cursorInfo);
+}
 int Utils::CinNoBlock()
 {
 	if (kbhit())

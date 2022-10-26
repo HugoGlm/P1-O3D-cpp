@@ -29,6 +29,7 @@ public:
 	std::vector<int> GetBoard() const;
 	void ShowBoard() const;
 	void ShowSide() const;
+	void ShowPipe() const;
 	void Reset();
 	int& At(const int _index);
 #pragma endregion
