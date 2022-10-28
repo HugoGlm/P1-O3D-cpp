@@ -1,8 +1,9 @@
 #include <iostream>
-#include "Launcher.h"
 #include "LauncherItem.h"
-#include "FlappyBirdGame.h"
 #include "MorpionGame.h"
+#include "FlappyBird.h"
+#include "DynoGame.h"
+#include "Launcher.h"
 #include <Windows.h>
 
 int main()
@@ -10,7 +11,8 @@ int main()
     SetConsoleTitle(L"Launcher");
     Launcher _launcher = Launcher({
         new LauncherItem(new MorpionGame()),
-        new LauncherItem(new FlappyBirdGame()),
+        new LauncherItem(new FlappyBird()),
+        new LauncherItem(new DynoGame()),
         });
     _launcher.Open();
 }

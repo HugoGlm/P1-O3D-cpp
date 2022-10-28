@@ -43,8 +43,35 @@
     <Filter Include="Games\FlappyBird">
       <UniqueIdentifier>{96b2029f-baeb-4751-9487-335b668be661}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games\FlappyBird\Board">
+    <Filter Include="Games\FlappyBird\Map">
       <UniqueIdentifier>{021f28bd-7505-4472-adf6-a9f103aa6651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Player">
+      <UniqueIdentifier>{e4a5a959-4c7b-4065-b89e-414c00ae50a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Pipe">
+      <UniqueIdentifier>{6acba84c-5ede-4f7d-8e0e-4dba6e20bdbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Score">
+      <UniqueIdentifier>{bfe1b121-a035-496e-a303-8e9cc0f24b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DynoGame">
+      <UniqueIdentifier>{1a8f6a80-652f-4e0f-a95e-309d4ef71624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DynoGame\Map">
+      <UniqueIdentifier>{3be5ce6b-eec6-431a-b7f1-67946fdc892c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DynoGame\Pipe">
+      <UniqueIdentifier>{1c525568-c4d0-4e66-ad88-b44b2a741f80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DynoGame\Score">
+      <UniqueIdentifier>{49734cdc-3c4e-43bb-ae15-a16224659f0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DynoGame\Player">
+      <UniqueIdentifier>{333b90fb-86a4-4eef-b494-5599d7ab98f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Interface">
+      <UniqueIdentifier>{a8c65b76-fb58-409a-9b59-74dfa20fddca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,11 +99,35 @@
     <ClCompile Include="MorpionAI.cpp">
       <Filter>Games\Morpion\AI</Filter>
     </ClCompile>
-    <ClCompile Include="FlappyBirdGame.cpp">
+    <ClCompile Include="FlappyBird.cpp">
       <Filter>Games\FlappyBird</Filter>
     </ClCompile>
-    <ClCompile Include="FlappyBoard.cpp">
-      <Filter>Games\FlappyBird\Board</Filter>
+    <ClCompile Include="FlappyMap.cpp">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyPlayer.cpp">
+      <Filter>Games\FlappyBird\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyPipe.cpp">
+      <Filter>Games\FlappyBird\Pipe</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyScore.cpp">
+      <Filter>Games\FlappyBird\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="DynoGame.cpp">
+      <Filter>Games\DynoGame</Filter>
+    </ClCompile>
+    <ClCompile Include="DynoMap.cpp">
+      <Filter>Games\DynoGame\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="DynoPipe.cpp">
+      <Filter>Games\DynoGame\Pipe</Filter>
+    </ClCompile>
+    <ClCompile Include="DynoPlayer.cpp">
+      <Filter>Games\DynoGame\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="DynoScore.cpp">
+      <Filter>Games\DynoGame\Score</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,11 +155,38 @@
     <ClInclude Include="MorpionAI.h">
       <Filter>Games\Morpion\AI</Filter>
     </ClInclude>
-    <ClInclude Include="FlappyBirdGame.h">
+    <ClInclude Include="FlappyBird.h">
       <Filter>Games\FlappyBird</Filter>
     </ClInclude>
-    <ClInclude Include="FlappyBoard.h">
-      <Filter>Games\FlappyBird\Board</Filter>
+    <ClInclude Include="FlappyMap.h">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="IDrawable.h">
+      <Filter>Games\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyPlayer.h">
+      <Filter>Games\FlappyBird\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyPipe.h">
+      <Filter>Games\FlappyBird\Pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyScore.h">
+      <Filter>Games\FlappyBird\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="DynoGame.h">
+      <Filter>Games\DynoGame</Filter>
+    </ClInclude>
+    <ClInclude Include="DynoMap.h">
+      <Filter>Games\DynoGame\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="DynoPipe.h">
+      <Filter>Games\DynoGame\Pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="DynoPlayer.h">
+      <Filter>Games\DynoGame\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="DynoScore.h">
+      <Filter>Games\DynoGame\Score</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

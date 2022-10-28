@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{437a41e9-97f7-421b-945d-bc06b312914c}</ProjectGuid>
-    <RootNamespace>Correction</RootNamespace>
+    <ProjectGuid>{cd52ff7e-de57-4928-9f97-444ba31c7396}</ProjectGuid>
+    <RootNamespace>My28102230</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,45 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Correction.cpp" />
-    <ClCompile Include="DynoGame.cpp" />
-    <ClCompile Include="DynoMap.cpp" />
-    <ClCompile Include="DynoPipe.cpp" />
-    <ClCompile Include="DynoPlayer.cpp" />
-    <ClCompile Include="DynoScore.cpp" />
-    <ClCompile Include="FlappyBird.cpp" />
-    <ClCompile Include="FlappyMap.cpp" />
-    <ClCompile Include="FlappyPipe.cpp" />
-    <ClCompile Include="FlappyPlayer.cpp" />
-    <ClCompile Include="FlappyScore.cpp" />
-    <ClCompile Include="Launcher.cpp" />
-    <ClCompile Include="LauncherItem.cpp" />
-    <ClCompile Include="MorpionAI.cpp" />
-    <ClCompile Include="MorpionBoard.cpp" />
-    <ClCompile Include="MorpionGame.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DynoGame.h" />
-    <ClInclude Include="DynoMap.h" />
-    <ClInclude Include="DynoPipe.h" />
-    <ClInclude Include="DynoPlayer.h" />
-    <ClInclude Include="DynoScore.h" />
-    <ClInclude Include="FlappyBird.h" />
-    <ClInclude Include="FlappyMap.h" />
-    <ClInclude Include="FlappyPipe.h" />
-    <ClInclude Include="FlappyPlayer.h" />
-    <ClInclude Include="FlappyScore.h" />
-    <ClInclude Include="IDrawable.h" />
-    <ClInclude Include="IGame.h" />
-    <ClInclude Include="Launcher.h" />
-    <ClInclude Include="LauncherItem.h" />
-    <ClInclude Include="MorpionAI.h" />
-    <ClInclude Include="MorpionBoard.h" />
-    <ClInclude Include="MorpionGame.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Utils.h" />
+    <ClCompile Include="28 10 22 (3.0).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

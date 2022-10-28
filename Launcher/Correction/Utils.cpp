@@ -1,8 +1,22 @@
 #include "Utils.h"
-#include <windows.h>
-#include <conio.h>
 #pragma warning(disable: 4996)
 
+int Utils::Random(const int _min, const int _max)
+{
+	std::random_device _device = std::random_device();
+	std::mt19937 _gen(_device());
+	const std::uniform_int_distribution<> _distr = std::uniform_int_distribution<>(_min, _max);
+	return _distr(_gen);
+}
+
+void Utils::LogWithEffect(const std::string& _msg, const int _time)
+{
+	for (char _c : _msg)
+	{
+		std::cout << _c;
+		::Sleep(_time);
+	}
+}
 void Utils::Log(const std::string& _str)
 {
 	std::cout << _str << std::endl;
@@ -64,6 +78,10 @@ void Utils::LoadingBar(const std::string& _msg)
 		_progress += 0.00155f;
 	}
 }
+void Utils::Sleep(const int _milliSeconds)
+{
+	::Sleep(_milliSeconds);
+}
 void Utils::SetCursor(const bool _visible, const int _size)
 {
 	int _currentSize = _size;
@@ -102,11 +120,15 @@ void Utils::Pause()
 {
 	system("pause");
 }
-void Utils::SetCursorPosistion(const int _x, const int _y)
+void Utils::SetCursorPosition(const int _x, const int _y)
 {
 	cursorPosition.X = _x;
 	cursorPosition.Y = _y;
 	SetConsoleCursorPosition(console, cursorPosition);
+}
+std::string Utils::Separator(const int _count, const char _c)
+{
+	return std::string(_count, _c);
 }
 void Utils::LogSeparator(const int _count, const char _c)
 {
