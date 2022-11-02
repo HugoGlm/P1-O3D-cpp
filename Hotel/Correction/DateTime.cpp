@@ -12,9 +12,6 @@ DateTime DateTime::Now = DateTime::NowInternal();
 #pragma region constructor
 DateTime::DateTime(const int _day, const int _month, const int _years, const int _hour, const int _minute, const int _second)
 {
-	day = _day;
-	month = _month;
-	years = _years;
 	hour = _hour;
 	minute = _minute;
 	second = _second;
@@ -22,9 +19,6 @@ DateTime::DateTime(const int _day, const int _month, const int _years, const int
 
 DateTime::DateTime(const DateTime& _copy)
 {
-	day = _copy.day;
-	month = _copy.month;
-	years = _copy.years;
 	hour = _copy.hour;
 	minute = _copy.minute;
 	second = _copy.second;

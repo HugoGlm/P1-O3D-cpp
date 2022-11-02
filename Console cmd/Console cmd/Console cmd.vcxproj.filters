@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{66ec90c2-027b-4476-8f49-4408edefc41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{d5b6fd00-9d2a-45ca-9c12-e2a1bbcd4f99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{73c441b5-6b3d-4902-a8a0-b71a75fd4a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShowConsole">
+      <UniqueIdentifier>{2d0133bd-08be-45f2-ba5e-5c9405d02048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD">
+      <UniqueIdentifier>{3568580b-755c-488a-b653-9e6c99cce77e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\CD">
+      <UniqueIdentifier>{1ab95734-41a5-4b60-aade-f2b892b779e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\ECHO">
+      <UniqueIdentifier>{72fb038f-bb30-4e86-80d8-4a2dc2e81bf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\Help">
+      <UniqueIdentifier>{e5b385ea-9bcd-4055-96db-38928a96ccb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Console cmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowConsole.cpp">
+      <Filter>ShowConsole</Filter>
+    </ClCompile>
+    <ClCompile Include="CMDecho.cpp">
+      <Filter>CMD\ECHO</Filter>
+    </ClCompile>
+    <ClCompile Include="Help.cpp">
+      <Filter>CMD\Help</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowConsole.h">
+      <Filter>ShowConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="CMDecho.h">
+      <Filter>CMD\ECHO</Filter>
+    </ClInclude>
+    <ClInclude Include="Help.h">
+      <Filter>CMD\Help</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
