@@ -1,11 +1,12 @@
 #pragma once
 #include "ItemCMD.h"
-class Drives : public ItemCMD
+
+class TaskList : public ItemCMD
 {
 #pragma region constructor
 public:
-	Drives() = default;
-	~Drives() = default;
+	TaskList() = default;
+	~TaskList() = default;
 #pragma endregion
 #pragma region methods
 public:
@@ -14,4 +15,3 @@ public:
 	virtual void Exec() override;
 #pragma endregion
 };
-

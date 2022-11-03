@@ -1,11 +1,13 @@
 #pragma once
 #include "ItemCMD.h"
-class Drives : public ItemCMD
+#include <iostream>
+
+class Exit : public ItemCMD
 {
 #pragma region constructor
 public:
-	Drives() = default;
-	~Drives() = default;
+	Exit() = default;
+	~Exit() = default;
 #pragma endregion
 #pragma region methods
 public:
@@ -13,5 +15,6 @@ public:
 	virtual std::string Description() override;
 	virtual void Exec() override;
 #pragma endregion
+	
 };
 

@@ -1,9 +1,9 @@
 #pragma once
+#include "ItemCMD.h"
 #include <iostream>
 #include <vector>
-#include "ItemCMD.h"
 
-class ShowConsole : public ItemCMD
+class ShowConsole
 {
 #pragma region f/p
 private:
@@ -17,10 +17,8 @@ public:
 #pragma region overrride
 public:
 	void Show();
-	static std::string Version();
-	int FindIndex(const std::string _index);
-	void Help(const std::string _index);
-	 virtual void Do(const std::string _index) override;
+	std::string Version();
+	int FindIndex(const std::string _cmd);
 #pragma endregion 
 };
 

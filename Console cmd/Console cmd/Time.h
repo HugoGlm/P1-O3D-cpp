@@ -1,11 +1,12 @@
 #pragma once
 #include "ItemCMD.h"
-class Drives : public ItemCMD
+
+class Time : public ItemCMD
 {
 #pragma region constructor
 public:
-	Drives() = default;
-	~Drives() = default;
+	Time() = default;
+	~Time() = default;
 #pragma endregion
 #pragma region methods
 public:

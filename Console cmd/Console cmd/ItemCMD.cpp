@@ -12,13 +12,3 @@ ItemCMD::~ItemCMD()
     description = nullptr;
 }
 #pragma endregion
-#pragma region methods
-std::string ItemCMD::Name()
-{
-    return name;
-}
-std::string ItemCMD::Description()
-{
-    return description;
-}
-#pragma endregion

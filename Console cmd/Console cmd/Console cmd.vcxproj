@@ -128,23 +128,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cd.cpp" />
+    <ClCompile Include="CMDcls.cpp" />
     <ClCompile Include="CMDecho.cpp" />
     <ClCompile Include="Console cmd.cpp" />
     <ClCompile Include="Drives.cpp" />
+    <ClCompile Include="Exit.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="ItemCMD.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ShowConsole.cpp" />
+    <ClCompile Include="TaskList.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="Type.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cd.h" />
+    <ClInclude Include="CMDcls.h" />
     <ClInclude Include="CMDecho.h" />
     <ClInclude Include="Drives.h" />
+    <ClInclude Include="Exit.h" />
     <ClInclude Include="Help.h" />
-    <ClInclude Include="Interface.h" />
     <ClInclude Include="ItemCMD.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ShowConsole.h" />
+    <ClInclude Include="TaskList.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="Type.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

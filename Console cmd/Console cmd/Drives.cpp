@@ -6,7 +6,16 @@
 
 #define BUFSIZE 512
 
-void Drives::ShowDrives()
+std::string Drives::Name()
+{
+	return "drives";
+}
+std::string Drives::Description()
+{
+	return "Display all drives in the computer";
+}
+
+void Drives::Exec()
 {
 	std::string _res;
 	TCHAR szTemp[BUFSIZE];
@@ -32,12 +41,4 @@ void Drives::ShowDrives()
 				_res += _d;
 		}
 	}
-}
-std::string Drives::Name()
-{
-	return "drives";
-}
-std::string Drives::Description()
-{
-	return "Display all drives in the computer";
 }

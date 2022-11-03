@@ -11,9 +11,9 @@ public:
 #pragma endregion
 #pragma region methods
 public:
-	static std::string Echo();
 	virtual std::string Name() override;
 	virtual std::string Description() override;
+	virtual void Exec() override;
 #pragma endregion
 };
 

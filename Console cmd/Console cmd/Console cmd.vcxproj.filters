@@ -16,9 +16,6 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{66ec90c2-027b-4476-8f49-4408edefc41d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface">
-      <UniqueIdentifier>{d5b6fd00-9d2a-45ca-9c12-e2a1bbcd4f99}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object">
       <UniqueIdentifier>{73c441b5-6b3d-4902-a8a0-b71a75fd4a59}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,24 @@
     </Filter>
     <Filter Include="CMD\ItemCMD">
       <UniqueIdentifier>{b2ef446b-b334-428f-bc1c-91f89ac22bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\CLS">
+      <UniqueIdentifier>{46b5114d-b2a8-4156-8243-abf1055338ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\Time">
+      <UniqueIdentifier>{58845fe7-c3f9-422c-b1d3-ec22b793a5b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\TaskList">
+      <UniqueIdentifier>{ec0bc5f3-3dd2-48d0-b608-7b68a4d5b9ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\Exit">
+      <UniqueIdentifier>{1ec67052-6a13-49aa-b39d-99e9fc864a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\Tree">
+      <UniqueIdentifier>{cde47359-3165-4df5-9419-ca70e9b72b96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\Type">
+      <UniqueIdentifier>{34c9560e-6fc0-4ca1-845f-81944b3db7fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,13 +84,31 @@
     <ClCompile Include="ItemCMD.cpp">
       <Filter>CMD\ItemCMD</Filter>
     </ClCompile>
+    <ClCompile Include="CMDcls.cpp">
+      <Filter>CMD\CLS</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>CMD\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskList.cpp">
+      <Filter>CMD\TaskList</Filter>
+    </ClCompile>
+    <ClCompile Include="Exit.cpp">
+      <Filter>CMD\Exit</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
+      <Filter>CMD\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Type.cpp">
+      <Filter>CMD\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="Cd.cpp">
+      <Filter>CMD\CD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
       <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Interface.h">
-      <Filter>Interface</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Object</Filter>
@@ -94,6 +127,27 @@
     </ClInclude>
     <ClInclude Include="ItemCMD.h">
       <Filter>CMD\ItemCMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CMDcls.h">
+      <Filter>CMD\CLS</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>CMD\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskList.h">
+      <Filter>CMD\TaskList</Filter>
+    </ClInclude>
+    <ClInclude Include="Exit.h">
+      <Filter>CMD\Exit</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>CMD\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Type.h">
+      <Filter>CMD\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="Cd.h">
+      <Filter>CMD\CD</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

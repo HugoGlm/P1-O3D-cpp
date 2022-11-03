@@ -16,9 +16,9 @@ public:
 	~ItemCMD();
 #pragma region
 #pragma region methods
-	virtual std::string Name();
-	virtual std::string Description();
-	virtual void Do(const std::string _index);
+	virtual std::string Name() = 0;
+	virtual std::string Description() = 0;
+	virtual void Exec() = 0;
 #pragma region
 };
 

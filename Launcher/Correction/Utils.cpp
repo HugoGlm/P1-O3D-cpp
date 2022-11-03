@@ -3,10 +3,10 @@
 
 int Utils::Random(const int _min, const int _max)
 {
-	std::random_device _device = std::random_device();
-	std::mt19937 _gen(_device());
-	const std::uniform_int_distribution<> _distr = std::uniform_int_distribution<>(_min, _max);
-	return _distr(_gen);
+	std::random_device _rd;
+	std::mt19937 _gen(_rd());
+	std::uniform_int_distribution<> _distrib(_min, _max);
+	return _distrib(_gen);
 }
 
 void Utils::LogWithEffect(const std::string& _msg, const int _time)

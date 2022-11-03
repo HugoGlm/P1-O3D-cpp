@@ -2,10 +2,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
-#include <random>
-#include <conio.h>
 #include <format>
-#include <ctime>
 
 #define color_white 15
 #define color_red 4
@@ -30,6 +27,5 @@ public:
 	static std::string Replace(const std::string& _str, const std::string& _old, const std::string& _new);
 	static std::vector<std::string> Parse(std::string _cmd);
 	static void ClearConsole();
-	static void Time();
 #pragma endregion
 };

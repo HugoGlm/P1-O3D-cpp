@@ -23,8 +23,7 @@ void Utils::LogError(const std::string& _str)
 }
 void Utils::Help(const std::string& _title, const std::string& _desc)
 {
-	const std::string& _msg = _title + "\t\t" + _desc;
-	Log(_msg);
+	std::cout << std::setw(10) << std::right << _title << "\t\t" << _desc << std::endl;
 }
 std::string Utils::CurrentPath()
 {
@@ -76,4 +75,8 @@ std::vector<std::string> Utils::Parse(std::string _cmd)
 	}
 	_res.push_back(_cmd);
 	return _res;
+}
+void Utils::ClearConsole()
+{
+	system("cls");
 }
