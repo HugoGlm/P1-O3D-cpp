@@ -130,15 +130,19 @@
   <ItemGroup>
     <ClCompile Include="CMDecho.cpp" />
     <ClCompile Include="Console cmd.cpp" />
+    <ClCompile Include="Drives.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="ItemCMD.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ShowConsole.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMDecho.h" />
+    <ClInclude Include="Drives.h" />
     <ClInclude Include="Help.h" />
     <ClInclude Include="Interface.h" />
+    <ClInclude Include="ItemCMD.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ShowConsole.h" />
     <ClInclude Include="Utils.h" />

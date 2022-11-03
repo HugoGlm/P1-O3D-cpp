@@ -1,17 +1,17 @@
 #pragma once
-#include <iostream>
 #include "ItemCMD.h"
+#include "Utils.h"
 
-class CMDecho : public ItemCMD
+class CMDcls : public ItemCMD
 {
 #pragma region constructor
 public:
-	CMDecho() = default;
-	~CMDecho() = default;
+	CMDcls() = default;
+	~CMDcls() = default;
 #pragma endregion
 #pragma region methods
 public:
-	static std::string Echo();
+	void Clear();
 	virtual std::string Name() override;
 	virtual std::string Description() override;
 #pragma endregion

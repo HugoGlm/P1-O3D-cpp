@@ -37,6 +37,12 @@
     <Filter Include="CMD\Help">
       <UniqueIdentifier>{e5b385ea-9bcd-4055-96db-38928a96ccb8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CMD\Drives">
+      <UniqueIdentifier>{3d6342cb-59ca-40e5-ba4d-7f1d51136dbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD\ItemCMD">
+      <UniqueIdentifier>{b2ef446b-b334-428f-bc1c-91f89ac22bd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Console cmd.cpp">
@@ -57,6 +63,12 @@
     <ClCompile Include="Help.cpp">
       <Filter>CMD\Help</Filter>
     </ClCompile>
+    <ClCompile Include="Drives.cpp">
+      <Filter>CMD\Drives</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemCMD.cpp">
+      <Filter>CMD\ItemCMD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -76,6 +88,12 @@
     </ClInclude>
     <ClInclude Include="Help.h">
       <Filter>CMD\Help</Filter>
+    </ClInclude>
+    <ClInclude Include="Drives.h">
+      <Filter>CMD\Drives</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemCMD.h">
+      <Filter>CMD\ItemCMD</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

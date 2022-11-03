@@ -1,18 +1,17 @@
 #pragma once
-class Drives
+#include "ItemCMD.h"
+class Drives : public ItemCMD
 {
-#pragma region f/p
-private:
-
-#pragma endregion
 #pragma region constructor
 public:
-	Drives();
-	~Drives();
+	Drives() = default;
+	~Drives() = default;
 #pragma endregion
 #pragma region methods
 public:
-	void ShowDrives();
+	static void ShowDrives();
+	virtual std::string Name() override;
+	virtual std::string Description() override;
 #pragma endregion
 };
 

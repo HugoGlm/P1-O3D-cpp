@@ -2,13 +2,6 @@
 #include <filesystem>
 #pragma warning(disable: 4996)
 
-int Utils::Random(const int _min, const int _max)
-{
-	std::random_device _device = std::random_device();
-	std::mt19937 _gen(_device());
-	const std::uniform_int_distribution<> _distr = std::uniform_int_distribution<>(_min, _max);
-	return _distr(_gen);
-}
 void Utils::LogWithEffect(const std::string& _msg, const int _time)
 {
 	for (char _c : _msg)
@@ -27,12 +20,6 @@ void Utils::LogError(const std::string& _str)
 	SetConsoleTextAttribute(_handle, color_red);
 	std::cout << "[ERROR] => " << _str << std::endl;
 	SetConsoleTextAttribute(_handle, color_white);
-}
-void Utils::LogTitle(const std::string& _title)
-{
-	const std::string& _msg = "\t\t" + _title;
-	Log(_msg);
-	Log(UnderLine(_msg));
 }
 void Utils::Help(const std::string& _title, const std::string& _desc)
 {
@@ -70,65 +57,23 @@ std::string Utils::Replace(const std::string& _str, const std::string& _old, con
 	}
 	return _result;
 }
-void Utils::Sleep(const int _milliSeconds)
+std::vector<std::string> Utils::Parse(std::string _cmd)
 {
-	::Sleep(_milliSeconds);
-}
-void Utils::SetCursor(const bool _visible, const int _size)
-{
-	int _currentSize = _size;
-	if (_currentSize == 0)
-		_currentSize = 20;
-	CONSOLE_CURSOR_INFO _cursorInfo = {};
-	_cursorInfo.bVisible = _visible;
-	_cursorInfo.dwSize = _currentSize;
-	SetConsoleCursorInfo(console, &_cursorInfo);
-}
-int Utils::CinNoBlock()
-{
-	if (kbhit())
-		return getch();
-	return -1;
-}
-std::string Utils::UnderLine(const std::string& _str)
-{
-	int _tabCount = 0, _count = 0;
-	for (char _c : _str)
+	std::vector<std::string> _res = std::vector<std::string>();
+
+	if (_cmd.find_first_of(' ') == std::string::npos)
 	{
-		if (_c == '\t')
-		{
-			_tabCount++;
-			continue;
-		}
-		_count++;
+		_res.push_back(_cmd);
+		_res.push_back("");
+		return _res;
 	}
-	return std::string(_tabCount, '\t') + std::string(_count, '-');
-}
-void Utils::ClearConsole()
-{
-	system("cls");
-}
-void Utils::Pause()
-{
-	system("pause");
-}
-void Utils::SetCursorPosition(const int _x, const int _y)
-{
-	cursorPosition.X = _x;
-	cursorPosition.Y = _y;
-	SetConsoleCursorPosition(console, cursorPosition);
-}
-void Utils::Time()
-{
-	const time_t _now = time(nullptr);
-	const std::tm _tm = *localtime(&_now);
-	std::cout << std::format("{:02}:{:02}:{:02}", _tm.tm_hour, _tm.tm_min, _tm.tm_sec) << std::endl;
-}
-std::string Utils::Separator(const int _count, const char _c)
-{
-	return std::string(_count, _c);
-}
-void Utils::LogSeparator(const int _count, const char _c)
-{
-	Log(std::string(_count, _c));
+
+	while (_cmd.find_first_of(' ') != std::string::npos)
+	{
+		std::string _tmp = _cmd.substr(0, _cmd.find_first_of(' ')); //warning 'space'
+		_res.push_back(_tmp);
+		_cmd = _cmd.substr(_cmd.find_first_of(' ') + 1, _cmd.size());
+	}
+	_res.push_back(_cmd);
+	return _res;
 }

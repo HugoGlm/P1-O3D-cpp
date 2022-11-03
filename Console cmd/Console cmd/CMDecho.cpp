@@ -11,4 +11,12 @@ std::string  CMDecho::Echo()
 	std::cin >> _str;
 	return _str;
 }
+std::string CMDecho::Name()
+{
+	return "echo";
+}
+std::string CMDecho::Description()
+{
+	return "Displays messages, or turns command echoing on or off.";
+}
 #pragma endregion
