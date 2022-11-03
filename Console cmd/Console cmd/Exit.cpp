@@ -12,5 +12,5 @@ void Exit::Exec()
 {
     int _input;
     std::cin >> _input;
-    std::exit(_input);
+    exit(_input);
 }

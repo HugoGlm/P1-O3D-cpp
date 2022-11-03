@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <string>
 #include <format>
+#include <vector>
 
 #define color_white 15
 #define color_red 4
