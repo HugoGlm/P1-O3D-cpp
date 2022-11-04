@@ -18,24 +18,12 @@
     <ClCompile Include="04 11 22.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Func\Func.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Predicate\Predicate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Object\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action\Action.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Func\Func.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Predicate\Predicate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Object\Object.h">

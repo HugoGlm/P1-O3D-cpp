@@ -129,6 +129,11 @@
   <ItemGroup>
     <ClCompile Include="correction 04 11 22.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action\Action.h" />
+    <ClInclude Include="Delegate\Delegate.h" />
+    <ClInclude Include="Object\Object.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
