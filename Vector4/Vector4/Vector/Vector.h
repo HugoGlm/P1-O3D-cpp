@@ -1,4 +1,5 @@
 #pragma once
+
 class Vector
 {
 #pragma region f/p
@@ -8,7 +9,7 @@ private:
 #pragma region constructor
 public:
 	Vector() = default;
-	Vector(const float _a, const float _b, const float _c, const float _d);
+	Vector(const float _w, const float _x, const float _y, const float _z);
 	Vector(const Vector& _copy);
 #pragma endregion
 #pragma region methods
@@ -26,6 +27,7 @@ public:
 	float Lenght() const;
 	float LenghtSqr() const;
 	void Set(float _nexX, float _newY, float _nexZ, float _newW) const;
+	void Display();
 	void Normalize();
 #pragma endregion
 #pragma region operator
@@ -38,11 +40,11 @@ public:
 	Vector operator*=(const Vector& _other);
 	Vector operator/(const Vector& _other);
 	Vector operator/=(const Vector& _other);
-	/*bool operator==(const Vector& _other);
-	bool operator<();
-	bool operator<=();
-	bool operator>();
-	bool operator>=();*/
+	bool operator==(const Vector& _other);
+	bool operator<(const Vector& _other) const;
+	bool operator<=(const Vector& _other);
+	bool operator>(const Vector& _other) const;
+	bool operator>=(const Vector& _other);
 #pragma endregion
 
 };
