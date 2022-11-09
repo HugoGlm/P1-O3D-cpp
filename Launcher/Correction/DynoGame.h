@@ -36,9 +36,9 @@ private:
 	void Draw();
 	void Clear();
 	void DisplayControls();
-	//void UpdatePipe();
+	void UpdatePipe();
 	void Init();
-	//void UpdateScore();
+	void UpdateScore();
 #pragma endregion
 #pragma region override
 public:

@@ -32,3 +32,4 @@ public:
 	virtual void Update() override;
 #pragma endregion
 };
+

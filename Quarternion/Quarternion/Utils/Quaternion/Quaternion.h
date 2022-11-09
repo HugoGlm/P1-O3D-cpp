@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class Quaternion
 {
@@ -17,6 +18,7 @@ public:
 #pragma endregion
 #pragma region methods
 public:
+	std::string ToString();
 	/// <summary>
 	/// The identity rotation
 	/// </summary>
@@ -27,7 +29,7 @@ public:
 	/// </summary>
 	/// <param name="_q">quarternion</param>
 	/// <returns>quaternion</returns>
-	static Quaternion Normalize(Quaternion _q);
+	static Quaternion Normalize(Quaternion _value);
 	/// <summary>
 	/// returns the conjugate of a quaternion specifier
 	/// </summary>
@@ -39,7 +41,7 @@ public:
 	/// </summary>
 	/// <param name="_rotation">quaternion</param>
 	/// <returns>quaternion</returns>
-	static Quaternion Inverse(Quaternion _rotation);
+	static Quaternion Inverse(Quaternion _value);
 	/// <summary>
 	/// Reverses the sign of each component of the quaternion.
 	/// </summary>
@@ -68,7 +70,7 @@ public:
 	/// <param name="_pitch">float</param>
 	/// <param name="_roll">float</param>
 	/// <returns>quaternion</returns>
-	static Quaternion CreateFromYawpitchRoll(float _yaw, float _pitch, float _roll);
+	static Quaternion CreateFromYawPitchRoll(float _yaw, float _pitch, float _roll);
 	/// <summary>
 	/// Returns the angle in degrees between two rotations a and b
 	/// </summary>
@@ -80,12 +82,12 @@ public:
 	/// Calculated length of the quaternion.
 	/// </summary>
 	/// <returns>float</returns>
-	float Length();
+	float Length() const;
 	/// <summary>
 	/// Calculate the square of the length of the quaternion.
 	/// </summary>
 	/// <returns>float</returns>
-	float LengthSquared();
+	float LengthSquared() const;
 #pragma endregion
 #pragma region operator
 	float& operator[](const int _index);
@@ -96,7 +98,6 @@ public:
 	bool operator==(const Quaternion& _other) const;
 	bool operator!=(const Quaternion& _other) const;
 	Quaternion operator=(const Quaternion& _other);
-
 #pragma endregion
 };
 

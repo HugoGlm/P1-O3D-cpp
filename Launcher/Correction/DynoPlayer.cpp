@@ -19,8 +19,8 @@ void DynoPlayer::SetDead(const bool _status)
 }
 void DynoPlayer::Jump()
 {
-    if (position > 3)
-        position -= 3;
+    if (position = SCREEN_HEIGHT - 5)
+        position -= 5;
 }
 bool DynoPlayer::IsCollide(const DynoPipe* _pipe)
 {
@@ -50,4 +50,6 @@ void DynoPlayer::Erase()
 }
 void DynoPlayer::Update()
 {
+    if (position = SCREEN_HEIGHT - 10)
+        position += 5;
 }

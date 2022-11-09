@@ -1,6 +1,6 @@
 #include "Vector4.h"
 #include "../../Utils/Mathf/Mathf.h"
-#include "../../Macro/AssertMacro.h"
+#include "../Macro/AssertMacro.h"
 #include <exception>
 #include <format>
 

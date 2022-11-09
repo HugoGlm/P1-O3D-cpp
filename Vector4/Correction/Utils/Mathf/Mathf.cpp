@@ -25,3 +25,15 @@ float Mathf::Clamp01(const float _value)
         return 1.0f;
     return _value;
 }
+float Mathf::Acos(const float _value)
+{
+    return std::acos(_value);
+}
+float Mathf::Cos(const float _value)
+{
+    return std::cos(_value);
+}
+float Mathf::Sin(const float _value)
+{
+    return std::sin(_value);
+}

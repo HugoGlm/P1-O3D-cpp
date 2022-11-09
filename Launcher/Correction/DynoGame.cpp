@@ -28,14 +28,14 @@ DynoGame::~DynoGame()
 void DynoGame::Draw()
 {
 	player->Draw();
-	//pipeOne->Draw();
-	//pipeTwo->Draw();
+	pipeOne->Draw();
+	pipeTwo->Draw();
 }
 void DynoGame::Clear()
 {
 	player->Erase();
-	//pipeOne->Erase();
-	//pipeTwo->Erase();
+	pipeOne->Erase();
+	pipeTwo->Erase();
 }
 void DynoGame::DisplayControls()
 {
@@ -52,43 +52,43 @@ void DynoGame::DisplayControls()
 	Utils::SetCursorPosition(WIN_WIDTH + 2, 14);
 	Utils::LogWithEffect("Spacebar for jump");
 }
-//void DynoGame::UpdatePipe()
-//{
-//	pipeOne->Update();
-//	pipeTwo->Update();
-//
-//	const int _pipePosition = pipeOne->Position();
-//	if (_pipePosition >= 40 && _pipePosition < 42)
-//	{
-//		pipeTwo->SetCanDraw(true);
-//		pipeTwo->SetPosition(4);
-//		pipeTwo->SetGapPosition(Utils::Random(3, 14)); //TODO change random
-//	}
-//}
+void DynoGame::UpdatePipe()
+{
+	pipeOne->Update();
+	pipeTwo->Update();
+
+	const int _pipePosition = pipeOne->Position();
+	if (_pipePosition >= 40 && _pipePosition < 42)
+	{
+		pipeTwo->SetCanDraw(true);
+		pipeTwo->SetPosition(4);
+		pipeTwo->SetGapPosition(Utils::Random(3, 14)); //TODO change random
+	}
+}
 void DynoGame::Init()
 {
 	isQuitting = false;
-	/*score = 0;*/
+	score = 0;
 	player->SetDead(false);
 	player->SetPosition(SCREEN_HEIGHT - 5);
-	/*pipeOne->SetCanDraw(true);
+	pipeOne->SetCanDraw(true);
 	pipeTwo->SetCanDraw(false);
 	pipeOne->SetPosition(4);
 	pipeTwo->SetPosition(4);
-	pipeOne->SetCanDraw(Utils::Random(3, 14));*/
+	pipeOne->SetCanDraw(Utils::Random(3, 14));
 }
-//void DynoGame::UpdateScore()
-//{
-//	if (pipeOne->Position() > 68)
-//	{
-//		//TODO score update
-//		score.Update();
-//		score.Draw();
-//		pipeTwo->SetCanDraw(false);
-//		pipeOne->SetPosition(pipeTwo->Position());
-//		pipeOne->SetGapPosition(pipeTwo->GapPosition());
-//	}
-//}
+void DynoGame::UpdateScore()
+{
+	if (pipeOne->Position() > 68)
+	{
+		//TODO score update
+		score.Update();
+		score.Draw();
+		pipeTwo->SetCanDraw(false);
+		pipeOne->SetPosition(pipeTwo->Position());
+		pipeOne->SetGapPosition(pipeTwo->GapPosition());
+	}
+}
 #pragma endregion
 #pragma region override
 void DynoGame::OnStart()
@@ -121,15 +121,15 @@ void DynoGame::OnUpdate()
 		Utils::Sleep(sleepTime);
 		Clear();
 		player->Update();
-		//UpdatePipe();
-		//UpdateScore();
+		UpdatePipe();
+		UpdateScore();
 	}
 }
 void DynoGame::OnEnd()
 {
 	player->Draw();
-	/*Utils::SetCursorPosition(10, 5);
-	std::cout << "SCORE: " << score;*/
+	Utils::SetCursorPosition(10, 5);
+	std::cout << "SCORE: " << score;
 	Utils::SetCursorPosition(15, 6);
 	std::cout << PRESS_ANY_KEY;
 	_getch();
@@ -138,7 +138,7 @@ void DynoGame::OnEnd()
 void DynoGame::DisplayMenu()
 {
 	DisplayControls();
-	/*score.Draw();*/
+	score.Draw();
 	Utils::SetCursorPosition(10, 5);
 	std::cout << PRESS_ANY_KEY;
 	_getch(); // _ => if not pragma warning
