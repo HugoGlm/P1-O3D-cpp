@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b854d5a8-f617-4e3d-ad0d-4e557bc0c0a6}</ProjectGuid>
-    <RootNamespace>Correction</RootNamespace>
+    <ProjectGuid>{6e6a0467-5d6e-485b-a536-70096b08b81d}</ProjectGuid>
+    <RootNamespace>Installation</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,18 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Correction.cpp" />
-    <ClCompile Include="Utils\Matrice\Matrice.cpp" />
-    <ClCompile Include="Utils\Quaternion\Quaternion.cpp" />
-    <ClCompile Include="Utils\Mathf\Mathf.cpp" />
-    <ClCompile Include="Utils\Vector\Vector4.cpp" />
+    <ClCompile Include="Installation.cpp" />
+    <ClCompile Include="Wifi\Wifi.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utils\Matrice\Matrice.h" />
-    <ClInclude Include="Utils\Quaternion\Quaternion.h" />
-    <ClInclude Include="Utils\Macro\AssertMacro.h" />
-    <ClInclude Include="Utils\Mathf\Mathf.h" />
-    <ClInclude Include="Utils\Vector\Vector4.h" />
+    <ClInclude Include="Wifi\Wifi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

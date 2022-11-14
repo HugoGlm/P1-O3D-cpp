@@ -27,6 +27,9 @@
     <ClCompile Include="Utils\Quaternion\Quaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Matrice\Matrice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Mathf\Mathf.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Quaternion\Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Matrice\Matrice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

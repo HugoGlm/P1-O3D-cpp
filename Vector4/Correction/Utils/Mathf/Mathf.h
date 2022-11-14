@@ -20,6 +20,7 @@ public:
 	static float Acos(const float _value);
 	static float Cos(const float _value);
 	static float Sin(const float _value);
+	static float Tan(const float _value);
 #pragma endregion
 
 };

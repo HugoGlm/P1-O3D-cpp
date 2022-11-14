@@ -2,6 +2,7 @@
 #include "../Mathf/Mathf.h"
 #include "../Macro/AssertMacro.h"
 
+Quaternion const Quaternion::Identity = Quaternion(0, 0, 0, 1);
 #pragma region constructor
 Quaternion::Quaternion(const float _x, const float _y, const float _z, const float _w)
 {
@@ -147,11 +148,6 @@ Quaternion Quaternion::operator*(const Quaternion& _other) const
 Quaternion Quaternion::operator/(const Quaternion& _other) const
 {
 	Quaternion _result = Quaternion::Identity;
-
-	const float _x = _other.x;
-	const float _y = _other.y;
-	const float _z = _other.z;
-	const float _w = _other.w;
 
 	const float _ls = Dot(_other, _other);
 	const float _invNorm = 1.0f / _ls;

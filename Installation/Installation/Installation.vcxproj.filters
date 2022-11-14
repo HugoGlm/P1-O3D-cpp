@@ -15,21 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Vector4.cpp">
+    <ClCompile Include="Installation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vector\Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrice\Matrice.cpp">
+    <ClCompile Include="Wifi\Wifi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrice\Matrice.h">
+    <ClInclude Include="Wifi\Wifi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

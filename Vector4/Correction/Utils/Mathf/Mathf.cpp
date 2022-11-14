@@ -37,3 +37,8 @@ float Mathf::Sin(const float _value)
 {
     return std::sin(_value);
 }
+
+float Mathf::Tan(const float _value)
+{
+    return std::tan(_value);
+}
