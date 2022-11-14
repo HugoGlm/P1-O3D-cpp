@@ -1,10 +1,12 @@
 #include <iostream>
-#include "Wifi/Wifi.h"
+#include "Item/Wifi/Wifi.h"
+#include "Item/Time/Time.h"
+#include "Menu/Menu.h"
 
 int main()
 {
-    while (true)
-    {
-        Wifi::Display();
-    }
+	Menu::Display();
+	Wifi::Display();
+	Time::Display();
+	system("pause");
 }

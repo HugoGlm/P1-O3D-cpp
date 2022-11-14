@@ -1,4 +1,5 @@
 #include "Wifi.h"
+#include "../Time/Time.h"
 #include <iostream>
 
 void Wifi::Execute()
@@ -8,8 +9,16 @@ void Wifi::Execute()
 	std::cin >> _input;
 	if (_input == "y")
 		std::cout << "Wifi is On." << std::endl;
+	else if (_input == "ok")
+	{
+		std::cout << "Turn ON|OFF Wifi" << std::endl;
+		system("pause");
+		Execute();
+	}
+	else if (_input == "r")
+		return;
 	else if (_input == "n")
-		std::cout << "Wifi is Off." << std::endl;
+		Time::Display();
 	else
 		Execute();
 }
@@ -24,5 +33,5 @@ std::string Wifi::Name()
 }
 std::string Wifi::GetQuestion()
 {
-	return "You want turn on your wifi ? (y/n)\n";
+	return "You want turn on your wifi ?\n";
 }

@@ -128,10 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Installation.cpp" />
-    <ClCompile Include="Wifi\Wifi.cpp" />
+    <ClCompile Include="Menu\Menu.cpp" />
+    <ClCompile Include="Item\Wifi\Wifi.cpp" />
+    <ClCompile Include="Item\Time\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Wifi\Wifi.h" />
+    <ClInclude Include="Menu\Menu.h" />
+    <ClInclude Include="Item\Wifi\Wifi.h" />
+    <ClInclude Include="Item\Time\Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
