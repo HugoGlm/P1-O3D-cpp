@@ -24,6 +24,8 @@ private:
 	float m42 = 0.0f;
 	float m43 = 0.0f;
 	float m44 = 0.0f;
+public:
+	static const Matrice Identity;
 #pragma endregion
 #pragma region constructor
 public:
@@ -36,7 +38,6 @@ public:
 #pragma region methods
 public:
 	std::string ToString();
-	static Matrice Identity();
 	/// <summary>
 	/// Creates a translation matrix from the specified X, Y, and Z components.
 	/// </summary>
@@ -93,20 +94,23 @@ public:
 	/// <param name="_matrice2">matrice</param>
 	/// <param name="_amount">float</param>
 	/// <returns>matrice</returns>
-	static Matrice Lerp(const Matrice& _matrice1, const Matrice& _matrice2, float _amount);
+	static Matrice Lerp(const Matrice& _a, const Matrice& _b, float _t);
 	/// <summary>
 	/// Computes the determinant of the current 4 x 4 matrix.
 	/// </summary>
 	/// <returns></returns>
 	float GetDeterminant() const;
+	static bool IsIdentity(const Matrice& _matrix);
+	static Matrice CreateFromYawPitchRoll(const float _yaw, const float _pitch, const float _roll);
 #pragma endregion
 #pragma region operator
 public:
-	Matrice operator+(const Matrice& _other) const;
-	Matrice operator*(const Matrice& _other) const;
-	Matrice operator-(const Matrice& _other) const;
 	Matrice operator-() const;
-	float& operator[](const int _index);
+	Matrice operator+(const Matrice& _other) const;
+	Matrice operator-(const Matrice& _other) const;
+	Matrice operator*(const Matrice& _other) const;
+	bool operator==(const Matrice& _other) const;
+	bool operator!=(const Matrice& _other) const;
 #pragma endregion
 
 };

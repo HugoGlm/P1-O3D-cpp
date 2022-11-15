@@ -4,6 +4,7 @@ class Quaternion
 #pragma region f/p
 private:
 	static inline const float epsilon = 0.000001f;
+public:
 	float x = 0.0f;
 	float y = 0.0f;
 	float z = 0.0f;
