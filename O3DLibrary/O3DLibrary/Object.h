@@ -1,11 +1,12 @@
 #pragma once
-#include <string>
+#include <iostream>
+#include "O3DLibrary.h"
 
 namespace Core
 {
 	namespace PrimitiveType
 	{
-		class String;
+		class FString;
 	}
 	class Object
 	{
@@ -16,10 +17,7 @@ namespace Core
 #pragma endregion
 #pragma region methods
 	public:
-		virtual Core::PrimitiveType::String ToString() const;
+		O3DLIBRARY_API virtual Core::PrimitiveType::FString ToString() const;
 #pragma endregion
-
 	};
 }
-
-

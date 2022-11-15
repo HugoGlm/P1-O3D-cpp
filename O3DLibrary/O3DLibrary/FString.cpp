@@ -1,0 +1,159 @@
+#include "pch.h"
+#include "FString.h"
+#include "Boolean.h"
+
+#pragma region f/p
+Core::PrimitiveType::FString const Core::PrimitiveType::FString::Empty = "";
+#pragma endregion
+
+#pragma region constructor/destructor
+Core::PrimitiveType::FString::FString(const char* _value)
+{
+	if (_value == nullptr) _value = "";
+	const int _otherLength = strlen(_value);
+	const int& _length = length;
+	const int _newLength = _length + _otherLength;
+	char* _char = new char[_newLength + 1];
+	strcpy(_char, value);
+	strcat(_char, _value);
+	value = _char;
+	length = _newLength;
+}
+
+Core::PrimitiveType::FString::FString(const FString& _copy)
+{
+	if (_copy.value == nullptr) return;
+	const size_t _length = _copy.length;
+	char* _new = new char[_length + 1];
+	memcpy(_new, _copy.value, _length + 1);
+	value = _new;
+	length = _copy.length;
+}
+Core::PrimitiveType::FString::FString(std::string::iterator _begin, std::string::iterator _end)
+{
+	for (; _begin != _end; ++_begin)
+		Append(*_begin);
+}
+#pragma endregion
+
+#pragma region methods
+void Core::PrimitiveType::FString::Append(const char _char)
+{
+	const size_t _newLength = length + 2;
+	char* _array = new char[_newLength];
+	strcpy(_array, value);
+	_array[length] = _char;
+	_array[length + 1] = '\0';
+	value = _array;
+	length = length + 1;
+}
+void Core::PrimitiveType::FString::Append(const FString& _value)
+{
+	const int& _otherLength = _value.length;
+	const int _newLength = length + _otherLength;
+	char* _char = new char[_newLength + 1];
+	strcpy(_char, value);
+	strcat(_char, _value.value);
+	value = _char;
+	length = _newLength;
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end)
+{
+	FString _result = Empty;
+	for (int i = _begin; i < _end; i++)
+		_result.Append(value[i]);
+	return _result;
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin)
+{
+	return SubString(_begin, length);
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::Replace(const char _old, const char _new) const
+{
+	char* _array = new char[length];
+	strcpy(_array, value);
+	for (int i = 0; i < length; i++)
+	{
+		if (value[i] == _old)
+			_array[i] = _new;
+	}
+	return _array;
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::Replace(const FString& _old, const FString& _new) const
+{
+	std::string _str = value;
+	size_t _startPos = 0;
+	const std::string _from = _old.ToCstr();
+	const std::string _to = _new.ToCstr();
+	while ((_startPos = _str.find(_from, _startPos)) != std::string::npos)
+	{
+		_str.replace(_startPos, _from.length(), _to);
+		_startPos += _to.length();
+	}
+	return _str.c_str();
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::Trim() const
+{
+	return Replace(" ", "");
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::ToUpper() const
+{
+	char* _array = new char[length];
+	strcpy(_array, value);
+	for (int i = 0; i < length; i++)
+		_array[i] = std::tolower(_array[i]);
+	return _array;
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::ToLower() const
+{
+	char* _array = new char[length];
+	strcpy(_array, value);
+	for (int i = 0; i < length; i++)
+		_array[i] = std::toupper(_array[i]);
+	return _array;
+}
+int Core::PrimitiveType::FString::Length() const
+{
+	return length;
+}
+const char* Core::PrimitiveType::FString::ToCstr() const
+{
+	return value;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::IsNullOrEmpty(const FString& _str)
+{
+	return _str.value == nullptr || _str.length == 0;
+}
+#pragma endregion
+
+#pragma region override
+Core::PrimitiveType::FString Core::PrimitiveType::FString::ToString() const
+{
+	return value;
+}
+#pragma endregion
+
+#pragma region operator
+Core::PrimitiveType::FString::operator const char* ()
+{
+	return value;
+}
+std::ostream& Core::PrimitiveType::operator<<(std::ostream& _os, const FString& _str)
+{
+	_os << _str.value;
+	return _os;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator==(const FString& _other)
+{
+	if (length != _other.length)
+		return false;
+	for (int i = 0; i < length; i++)
+		if (value[i] != _other.value[i])
+			return false;
+	return true;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator!=(const FString& _other)
+{
+	return !this->operator==(_other);
+}
+#pragma endregion

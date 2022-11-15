@@ -25,6 +25,9 @@
     <Filter Include="Core\PrimaryType\String">
       <UniqueIdentifier>{818ef9df-ff97-4e8f-b96e-3a61bca54671}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\PrimaryType\Boolean">
+      <UniqueIdentifier>{8c164a28-5153-41c5-8a0e-9c7cb89d4739}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -36,8 +39,14 @@
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="String.h">
+    <ClInclude Include="FString.h">
       <Filter>Core\PrimaryType\String</Filter>
+    </ClInclude>
+    <ClInclude Include="O3DLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boolean.h">
+      <Filter>Core\PrimaryType\Boolean</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -50,8 +59,11 @@
     <ClCompile Include="Object.cpp">
       <Filter>Core\Object</Filter>
     </ClCompile>
-    <ClCompile Include="String.cpp">
+    <ClCompile Include="FString.cpp">
       <Filter>Core\PrimaryType\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Boolean.cpp">
+      <Filter>Core\PrimaryType\Boolean</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
