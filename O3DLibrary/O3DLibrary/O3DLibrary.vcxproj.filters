@@ -28,6 +28,33 @@
     <Filter Include="Core\PrimaryType\Boolean">
       <UniqueIdentifier>{8c164a28-5153-41c5-8a0e-9c7cb89d4739}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Exception">
+      <UniqueIdentifier>{6307f253-ee90-42ef-95f2-98ae80f4fabd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimaryType\Integer">
+      <UniqueIdentifier>{8721fcce-bd9a-4fc1-af2d-2bbf7c5bf534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Environment">
+      <UniqueIdentifier>{9b7bec91-622f-4698-8b96-8afa62e22ef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostics">
+      <UniqueIdentifier>{697d8b1c-f08c-4c94-9894-1c7a841e72e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostics\Process">
+      <UniqueIdentifier>{199f8bd7-6a5a-4748-8f48-a3fb086c0caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO">
+      <UniqueIdentifier>{c4b8624e-0b43-44a2-b0c2-5a38867f9086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream">
+      <UniqueIdentifier>{e8e6ec59-2432-49d3-a637-51d59ac9a7a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TextWritter">
+      <UniqueIdentifier>{a009aea3-4f4e-48bb-aef9-2679b66f3fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TextReader">
+      <UniqueIdentifier>{855be3dd-4d03-4d21-a92f-e81f6b845a49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -48,6 +75,24 @@
     <ClInclude Include="Boolean.h">
       <Filter>Core\PrimaryType\Boolean</Filter>
     </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Core\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="Integer.h">
+      <Filter>Core\PrimaryType\Integer</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Core\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Core\Diagnostics\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="TextWritter.h">
+      <Filter>Core\IO\Stream\TextWritter</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.h">
+      <Filter>Core\IO\Stream\TextReader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -64,6 +109,24 @@
     </ClCompile>
     <ClCompile Include="Boolean.cpp">
       <Filter>Core\PrimaryType\Boolean</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Core\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="Integer.cpp">
+      <Filter>Core\PrimaryType\Integer</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Core\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Core\Diagnostics\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="TextWritter.cpp">
+      <Filter>Core\IO\Stream\TextWritter</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Core\IO\Stream\TextReader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

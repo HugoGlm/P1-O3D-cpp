@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "FString.h"
 #include "Boolean.h"
+#include "Exception.h"
+#include "Integer.h"
 
 #pragma region f/p
 Core::PrimitiveType::FString const Core::PrimitiveType::FString::Empty = "";
@@ -19,7 +21,6 @@ Core::PrimitiveType::FString::FString(const char* _value)
 	value = _char;
 	length = _newLength;
 }
-
 Core::PrimitiveType::FString::FString(const FString& _copy)
 {
 	if (_copy.value == nullptr) return;
@@ -112,9 +113,61 @@ Core::PrimitiveType::FString Core::PrimitiveType::FString::ToLower() const
 		_array[i] = std::toupper(_array[i]);
 	return _array;
 }
-int Core::PrimitiveType::FString::Length() const
+Core::PrimitiveType::Integer Core::PrimitiveType::FString::Length() const
 {
 	return length;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::StartWith(const char _c) const
+{
+	return value[0] == _c;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::StartWith(const FString& _str) const
+{
+	const int _length = _str.length;
+	for (int i = 0; i < _length; i++)
+		if (value[i] != _str[i])
+			return false;
+	return true;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::EndWith(const char _c) const
+{
+	return value[length - 1] == _c;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::EndWith(const FString& _str) const
+{
+	const int _otherLength = _str.length;
+	for (int i = _otherLength; i > 0; i--)
+		if (value[length - 1] != _str[_otherLength - 1])
+			return false;
+	return true;
+}
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::Contains(const FString& _str) const
+{
+	return Find(_str) != Integer(-1);
+}
+Core::PrimitiveType::Integer Core::PrimitiveType::FString::LastIndexOf(const char _c) const
+{
+	int _result = -1;
+	for (int i = 0; i < length; i++)
+		if (value[i] == _c)
+			_result = i;
+	return _result;
+}
+Core::PrimitiveType::Integer Core::PrimitiveType::FString::FirstIndexOf(const char _c) const
+{
+	for (int i = 0; i < length; i++)
+		if (value[i] == _c)
+			return i;
+	return -1;
+}
+Core::PrimitiveType::Integer Core::PrimitiveType::FString::Find(const FString& _str) const
+{
+	return std::string(value).find(_str.ToCstr());
+}
+std::wstring Core::PrimitiveType::FString::ToWString() const
+{
+	std::string _str = value;
+	return std::wstring(_str.begin(), _str.end());
 }
 const char* Core::PrimitiveType::FString::ToCstr() const
 {
@@ -124,6 +177,10 @@ Core::PrimitiveType::Boolean Core::PrimitiveType::FString::IsNullOrEmpty(const F
 {
 	return _str.value == nullptr || _str.length == 0;
 }
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::Equals(const FString& _other) const
+{
+	return value == _other.value;
+}
 #pragma endregion
 
 #pragma region override
@@ -131,10 +188,17 @@ Core::PrimitiveType::FString Core::PrimitiveType::FString::ToString() const
 {
 	return value;
 }
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::Equals(const Object* _obj) const
+{
+	const FString* _other = dynamic_cast<const FString*>(_obj);
+	if (_other == nullptr)
+		return false;
+	return Equals(*_other);
+}
 #pragma endregion
 
 #pragma region operator
-Core::PrimitiveType::FString::operator const char* ()
+Core::PrimitiveType::FString::operator const char* () const
 {
 	return value;
 }
@@ -143,7 +207,7 @@ std::ostream& Core::PrimitiveType::operator<<(std::ostream& _os, const FString& 
 	_os << _str.value;
 	return _os;
 }
-Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator==(const FString& _other)
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator==(const FString& _other)const
 {
 	if (length != _other.length)
 		return false;
@@ -152,8 +216,25 @@ Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator==(const FStr
 			return false;
 	return true;
 }
-Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator!=(const FString& _other)
+Core::PrimitiveType::Boolean Core::PrimitiveType::FString::operator!=(const FString& _other)const
 {
 	return !this->operator==(_other);
+}
+Core::PrimitiveType::FString Core::PrimitiveType::FString::operator+(const FString& _other) const
+{
+	FString _result = *this;
+	_result.Append(_other);
+	return _result;
+}
+Core::PrimitiveType::FString& Core::PrimitiveType::FString::operator+=(const FString& _other)
+{
+	Append(_other);
+	return *this;
+}
+char Core::PrimitiveType::FString::operator[](const int _index)
+{
+	if (_index < 0 || _index > length)
+		throw OutOfRangeException("[FString] => index out of range");
+	return value[_index];
 }
 #pragma endregion
