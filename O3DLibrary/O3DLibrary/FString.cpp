@@ -58,14 +58,14 @@ void Core::PrimitiveType::FString::Append(const FString& _value)
 	value = _char;
 	length = _newLength;
 }
-Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end)
+Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end) const
 {
 	FString _result = Empty;
 	for (int i = _begin; i < _end; i++)
 		_result.Append(value[i]);
 	return _result;
 }
-Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin)
+Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin) const
 {
 	return SubString(_begin, length);
 }

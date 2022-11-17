@@ -55,6 +55,30 @@
     <Filter Include="Core\IO\Stream\TextReader">
       <UniqueIdentifier>{855be3dd-4d03-4d21-a92f-e81f6b845a49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\IO\File">
+      <UniqueIdentifier>{02ab402b-8d76-474d-ac7d-ac2d2adbebdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\File\FileStream">
+      <UniqueIdentifier>{8b7c123a-d021-49c2-8f51-b625a54a87ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console">
+      <UniqueIdentifier>{11048792-0e61-4346-9bfb-61a0e22f605a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console\Enum">
+      <UniqueIdentifier>{528147b0-22e5-4505-8a40-f98592c7e481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Path">
+      <UniqueIdentifier>{0eed10f6-e059-4ede-bcde-b88c539cb415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Directory">
+      <UniqueIdentifier>{f8a0d43a-309f-4e23-8bb5-d22f22ac25ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DateTime">
+      <UniqueIdentifier>{094c54af-bab9-4423-8cb8-67fb77e9e525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DateTime\EDayOfWeek">
+      <UniqueIdentifier>{8f3d92b6-1390-4d84-9845-e5b6b36c35ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -93,6 +117,33 @@
     <ClInclude Include="TextReader.h">
       <Filter>Core\IO\Stream\TextReader</Filter>
     </ClInclude>
+    <ClInclude Include="FileStream.h">
+      <Filter>Core\IO\File\FileStream</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreIO.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="EConsoleColor.h">
+      <Filter>Core\Console\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Core\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Core\IO\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Core\IO\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Directory.h">
+      <Filter>Core\IO\Directory</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="EDayOfWeek.h">
+      <Filter>Core\DateTime\EDayOfWeek</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -127,6 +178,24 @@
     </ClCompile>
     <ClCompile Include="TextReader.cpp">
       <Filter>Core\IO\Stream\TextReader</Filter>
+    </ClCompile>
+    <ClCompile Include="FileStream.cpp">
+      <Filter>Core\IO\File\FileStream</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Core\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Core\IO\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Core\IO\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Directory.cpp">
+      <Filter>Core\IO\Directory</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Core\DateTime</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

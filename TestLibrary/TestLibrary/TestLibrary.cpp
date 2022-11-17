@@ -4,6 +4,8 @@
 #include <Integer.h>
 #include <Environment.h>
 #include <Process.h>
+#include <Console.h>
+#include <DateTime.h>
 #include <iostream>
 #include <iomanip>
 
@@ -12,10 +14,13 @@ using namespace Core;
 
 int main()
 {
+    DateTime date = DateTime(17, 11, 2022);
+    Console::WriteLine(*date.DayOfWeek());
 
+    //Console::WriteLine(FString("Hello World"));
 
-    const FString _path = "C:\\Users\\GUIL2804\\AppData\\Local\\Programs\\Opera GX\\launcher.exe";
-    Core::Diagnostics::Process::Start(_path, "https://www.tusmo.xyz");
+    /*const FString _path = "C:\\Users\\GUIL2804\\AppData\\Local\\Programs\\Opera GX\\launcher.exe";
+    Core::Diagnostics::Process::Start(_path, "https://www.youtube.com");*/
 
     /*std::cout << Environment::SpecialFolder(ESpecialFolder::Desktop) << std::endl;
     std::cout << Environment::SpecialFolder(ESpecialFolder::Programs) << std::endl;

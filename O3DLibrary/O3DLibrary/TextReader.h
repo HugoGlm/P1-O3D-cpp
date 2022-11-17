@@ -25,6 +25,23 @@ namespace Core
 			O3DLIBRARY_API TextReader(const PrimitiveType::FString& _path);
 			O3DLIBRARY_API TextReader(const TextReader& _copy);
 #pragma endregion
+#pragma region methods
+		public:
+			O3DLIBRARY_API void Close();
+			O3DLIBRARY_API PrimitiveType::Boolean IsOpen() const;
+			O3DLIBRARY_API PrimitiveType::Boolean IsValid() const;
+			O3DLIBRARY_API PrimitiveType::Boolean ReadLine(PrimitiveType::FString& _out);
+			O3DLIBRARY_API PrimitiveType::FString ReadLine();
+			O3DLIBRARY_API PrimitiveType::FString ReadToEnd();
+			O3DLIBRARY_API PrimitiveType::FString Path() const;
+			O3DLIBRARY_API PrimitiveType::Boolean Equals(const TextReader& _textReader) const;
+#pragma endregion
+#pragma region override
+		public:
+			O3DLIBRARY_API PrimitiveType::FString ToString() const override;
+			O3DLIBRARY_API PrimitiveType::Boolean Equals(const Object* _obj) const override;
+#pragma endregion
+
 
 		};
 	}
