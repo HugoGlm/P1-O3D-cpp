@@ -163,6 +163,8 @@
     <ClInclude Include="Process.h" />
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWritter.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="WindowMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Boolean.cpp" />
@@ -188,6 +190,8 @@
     <ClCompile Include="Process.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TextWritter.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

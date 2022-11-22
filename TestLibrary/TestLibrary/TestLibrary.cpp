@@ -7,6 +7,7 @@
 #include <Console.h>
 #include <DateTime.h>
 #include <BoxFile.h>
+#include <Window.h>
 #include <iostream>
 #include <Windows.h> // pour la box
 #include <iomanip>
@@ -36,6 +37,9 @@ static bool InstanceOf(const Derived*)
 
 int main()
 {
+    Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+    window.Open();
+
     /*object o = new Object();
     DateTime* time = new DateTime(0, 0, 0);
     if (instanceof(Object, o))

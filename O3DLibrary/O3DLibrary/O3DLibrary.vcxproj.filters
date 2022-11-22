@@ -85,6 +85,12 @@
     <Filter Include="Core\Box\BoxFile">
       <UniqueIdentifier>{fba14cc3-52b8-423c-98b9-06006faeca06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Window">
+      <UniqueIdentifier>{1c367dbe-9de5-4ec8-8057-63aed91612bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Menu">
+      <UniqueIdentifier>{400bc900-4c16-4307-9cf7-a5836d85a37e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -153,6 +159,12 @@
     <ClInclude Include="BoxFile.h">
       <Filter>Core\Box\BoxFile</Filter>
     </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowMenu.h">
+      <Filter>Core\Window\Menu</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -208,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="BoxFile.cpp">
       <Filter>Core\Box\BoxFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Core\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowMenu.cpp">
+      <Filter>Core\Window\Menu</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
