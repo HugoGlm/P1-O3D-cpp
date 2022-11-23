@@ -91,6 +91,15 @@
     <Filter Include="Core\Window\Menu">
       <UniqueIdentifier>{400bc900-4c16-4307-9cf7-a5836d85a37e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Window\Shape">
+      <UniqueIdentifier>{3adb7810-259f-4213-8afd-0157a1c95772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\Rectangle">
+      <UniqueIdentifier>{bbf672e5-d2c7-4885-8f92-22a0bc15c6cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\Circle">
+      <UniqueIdentifier>{bc76a71d-a5f1-42f0-8ec6-ade2683d8133}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -165,6 +174,15 @@
     <ClInclude Include="WindowMenu.h">
       <Filter>Core\Window\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Core\Window\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleShape.h">
+      <Filter>Core\Window\Shape\Rectangle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -227,5 +245,16 @@
     <ClCompile Include="WindowMenu.cpp">
       <Filter>Core\Window\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Core\Window\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleShape.cpp">
+      <Filter>Core\Window\Shape\Rectangle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="O3DLibrary.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

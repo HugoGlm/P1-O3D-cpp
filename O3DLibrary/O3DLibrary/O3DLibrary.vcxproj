@@ -161,6 +161,9 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="FString.h" />
     <ClInclude Include="Process.h" />
+    <ClInclude Include="RectangleShape.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Shape.h" />
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWritter.h" />
     <ClInclude Include="Window.h" />
@@ -188,10 +191,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Process.cpp" />
+    <ClCompile Include="RectangleShape.cpp" />
+    <ClCompile Include="Shape.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TextWritter.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowMenu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="O3DLibrary.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

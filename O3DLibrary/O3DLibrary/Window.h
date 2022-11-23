@@ -2,6 +2,7 @@
 #include "FString.h"
 #include "Object.h"
 #include <map>
+#include <vector>
 #include <Windows.h>
 
 namespace Core
@@ -12,6 +13,7 @@ namespace Core
 	{
 #pragma region f/p
 	private:
+		std::vector<class Shape*> shapes = std::vector<class Shape*>();
 		HWND windowInstance = nullptr;
 		PrimitiveType::FString name = "";
 		int width = 1920;
@@ -28,12 +30,12 @@ namespace Core
 #pragma region methods
 	private:
 		O3DLIBRARY_API LRESULT __stdcall windowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp);
-		const LRESULT& AddStructPaint();
 		O3DLIBRARY_API static LRESULT __stdcall WindowProc_Internal(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp);
 	protected:
 		O3DLIBRARY_API virtual void Update();
 		O3DLIBRARY_API virtual void AddMenu(HWND _hwnd);
 		O3DLIBRARY_API WindowMenu* CreateWindowMenu(const char* _name);
+		O3DLIBRARY_API void Register(Shape* _shape);
 	public:
 		O3DLIBRARY_API int MenuCount() const;
 		O3DLIBRARY_API void RegisterMenu(WindowMenu* _menu);

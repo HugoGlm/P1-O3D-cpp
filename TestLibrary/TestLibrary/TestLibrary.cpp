@@ -38,6 +38,7 @@ static bool InstanceOf(const Derived*)
 int main()
 {
     Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+    window.
     window.Open();
 
     /*object o = new Object();

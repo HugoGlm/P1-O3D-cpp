@@ -1,5 +1,8 @@
 #include "Window.h"
 #include "WindowMenu.h"
+#include "Shape.h"
+#include <Windows.h>
+#include <gdiplus.h>
 
 #pragma region constructor
 Core::Window::Window(const PrimitiveType::FString& _name, const int _width, const int _height)
@@ -14,8 +17,9 @@ Core::Window::Window(const PrimitiveType::FString& _name, const int _width, cons
 	_wndClass.lpszClassName = _className;
 	_wndClass.hInstance = _instance;
 	//TODO Window Proc
+	_wndClass.style = CS_HREDRAW | CS_VREDRAW;
 	_wndClass.lpfnWndProc = WindowProc_Internal;
-	_wndClass.hbrBackground = CreateSolidBrush(RGB(255, 255, 255));
+	_wndClass.hbrBackground = CreateSolidBrush(RGB(255, 0, 255));
 	_wndClass.hCursor = LoadCursor(_instance, IDC_HAND);
 	RegisterClass(&_wndClass);
 
@@ -37,25 +41,20 @@ Core::Window::~Window()
 #pragma region methods
 LRESULT __stdcall Core::Window::windowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp)
 {
-	PAINTSTRUCT ps;
-	HDC hdc;
-	RECT rc;
-	POINT draw[5] = { 125, 25, 150, 25, 150, 50, 150, 25, 125, 25 };
-
 	if (_hWindow == nullptr)
 		return 0;
 	switch (_msg)
 	{
 	case WM_PAINT:
-		hdc = BeginPaint(_hWindow, &ps);
-		GetClientRect(_hWindow, &rc);
-		SetMapMode(hdc, MM_ANISOTROPIC);
-		SetWindowExtEx(hdc, 100, 100, NULL);
-		SetViewportExtEx(hdc, rc.right, rc.bottom, NULL);
-		Polyline(hdc, draw, 5);
-		EndPaint(_hWindow, &ps);
-		return 0;
+	{
+		PAINTSTRUCT paintStruct;
+		HDC _hdc = BeginPaint(_hWindow, &paintStruct);
+		_hdc = BeginPaint(_hWindow, &paintStruct);
+		for (Shape* _shape : shapes)
+			_shape->Draw(_hdc);
+		EndPaint(_hWindow, &paintStruct);
 		break;
+	}
 	case WM_CREATE:
 		AddMenu(_hWindow);
 		break;
@@ -112,6 +111,10 @@ Core::WindowMenu* Core::Window::CreateWindowMenu(const char* _name)
 	menus.insert(std::pair<const char*, WindowMenu*>(_name, _menu));
 	return _menu;
 }
+O3DLIBRARY_API void Core::Window::Register(Shape* _shape)
+{
+	return shapes.push_back(_shape);
+}
 int Core::Window::MenuCount() const
 {
 	return menus.size();
@@ -135,5 +138,3 @@ void Core::Window::Close()
 	isOpen = false;
 }
 #pragma endregion
-
-
