@@ -5,6 +5,8 @@
 #include <vector>
 #include <Windows.h>
 
+#pragma comment(lib, "Gdiplus.lib")
+
 namespace Core
 {
 	class WindowMenu;

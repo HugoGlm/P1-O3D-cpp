@@ -6,6 +6,8 @@
 #include <Process.h>
 #include <Console.h>
 #include <DateTime.h>
+#include <BindingFlags.h>
+#include <FieldInfo.h>
 #include <BoxFile.h>
 #include <Window.h>
 #include <iostream>
@@ -35,11 +37,30 @@ static bool InstanceOf(const Derived*)
 
 #define instanceof(a, b) InstanceOf<a>(b)
 
+class A : public Object
+{
+private:
+    PrimitiveType::FString name = "";
+public:
+    PrimitiveType::Integer age = 0;
+public:
+    A()
+    {
+        Object::RegisterField("name", &name, (int)BindingFlags::Private);
+        Object::RegisterField("age", &age, (int)BindingFlags::Public);
+    }
+};
+
 int main()
 {
-    Window window = Window(PrimitiveType::FString("Test"), 900, 800);
-    window.
-    window.Open();
+    A a;
+    LOG(a.age);
+    a.SetFieldValue("age", new PrimitiveType::Integer(10));
+    LOGWARNING(a.GetFields(BindingFlags::Public)[0]->ReflectedObject());
+    LOG(a.age);
+
+    /*Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+    window.Open();*/
 
     /*object o = new Object();
     DateTime* time = new DateTime(0, 0, 0);

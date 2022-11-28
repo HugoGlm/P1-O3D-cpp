@@ -100,6 +100,21 @@
     <Filter Include="Core\Window\Shape\Circle">
       <UniqueIdentifier>{bc76a71d-a5f1-42f0-8ec6-ade2683d8133}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Reflection">
+      <UniqueIdentifier>{74abe432-58cd-46c6-b035-3f5bbb07bfd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\FieldInfo">
+      <UniqueIdentifier>{1d23aec2-14df-45c5-9db2-38e1f8682e0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\BindingFlags">
+      <UniqueIdentifier>{5de581ca-4fe9-45ac-b5f8-bf03f81591e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\Complex">
+      <UniqueIdentifier>{c9b64add-a1a4-4152-8178-49de39aa5c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\RegisterInfo">
+      <UniqueIdentifier>{80e5b10e-5da4-474b-b714-4f7bc90b627e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -183,6 +198,21 @@
     <ClInclude Include="RectangleShape.h">
       <Filter>Core\Window\Shape\Rectangle</Filter>
     </ClInclude>
+    <ClInclude Include="FieldInfo.h">
+      <Filter>Core\Reflection\FieldInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingFlags.h">
+      <Filter>Core\Reflection\BindingFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleShape.h">
+      <Filter>Core\Window\Shape\Circle</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexShape.h">
+      <Filter>Core\Window\Shape\Complex</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterInfo.h">
+      <Filter>Core\Reflection\RegisterInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -250,6 +280,18 @@
     </ClCompile>
     <ClCompile Include="RectangleShape.cpp">
       <Filter>Core\Window\Shape\Rectangle</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldInfo.cpp">
+      <Filter>Core\Reflection\FieldInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleShape.cpp">
+      <Filter>Core\Window\Shape\Circle</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexShape.cpp">
+      <Filter>Core\Window\Shape\Complex</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterInfo.cpp">
+      <Filter>Core\Reflection\RegisterInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
