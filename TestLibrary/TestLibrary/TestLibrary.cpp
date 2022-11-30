@@ -51,12 +51,16 @@ static bool InstanceOf(const Derived*)
 //    REGISTER_METHOD(Test, &A::Test, this, std::vector<ParameterInfo>({ ParameterInfo("msg", "FString", 0), ParameterInfo("a", "FString", 1) }));
 //};
 
-ENUM(Type, Int = 5, Float = 25, Double);
+ENUM(Test, Giusy = 1, Gabriel = 15, Hugo);
+ENUM(Test1, Aymeric = 1, Thibaud = 2, Romain, Benoit = 5, Pierre);
 
 int main()
 {
-    std::cout << (int)Type::Int << std::endl;
-    std::cout << *Type::Float << std::endl;
+    std::cout << *Test::Giusy << std::endl;
+    for (Test1 t : Test1Support::Value())
+    {
+        std::cout << *t << std::endl;
+    }
 
    /* A a;
     MethodInfo<void, const FString&>* method = a.GetMethod<void, const FString&>("Test");
