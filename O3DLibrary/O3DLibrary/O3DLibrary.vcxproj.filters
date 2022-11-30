@@ -112,8 +112,14 @@
     <Filter Include="Core\Window\Shape\Complex">
       <UniqueIdentifier>{c9b64add-a1a4-4152-8178-49de39aa5c64}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Reflection\RegisterInfo">
-      <UniqueIdentifier>{80e5b10e-5da4-474b-b714-4f7bc90b627e}</UniqueIdentifier>
+    <Filter Include="Core\Reflection\MethodInfo">
+      <UniqueIdentifier>{a56b9263-7548-44aa-9af4-34eb77da3607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\MethodInfo\ParameterInfo">
+      <UniqueIdentifier>{66d1adb8-6719-47c1-afe8-daf6a6a504eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimaryType\Enum">
+      <UniqueIdentifier>{f286c7c4-7de8-4d2a-9df4-2ac761baadbc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -210,8 +216,14 @@
     <ClInclude Include="ComplexShape.h">
       <Filter>Core\Window\Shape\Complex</Filter>
     </ClInclude>
-    <ClInclude Include="RegisterInfo.h">
-      <Filter>Core\Reflection\RegisterInfo</Filter>
+    <ClInclude Include="MethodInfo.h">
+      <Filter>Core\Reflection\MethodInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="ParameterInfo.h">
+      <Filter>Core\Reflection\MethodInfo\ParameterInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>Core\PrimaryType\Enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -289,9 +301,6 @@
     </ClCompile>
     <ClCompile Include="ComplexShape.cpp">
       <Filter>Core\Window\Shape\Complex</Filter>
-    </ClCompile>
-    <ClCompile Include="RegisterInfo.cpp">
-      <Filter>Core\Reflection\RegisterInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

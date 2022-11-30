@@ -9,6 +9,9 @@
 #include <BindingFlags.h>
 #include <FieldInfo.h>
 #include <BoxFile.h>
+#include <MethodInfo.h>
+#include <ParameterInfo.h>
+#include <Enum.h>
 #include <Window.h>
 #include <iostream>
 #include <Windows.h> // pour la box
@@ -37,27 +40,35 @@ static bool InstanceOf(const Derived*)
 
 #define instanceof(a, b) InstanceOf<a>(b)
 
-class A : public Object
-{
-private:
-    PrimitiveType::FString name = "";
-public:
-    PrimitiveType::Integer age = 0;
-public:
-    A()
-    {
-        Object::RegisterField("name", &name, (int)BindingFlags::Private);
-        Object::RegisterField("age", &age, (int)BindingFlags::Public);
-    }
-};
+//class A : public Object
+//{
+//public:
+//    void Test(const FString& msg, const FString& a)
+//    {
+//        LOG(msg);
+//        LOG(a);
+//    }
+//    REGISTER_METHOD(Test, &A::Test, this, std::vector<ParameterInfo>({ ParameterInfo("msg", "FString", 0), ParameterInfo("a", "FString", 1) }));
+//};
+
+ENUM(Type, Int = 5, Float = 25, Double);
 
 int main()
 {
-    A a;
-    LOG(a.age);
-    a.SetFieldValue("age", new PrimitiveType::Integer(10));
-    LOGWARNING(a.GetFields(BindingFlags::Public)[0]->ReflectedObject());
-    LOG(a.age);
+    std::cout << (int)Type::Int << std::endl;
+    std::cout << *Type::Float << std::endl;
+
+   /* A a;
+    MethodInfo<void, const FString&>* method = a.GetMethod<void, const FString&>("Test");
+    if (method == nullptr)
+    {
+        std::cout << "Function is null !";
+        return -4;
+    }
+    for (ParameterInfo _params : method->Parameters())
+    {
+        std::cout << "Type: " << _params.TypeName() << ", param name: " << _params.Name() << " position: " << _params.Position();
+    }*/
 
     /*Window window = Window(PrimitiveType::FString("Test"), 900, 800);
     window.Open();*/

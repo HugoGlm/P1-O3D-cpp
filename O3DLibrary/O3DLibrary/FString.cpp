@@ -38,6 +38,19 @@ Core::PrimitiveType::FString::FString(std::string::iterator _begin, std::string:
 #pragma endregion
 
 #pragma region methods
+std::vector<std::string> Core::PrimitiveType::FString::Split(const std::string& _str, const char _c)
+{
+	std::vector<std::string> _result = std::vector<std::string>();
+	std::string _string = _str;
+	size_t _pos = 0;
+	while ((_pos = _string.find(_c)) != std::string::npos)
+	{
+		_result.push_back(_string.substr(0, _pos));
+		_string = _string.erase(0, _pos + 1);
+	}
+	_result.push_back(_string.substr(0, _pos));
+	return _result;
+}
 void Core::PrimitiveType::FString::Append(const char _char)
 {
 	const size_t _newLength = length + 2;
