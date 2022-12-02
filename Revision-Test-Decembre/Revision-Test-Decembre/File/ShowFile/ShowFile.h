@@ -22,9 +22,25 @@ public:
 #pragma endregion
 #pragma region methods
 public:
+	/// <summary>
+	/// execute
+	/// </summary>
 	void Init();
+	/// <summary>
+	/// get messages in file
+	/// </summary>
+	/// <param name="_key">string</param>
+	/// <returns>string</returns>
 	std::string GetMessages(const std::string& _key) const;
+	/// <summary>
+	/// return name
+	/// </summary>
+	/// <returns>string</returns>
 	std::string Name() const;
+	/// <summary>
+	/// return filepath
+	/// </summary>
+	/// <returns>string</returns>
 	std::string FilePath() const;
 #pragma endregion
 

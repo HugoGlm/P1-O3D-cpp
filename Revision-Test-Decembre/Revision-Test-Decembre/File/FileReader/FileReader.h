@@ -19,8 +19,19 @@ public:
 #pragma endregion
 #pragma region methods
 public:
+	/// <summary>
+	/// check if isOpen
+	/// </summary>
+	/// <returns>bool</returns>
 	bool IsOpen() const;
+	/// <summary>
+	/// close File
+	/// </summary>
 	void Close();
+	/// <summary>
+	/// get all lines in file
+	/// </summary>
+	/// <returns></returns>
 	std::vector<std::string> GetAllLines();
 #pragma endregion
 

@@ -17,7 +17,17 @@ public:
 #pragma endregion
 #pragma region mmethods
 public:
+	/// <summary>
+	/// chaeck if file Exist
+	/// </summary>
+	/// <param name="_path">string</param>
+	/// <returns>bool</returns>
 	static bool Exist(const std::string& _path);
+	/// <summary>
+	/// create file
+	/// </summary>
+	/// <param name="_path">string</param>
+	/// <returns>FileStream</returns>
 	static FileStream* Create(const std::string& _path);
 #pragma endregion
 

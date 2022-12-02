@@ -20,9 +20,25 @@ public:
 #pragma endregion
 #pragma region methods
 public:
+	/// <summary>
+	/// select menu
+	/// </summary>
+	/// <param name="_currentMenu">Menu</param>
 	void OnClick(Menu* _currentMenu);
+	/// <summary>
+	/// return name
+	/// </summary>
+	/// <returns>string</returns>
 	std::string Name() const;
+	/// <summary>
+	/// return description
+	/// </summary>
+	/// <returns>string</returns>
 	std::string Description() const;
+	/// <summary>
+	/// return NextMenu
+	/// </summary>
+	/// <returns>Menu</returns>
 	Menu* NextMenu() const;
 #pragma endregion
 #pragma region override

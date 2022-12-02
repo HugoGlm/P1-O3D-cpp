@@ -10,8 +10,9 @@
 ShowFile::ShowFile(const std::string& _name)
 {
 	name = _name;
-	filePath = Path::Combine(Environment::CurrentDirectory(), "Test", _name + ".txt");
+	filePath = Path::Combine(Environment::CurrentDirectory(), "Path", _name + ".txt");
 	stream = File::Create(filePath);
+	Init();
 }
 ShowFile::~ShowFile()
 {

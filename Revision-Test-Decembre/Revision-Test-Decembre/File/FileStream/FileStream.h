@@ -19,9 +19,24 @@ public:
 #pragma endregion
 #pragma region methods
 public:
+	/// <summary>
+	/// close directory
+	/// </summary>
 	void Close() const;
+	/// <summary>
+	/// write in directory
+	/// </summary>
+	/// <returns>FileWriter</returns>
 	FileWriter* Writer() const;
+	/// <summary>
+	/// read directory
+	/// </summary>
+	/// <returns>FileReader</returns>
 	FileReader* Reader() const;
+	/// <summary>
+	/// check if isValid
+	/// </summary>
+	/// <returns>bool</returns>
 	bool IsValid() const;
 #pragma endregion
 

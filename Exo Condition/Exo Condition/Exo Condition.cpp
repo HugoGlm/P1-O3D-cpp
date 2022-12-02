@@ -15,7 +15,7 @@ void SetMember()
 {
 	cout << "Set x member : " << endl;
 	cin >> x;
-	cout << "Set x member : " << endl;
+	cout << "Set y member : " << endl;
 	cin >> y;
 }
 

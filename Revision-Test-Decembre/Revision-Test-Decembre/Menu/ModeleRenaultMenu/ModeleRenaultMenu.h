@@ -9,6 +9,9 @@ public:
 #pragma endregion constructor
 #pragma region override
 public:
+	/// <summary>
+	/// execute menu
+	/// </summary>
 	void Open() override;
 #pragma endregion override
 };

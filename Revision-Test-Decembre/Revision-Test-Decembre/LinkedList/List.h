@@ -1,8 +1,6 @@
 #pragma once
-#include <initializer_list>
-#include <iostream>
 #include "Node.h"
-using namespace std;
+#include <initializer_list>
 
 template<typename T>
 class List
@@ -17,7 +15,7 @@ private:
 #pragma region constructor
 public:
 	List() = default;
-	List(const initializer_list<T>& _tab);
+	List(const std::initializer_list<T>& _tab);
 	~List();
 #pragma endregion
 #pragma region methods
@@ -41,7 +39,7 @@ public:
 
 #pragma region constructor
 template<typename T>
-List<T>::List(const initializer_list<T>& _tab)
+List<T>::List(const std::initializer_list<T>& _tab)
 {
 	for (const T& _item : _tab)
 		AddLast(_item);
@@ -199,10 +197,10 @@ void List<T>::Display()
 	Node<T>* _head = head;
 	while (_head != nullptr)
 	{
-		cout << _head->Data() << ", ";
+		std::cout << _head->Data() << ", ";
 		_head = _head->Next();
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 template<typename T>
 int List<T>::Count() const
