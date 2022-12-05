@@ -9,7 +9,6 @@ Booking::Booking(Client* _client, DateTime _arrival, DateTime _departure)
 	arrivalDate = _arrival;
 	departureDate = _departure;
 }
-
 Booking::Booking(const Booking& _copy)
 {
 	client = _copy.client;
