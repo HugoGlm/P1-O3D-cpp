@@ -8,20 +8,23 @@
 //
 //LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 //{
-//	if (uMsg == WM_PAINT)
+//	PAINTSTRUCT ps;
+//	HDC hdc;
+//	TCHAR title[] = L"Hotel Objectif3D";
+//	switch (uMsg)
 //	{
-//		PAINTSTRUCT ps;
-//		HDC hdc = BeginPaint(hwnd, &ps);
-//
-//		TCHAR title[] = L"Hotel Objectif3D";
-//
+//	case WM_PAINT:
+//		hdc = BeginPaint(hwnd, &ps);
 //		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
 //		TextOut(hdc, 400, 0, title, _tcslen(title));
-//
 //		EndPaint(hwnd, &ps);
-//		return 0;
+//		break;
+//	default:
+//		return DefWindowProc(hwnd, uMsg, wParam, lParam);
+//		break;
 //	}
-//	return DefWindowProc(hwnd, uMsg, wParam, lParam);
+//
+//	return 0;
 //}
 //
 //#pragma region methods

@@ -8,6 +8,8 @@
 #include <CommCtrl.h>
 #include <iostream>
 
+#pragma warning(disable: 4996)
+
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 
 #define IDC_MONTHCAL 101
@@ -15,27 +17,29 @@
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	if (uMsg == WM_PAINT)
+	PAINTSTRUCT ps;
+	HDC hdc;
+	TCHAR title[] = L"Create New Booking";
+	TCHAR firstName[] = L"Enter first name: ";
+	TCHAR lastName[] = L"Enter last Name: ";
+	TCHAR nbrPeople[] = L"For how many people: ";
+	switch (uMsg)
 	{
-		PAINTSTRUCT ps;
-		HDC hdc = BeginPaint(hwnd, &ps);
-
-		TCHAR title[] = L"Create New Booking";
-		TCHAR firstName[] = L"Enter first name: ";
-		TCHAR lastName[] = L"Enter last Name: ";
-		TCHAR nbrPeople[] = L"For how many people: ";
-
+	case WM_PAINT:
+		hdc = BeginPaint(hwnd, &ps);
 		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
-
 		TextOut(hdc, 400, 0, title, _tcslen(title));
 		TextOut(hdc, 5, 80, firstName, _tcslen(firstName));
 		TextOut(hdc, 5, 110, lastName, _tcslen(lastName));
 		TextOut(hdc, 5, 160, nbrPeople, _tcslen(nbrPeople));
-
-		EndPaint(hwnd, &ps);
-		return 0;
+		break;
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hwnd, uMsg, wParam, lParam);
+		break;
 	}
-	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 
 #pragma region methods
@@ -111,7 +115,7 @@ int AddReservation::CreateWindows()
 	HWND calendar = CreateWindowEx(0,
 		MONTHCAL_CLASS,
 		L"",
-		WS_BORDER | WS_CHILD | WS_VISIBLE | MCS_DAYSTATE | MCS_NOTODAYCIRCLE | MCS_NOTODAY,
+		WS_BORDER | WS_CHILD | WS_VISIBLE | MCS_NOTODAYCIRCLE | MCS_NOTODAY | MCS_MULTISELECT,
 		5,						// position x
 		200,					// position y
 		215,					// length
@@ -121,8 +125,12 @@ int AddReservation::CreateWindows()
 		hInstance,
 		NULL
 	);
-	MonthCal_GetMinReqRect(calendar, &rc);
+	MonthCal_SetMaxSelCount(calendar, 31);
 
+	MonthCal_SetRange(calendar, GDTR_MIN, );
+
+	MonthCal_GetMinReqRect(calendar, &rc);
+	
 	MonthCal_SetCurrentView(calendar, MCMV_MONTH);
 
 	HWND ButtonReturn = CreateWindowEx(
@@ -145,7 +153,7 @@ int AddReservation::CreateWindows()
 		L"Save Booking",
 		WS_VISIBLE | WS_CHILD,
 		10,						// position x
-		420,					// position y
+		370,					// position y
 		150,					// length
 		Height,					// height
 		handle,					// class parent
@@ -162,7 +170,7 @@ int AddReservation::CreateWindows()
 
 		return 1;
 	}
-	ShowWindow(handle, SW_SHOWDEFAULT);
+	ShowWindow(handle, SW_SHOW);
 }
 void AddReservation::Reservation()
 {
@@ -190,4 +198,3 @@ void AddReservation::Execute()
 	}
 }
 #pragma endregion
-
