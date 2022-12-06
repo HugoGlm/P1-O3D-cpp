@@ -127,7 +127,7 @@ int AddReservation::CreateWindows()
 	);
 	MonthCal_SetMaxSelCount(calendar, 31);
 
-	MonthCal_SetRange(calendar, GDTR_MIN, );
+	MonthCal_SetRange(calendar, GDTR_MIN, 0); //TODO trouver le dernier param
 
 	MonthCal_GetMinReqRect(calendar, &rc);
 	
