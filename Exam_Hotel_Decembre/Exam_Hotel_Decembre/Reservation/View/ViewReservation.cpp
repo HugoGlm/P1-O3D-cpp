@@ -1,12 +1,12 @@
-//#include "ViewReservation.h"
-//#include "../../Client/Client.h"
-//#include "../../Booking/Manager/BookingManager.h"
-//#include <string>
-//#include <Windows.h>
-//#include <stdlib.h>
-//#include <tchar.h>
-//#include <CommCtrl.h>
-//#include <iostream>
+#include "ViewReservation.h"
+#include "../../Client/Client.h"
+#include "../../Booking/Manager/BookingManager.h"
+#include <string>
+#include <Windows.h>
+#include <stdlib.h>
+#include <tchar.h>
+#include <CommCtrl.h>
+#include <iostream>
 //
 //#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 //
@@ -95,8 +95,8 @@
 //{
 //	
 //}
-//void ViewReservation::Execute()
-//{
+void ViewReservation::Execute()
+{
 //	CreateWindows();
 //	MSG msg = { };
 //	while (GetMessage(&msg, NULL, 0, 0) > 0)
@@ -104,6 +104,7 @@
 //		TranslateMessage(&msg);
 //		DispatchMessage(&msg);
 //	}
-//}
+	std::cout << "TestView" << std::endl;
+}
 //#pragma endregion
 //

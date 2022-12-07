@@ -14,3 +14,4 @@ int main()
 }
 
 // probleme je ne peux pas lancer une window sans commenter les autres
+// parce que j'ai 3 windowProc et il en faut max 1 

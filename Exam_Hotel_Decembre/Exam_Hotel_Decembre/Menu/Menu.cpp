@@ -1,29 +1,42 @@
 //#include "Menu.h"
+//#include "../Reservation/Add/AddReservation.h"
+//#include "../Reservation/View/ViewReservation.h"
+//#include <iostream>
 //#include <string>
 //#include <Windows.h>
 //#include <stdlib.h>
 //#include <tchar.h>
+//#include <CommCtrl.h>
 //
 //#define HEIGHT 25
 //
+//HDC hdc;
+//
+//void Menu::Text()
+//{
+//	TCHAR title[] = L"Hotel Objectif3D";
+//	TextOut(hdc, 400, 0, title, _tcslen(title));
+//}
 //LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 //{
 //	PAINTSTRUCT ps;
-//	HDC hdc;
-//	TCHAR title[] = L"Hotel Objectif3D";
+//
 //	switch (uMsg)
 //	{
 //	case WM_PAINT:
 //		hdc = BeginPaint(hwnd, &ps);
 //		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
-//		TextOut(hdc, 400, 0, title, _tcslen(title));
+//		Menu::Text();
 //		EndPaint(hwnd, &ps);
+//		break;
+//	case WM_COMMAND:
+//		AddReservation resa = AddReservation();
+//		resa.Execute();
 //		break;
 //	default:
 //		return DefWindowProc(hwnd, uMsg, wParam, lParam);
 //		break;
 //	}
-//
 //	return 0;
 //}
 //
@@ -54,12 +67,11 @@
 //		hInstance,
 //		NULL
 //	);
-//
 //	HWND ButtonAdd = CreateWindowEx(
 //		WS_EX_CLIENTEDGE,
 //		L"BUTTON",
 //		L"create new Booking",
-//		WS_VISIBLE | WS_CHILD,
+//		WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
 //		100,					// position x
 //		30,						// position y
 //		150,					// length
@@ -73,7 +85,7 @@
 //		WS_EX_CLIENTEDGE,
 //		L"BUTTON",
 //		L"View all Bookings",
-//		WS_VISIBLE | WS_CHILD,
+//		WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
 //		300,					// position x
 //		30,						// position y
 //		150,					// length
@@ -92,7 +104,8 @@
 //
 //		return 1;
 //	}
-//	ShowWindow(handle, SW_SHOWDEFAULT);
+//	ShowWindow(handle, SW_SHOW);
+//	UpdateWindow(handle);
 //}
 //void Menu::Execute()
 //{
@@ -105,4 +118,3 @@
 //	}
 //}
 //#pragma endregion
-//

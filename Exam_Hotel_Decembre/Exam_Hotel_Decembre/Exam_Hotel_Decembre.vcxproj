@@ -133,8 +133,8 @@
     <ClCompile Include="Client\Client.cpp" />
     <ClCompile Include="Date\Date.cpp" />
     <ClCompile Include="Menu\Menu.cpp" />
-    <ClCompile Include="Reservation\Add\AddReservation.cpp" />
     <ClCompile Include="Exam_Hotel_Decembre.cpp" />
+    <ClCompile Include="Reservation\Add\AddReservation.cpp" />
     <ClCompile Include="Reservation\View\ViewReservation.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +144,7 @@
     <ClInclude Include="Date\Date.h" />
     <ClInclude Include="Menu\Menu.h" />
     <ClInclude Include="Reservation\Add\AddReservation.h" />
+    <ClInclude Include="Window\IWindow.h" />
     <ClInclude Include="Reservation\View\ViewReservation.h" />
     <ClInclude Include="Singleton\Singleton.h" />
   </ItemGroup>

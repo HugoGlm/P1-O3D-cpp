@@ -15,23 +15,36 @@
 #define IDC_MONTHCAL 101
 #define Height 25
 
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+HDC hdc;
+
+AddReservation::AddReservation(Client* _client)
 {
-	PAINTSTRUCT ps;
-	HDC hdc;
+	client = _client;
+}
+
+void AddReservation::Text()
+{
 	TCHAR title[] = L"Create New Booking";
 	TCHAR firstName[] = L"Enter first name: ";
 	TCHAR lastName[] = L"Enter last Name: ";
 	TCHAR nbrPeople[] = L"For how many people: ";
+
+	TextOut(hdc, 400, 0, title, _tcslen(title));
+	TextOut(hdc, 5, 80, firstName, _tcslen(firstName));
+	TextOut(hdc, 5, 110, lastName, _tcslen(lastName));
+	TextOut(hdc, 5, 160, nbrPeople, _tcslen(nbrPeople));
+}
+
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	PAINTSTRUCT ps;
+	
 	switch (uMsg)
 	{
 	case WM_PAINT:
 		hdc = BeginPaint(hwnd, &ps);
 		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
-		TextOut(hdc, 400, 0, title, _tcslen(title));
-		TextOut(hdc, 5, 80, firstName, _tcslen(firstName));
-		TextOut(hdc, 5, 110, lastName, _tcslen(lastName));
-		TextOut(hdc, 5, 160, nbrPeople, _tcslen(nbrPeople));
+		AddReservation::Text();
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
@@ -43,6 +56,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 
 #pragma region methods
+
 int AddReservation::CreateWindows()
 {
 	RECT rc;
@@ -125,9 +139,13 @@ int AddReservation::CreateWindows()
 		hInstance,
 		NULL
 	);
+	// multiselect limiter a 31
 	MonthCal_SetMaxSelCount(calendar, 31);
 
-	MonthCal_SetRange(calendar, GDTR_MIN, 0); //TODO trouver le dernier param
+	// range pour ne pas acceder au date passer
+	SYSTEMTIME _today[1] = { };
+	MonthCal_GetToday(calendar, _today);
+	MonthCal_SetRange(calendar, GDTR_MIN, _today);
 
 	MonthCal_GetMinReqRect(calendar, &rc);
 	
@@ -137,7 +155,7 @@ int AddReservation::CreateWindows()
 		WS_EX_CLIENTEDGE,
 		L"BUTTON",
 		L"Return",
-		WS_VISIBLE | WS_CHILD,
+		WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
 		5,						// position x
 		0,						// position y
 		100,					// length
@@ -151,7 +169,7 @@ int AddReservation::CreateWindows()
 		WS_EX_CLIENTEDGE,
 		L"BUTTON",
 		L"Save Booking",
-		WS_VISIBLE | WS_CHILD,
+		WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
 		10,						// position x
 		370,					// position y
 		150,					// length
@@ -196,5 +214,6 @@ void AddReservation::Execute()
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
+	std::cout << "test" << std::endl;
 }
 #pragma endregion
