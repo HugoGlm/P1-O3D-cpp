@@ -1,4 +1,5 @@
 #include "AddReservation.h"
+#include "AddReservation.h"
 #include "../../Client/Client.h"
 #include "../../Booking/Manager/BookingManager.h"
 #include <string>
@@ -15,15 +16,9 @@
 #define IDC_MONTHCAL 101
 #define Height 25
 
-HDC hdc;
-
-AddReservation::AddReservation(Client* _client)
-{
-	client = _client;
-}
-
 void AddReservation::Text()
 {
+	HDC hdc = { };
 	TCHAR title[] = L"Create New Booking";
 	TCHAR firstName[] = L"Enter first name: ";
 	TCHAR lastName[] = L"Enter last Name: ";
@@ -37,6 +32,7 @@ void AddReservation::Text()
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	HDC hdc;
 	PAINTSTRUCT ps;
 	
 	switch (uMsg)
@@ -45,6 +41,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		hdc = BeginPaint(hwnd, &ps);
 		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
 		AddReservation::Text();
+		EndPaint(hwnd, &ps);
+		break;
+	case WM_COMMAND:
+		std::cout << "je t'avais prevenu" << std::endl;
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
@@ -54,9 +54,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		break;
 	}
 }
-
 #pragma region methods
-
 int AddReservation::CreateWindows()
 {
 	RECT rc;
@@ -154,11 +152,11 @@ int AddReservation::CreateWindows()
 	HWND ButtonReturn = CreateWindowEx(
 		WS_EX_CLIENTEDGE,
 		L"BUTTON",
-		L"Return",
+		L"Clique pas ca marche pas"/*"Return"*/,
 		WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
 		5,						// position x
 		0,						// position y
-		100,					// length
+		200,					// length
 		Height,					// height
 		handle,					// class parent
 		NULL,
@@ -168,11 +166,11 @@ int AddReservation::CreateWindows()
 	HWND ButtonSave = CreateWindowEx(
 		WS_EX_CLIENTEDGE,
 		L"BUTTON",
-		L"Save Booking",
+		L"Clique pas ca marche pas"/*"Save Booking"*/,
 		WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
 		10,						// position x
 		370,					// position y
-		150,					// length
+		200,					// length
 		Height,					// height
 		handle,					// class parent
 		NULL,
@@ -214,6 +212,5 @@ void AddReservation::Execute()
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
-	std::cout << "test" << std::endl;
 }
 #pragma endregion

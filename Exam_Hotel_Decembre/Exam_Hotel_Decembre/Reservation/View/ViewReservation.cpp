@@ -1,12 +1,12 @@
-#include "ViewReservation.h"
-#include "../../Client/Client.h"
-#include "../../Booking/Manager/BookingManager.h"
-#include <string>
-#include <Windows.h>
-#include <stdlib.h>
-#include <tchar.h>
-#include <CommCtrl.h>
-#include <iostream>
+//#include "ViewReservation.h"
+//#include "../../Client/Client.h"
+//#include "../../Booking/Manager/BookingManager.h"
+//#include <string>
+//#include <Windows.h>
+//#include <stdlib.h>
+//#include <tchar.h>
+//#include <CommCtrl.h>
+//#include <iostream>
 //
 //#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 //
@@ -69,11 +69,11 @@
 //	HWND ButtonReturn = CreateWindowEx(
 //		WS_EX_CLIENTEDGE,
 //		L"BUTTON",
-//		L"Return",
+//		L"Clique pas ca marche pas"/*"Return"*/,
 //		WS_VISIBLE | WS_CHILD,
 //		5,						// position x
 //		0,						// position y
-//		100,					// length
+//		200,					// length
 //		Height,					// height
 //		handle,					// class parent
 //		NULL,
@@ -93,18 +93,22 @@
 //}
 //void ViewReservation::ShowReservation()
 //{
-//	
-//}
-void ViewReservation::Execute()
-{
-//	CreateWindows();
-//	MSG msg = { };
-//	while (GetMessage(&msg, NULL, 0, 0) > 0)
+//	std::vector<Booking*> _bookings = BookingManager::Instance()->Bookings();
+//	for (Booking* _booking : _bookings)
 //	{
-//		TranslateMessage(&msg);
-//		DispatchMessage(&msg);
+//		std::cout << _bookings << std::endl;
 //	}
-	std::cout << "TestView" << std::endl;
-}
+//}
+//void ViewReservation::Execute()
+//{
+//		CreateWindows();
+//		MSG msg = { };
+//		while (GetMessage(&msg, NULL, 0, 0) > 0)
+//		{
+//			TranslateMessage(&msg);
+//			DispatchMessage(&msg);
+//		}
+//	std::cout << "TestView" << std::endl;
+//}
 //#pragma endregion
 //

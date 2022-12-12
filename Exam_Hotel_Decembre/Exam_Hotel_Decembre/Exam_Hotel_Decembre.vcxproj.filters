@@ -39,6 +39,9 @@
     <ClCompile Include="Reservation\Add\AddReservation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Object\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reservation\Add\AddReservation.h">
@@ -65,7 +68,7 @@
     <ClInclude Include="Singleton\Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Window\IWindow.h">
+    <ClInclude Include="Object\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
