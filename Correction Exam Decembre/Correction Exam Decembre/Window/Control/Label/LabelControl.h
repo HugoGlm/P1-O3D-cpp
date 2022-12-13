@@ -20,11 +20,14 @@ public:
 	LabelControl(int _controlID, HWND _owner, const Rect& _rect, const wchar_t* _text);
 	LabelControl(const LabelControl& _copy);
 #pragma endregion
-#pragma region override
-public:
+#pragma region methods
 	std::string TextStr();
 	std::wstring Text();
 	void SetText(const wchar_t* _newText);
+	void SetText(std::string _str);
+#pragma endregion
+#pragma region override
+public:
 	HWND Create() override;
 #pragma endregion
 

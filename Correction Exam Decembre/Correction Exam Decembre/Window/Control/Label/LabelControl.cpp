@@ -24,6 +24,12 @@ std::wstring LabelControl::Text()
 void LabelControl::SetText(const wchar_t* _newText)
 {
 	text = _newText;
+	SetWindowTextA(instance, TextStr().c_str());
+}
+void LabelControl::SetText(std::string _str)
+{
+	const std::wstring _wstr(_str.begin(), _str.end());
+	SetText(_wstr.c_str());
 }
 #pragma endregion
 

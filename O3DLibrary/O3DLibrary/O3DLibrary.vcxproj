@@ -145,6 +145,7 @@
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BoxFile.h" />
     <ClInclude Include="CircleShape.h" />
+    <ClInclude Include="ClipBoard.h" />
     <ClInclude Include="ComplexShape.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CoreIO.h" />
@@ -173,6 +174,8 @@
     <ClInclude Include="Shape.h" />
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWritter.h" />
+    <ClInclude Include="ETimeZoneName.h" />
+    <ClInclude Include="TimeZoneName.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowMenu.h" />
   </ItemGroup>
@@ -180,6 +183,7 @@
     <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="BoxFile.cpp" />
     <ClCompile Include="CircleShape.cpp" />
+    <ClCompile Include="ClipBoard.cpp" />
     <ClCompile Include="ComplexShape.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DateTime.cpp" />
@@ -205,6 +209,7 @@
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TextWritter.cpp" />
+    <ClCompile Include="TimeZoneName.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>

@@ -20,6 +20,10 @@ public:
 	ButtonControl(int _controlID, HWND _owner, const Rect& _rect, const wchar_t* _text);
 	ButtonControl(const ButtonControl& _copy);
 #pragma endregion
+#pragma region methods
+public:
+	virtual void OnUse();
+#pragma endregion
 #pragma region override
 public:
 	HWND Create() override;

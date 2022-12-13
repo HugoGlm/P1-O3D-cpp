@@ -21,7 +21,7 @@ public:
 #pragma region methods
 	DateTime ArrivedDate() const;
 	DateTime DepartureDate() const;
-	Client GetCllient() const;
+	Client GetClient() const;
 	int NumberOfPeople() const;
 #pragma endregion
 

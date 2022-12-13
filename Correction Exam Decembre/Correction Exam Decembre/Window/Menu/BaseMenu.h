@@ -1,10 +1,11 @@
 #pragma once
+#include "../Control/textField/TextFieldControl.h"
+#include "../Control/Button/ButtonControl.h"
+#include "../Control/Label/LabelControl.h"
+#include "../../Booking/Booking.h"
 #include "../../Object/Object.h"
+#include "../Window.h"
 #include <vector>
-
-class WindowControl;
-class Rect;
-class Window;
 
 class BaseMenu : public Object
 {
@@ -16,6 +17,7 @@ protected:
 	bool isInitialized = false;
 	Window* owner = nullptr;
 	std::vector<WindowControl*> controls = std::vector<WindowControl*>();
+	LabelControl* titleControl = nullptr;
 #pragma endregion
 #pragma region constructor
 public:
@@ -31,10 +33,11 @@ public:
 	virtual void Initialize();
 	std::string Name() const;
 protected:
-	void CreateButton(const Rect& _rect, const wchar_t* _text);
-	void CreateLabel(const Rect& _rect, const wchar_t* _text);
-	void CreateTextField(const Rect& _rect, const wchar_t* _defaultText);
+	class ButtonControl* CreateButton(const Rect& _rect, const wchar_t* _text);
+	class LabelControl* CreateLabel(const Rect& _rect, const wchar_t* _text);
+	class TextFieldControl* CreateTextField(const Rect& _rect, const wchar_t* _defaultText);
 	class CalendarControl* CreateCalendar(const Rect& _rect);
+	class ButtonBookingControl* CreateBookingButton(const Rect& _rect, const wchar_t* _text, Booking* _booking);
 #pragma endregion
 
 };

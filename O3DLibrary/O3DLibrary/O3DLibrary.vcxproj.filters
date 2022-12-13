@@ -121,6 +121,15 @@
     <Filter Include="Core\PrimaryType\Enum">
       <UniqueIdentifier>{f286c7c4-7de8-4d2a-9df4-2ac761baadbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\ClipBoard">
+      <UniqueIdentifier>{fffd48ac-43ad-4617-abf0-278949426751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DateTime\TimeZoneName">
+      <UniqueIdentifier>{ff95ab0b-0878-4cb2-962d-6e2554b3e64a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DateTime\TimeZoneName\ETimeZoneName">
+      <UniqueIdentifier>{f8a066b9-f77f-463f-a9cc-e1dec4148c31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -225,6 +234,15 @@
     <ClInclude Include="Enum.h">
       <Filter>Core\PrimaryType\Enum</Filter>
     </ClInclude>
+    <ClInclude Include="ClipBoard.h">
+      <Filter>Core\ClipBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="ETimeZoneName.h">
+      <Filter>Core\DateTime\TimeZoneName\ETimeZoneName</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeZoneName.h">
+      <Filter>Core\DateTime\TimeZoneName</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -301,6 +319,12 @@
     </ClCompile>
     <ClCompile Include="ComplexShape.cpp">
       <Filter>Core\Window\Shape\Complex</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipBoard.cpp">
+      <Filter>Core\ClipBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeZoneName.cpp">
+      <Filter>Core\DateTime\TimeZoneName</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

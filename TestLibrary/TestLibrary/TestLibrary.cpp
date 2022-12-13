@@ -11,6 +11,7 @@
 #include <BoxFile.h>
 #include <MethodInfo.h>
 #include <ParameterInfo.h>
+#include <ClipBoard.h>
 #include <Enum.h>
 #include <Window.h>
 #include <iostream>
@@ -56,11 +57,13 @@ ENUM(Test1, Aymeric = 1, Thibaud = 2, Romain, Benoit = 5, Pierre);
 
 int main()
 {
-    std::cout << *Test::Giusy << std::endl;
+    ClipBoard::Copy("P1");
+    
+    /*std::cout << *Test::Giusy << std::endl;
     for (Test1 t : Test1Support::Value())
     {
         std::cout << *t << std::endl;
-    }
+    }*/
 
    /* A a;
     MethodInfo<void, const FString&>* method = a.GetMethod<void, const FString&>("Test");

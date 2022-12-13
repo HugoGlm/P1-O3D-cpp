@@ -21,7 +21,9 @@ public:
 #pragma endregion
 #pragma region methods
 public:
+	void OnValueChange();
 	std::wstring CurrentText() const;
+	std::string CurrentTextStr() const;
 	void OnTextChange(const wchar_t* _text);
 	HWND Create() override;
 #pragma endregion

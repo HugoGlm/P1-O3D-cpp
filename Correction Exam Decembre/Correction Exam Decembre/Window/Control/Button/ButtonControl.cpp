@@ -11,6 +11,13 @@ ButtonControl::ButtonControl(const ButtonControl& _copy) : super(_copy)
 }
 #pragma endregion
 
+#pragma region methods
+void ButtonControl::OnUse()
+{
+	OnClick.Invoke();
+}
+#pragma endregion
+
 #pragma region override
 HWND ButtonControl::Create()
 {

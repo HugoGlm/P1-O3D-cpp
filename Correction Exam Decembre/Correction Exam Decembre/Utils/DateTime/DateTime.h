@@ -26,6 +26,7 @@ public:
 #pragma region methods
 public:
 	static DateTime NowInternal();
+	SYSTEMTIME ToSystemTime() const;
 #pragma endregion
 #pragma region override
 public:

@@ -1,5 +1,4 @@
 #include "CalendarControl.h"
-#include <CommCtrl.h>
 
 #pragma region constructor
 CalendarControl::CalendarControl(int _controlID, HWND _owner, const Rect& _rect) : super(_controlID, _owner, _rect) { }
@@ -12,6 +11,28 @@ void CalendarControl::SetMaxSelected(UINT _value)
 	if (!isInitialized)
 		return;
 	MonthCal_SetMaxSelCount(instance, _value);
+}
+void CalendarControl::SetValue(const DateTime& _a, const DateTime& _b)
+{
+	const SYSTEMTIME _start = _a.ToSystemTime();
+	const SYSTEMTIME _end = _b.ToSystemTime();
+	LPSYSTEMTIME _tab = new SYSTEMTIME[2];
+	_tab[0] = _start;
+	_tab[1] = _end;
+	MonthCal_SetSelRange(instance, _tab);
+}
+void CalendarControl::OnChoice(LPNMSELCHANGE _value)
+{
+	arrivedDate = DateTime(_value->stSelStart);
+	departureDate = DateTime(_value->stSelEnd);
+}
+DateTime CalendarControl::ArrivedDate() const
+{
+	return arrivedDate;
+}
+DateTime CalendarControl::DepartureDate() const
+{
+	return departureDate;
 }
 #pragma endregion
 
@@ -44,6 +65,7 @@ HWND CalendarControl::Create()
 	if (instance != NULL)
 	{
 		isInitialized = true;
+		calendars.insert(std::pair(controlID, this));
 		Show();
 	}
 	return instance;

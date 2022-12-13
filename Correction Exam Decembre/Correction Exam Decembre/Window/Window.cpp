@@ -1,10 +1,12 @@
 #include "Window.h"
+#include "Control/textField/TextFieldControl.h"
+#include "Control/Calendar/CalendarControl.h"
 #include "Control/Button/ButtonControl.h"
 #include "Control/Label/LabelControl.h"
 #include "Menu/BaseMenu.h"
+#include <iostream>
 #include <format>
 #include <ranges>
-#include <iostream>
 
 #pragma region constructor
 Window::Window(const wchar_t* _title, int _width, int _height)
@@ -63,15 +65,52 @@ LRESULT __stdcall Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARA
 		return false;
 	switch (_msg)
 	{
-	case WM_CREATE:
-	{
-
-	}
 	case WM_COMMAND:
 	{
-		if (!ButtonControl::buttons.contains(_wp))
+		if (ButtonControl::buttons.contains(_wp))
+		{
+			ButtonControl::buttons[_wp]->OnUse();
 			break;
-		ButtonControl::buttons[_wp]->OnClick.Invoke();
+		}
+		WORD _word = HIWORD(_wp);
+		switch (_word)
+		{
+		case EN_CHANGE:
+		{
+			std::map<int, TextFieldControl*> textFields = TextFieldControl::textFields;
+			for (std::pair<int, TextFieldControl*> _pair : textFields)
+			{
+				if (_pair.first == LOWORD(_wp))
+				{
+					_pair.second->OnValueChange();
+					break;
+				}
+			}
+			break;
+		}
+		}
+		break;
+	}
+	case WM_NOTIFY:
+	{
+		LPNMHDR _lpm = (LPNMHDR)_lp;
+		switch (_lpm->code)
+		{
+		case MCN_SELECT:
+		{
+			std::map<int, CalendarControl*> _calendars = CalendarControl::calendars;
+			for (std::pair<int, CalendarControl*> _pair : _calendars)
+			{
+				if (_pair.first == _wp)
+				{
+					_pair.second->OnChoice((LPNMSELCHANGE)_lp);
+					break;
+				}
+			}
+			break;
+		}
+		}
+		break;
 	}
 	case WM_DESTROY:
 	{

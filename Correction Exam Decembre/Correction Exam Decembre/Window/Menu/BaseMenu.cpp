@@ -1,10 +1,8 @@
 #include "BaseMenu.h"
-#include "../Control/WindowControl.h"
-#include "../Window.h"
-#include "../Control/Button/ButtonControl.h"
-#include "../Control/Label/LabelControl.h"
-#include "../Control/textField/TextFieldControl.h"
+#include "../Control/Button/Booking/ButtonBookingControl.h"
 #include "../Control/Calendar/CalendarControl.h"
+#include "../Control/Button/ButtonControl.h"
+#include "../Control/WindowControl.h"
 #include <math.h>
 
 #pragma region constructor
@@ -44,29 +42,32 @@ void BaseMenu::Initialize()
 	std::string _str = name;
 	const int _width = (owner->Width() / 2) - (_str.size() / 2);
 	const std::wstring _wName(_str.begin(), _str.end());
-	CreateLabel(Rect(_width, 0, 255, 20), _wName.c_str());
+	titleControl = CreateLabel(Rect(_width, 0, 255, 20), _wName.c_str());
 }
 std::string BaseMenu::Name() const
 {
 	return name;
 }
-void BaseMenu::CreateButton(const Rect& _rect, const wchar_t* _text)
+ButtonControl* BaseMenu::CreateButton(const Rect& _rect, const wchar_t* _text)
 {
 	ButtonControl* _button = new ButtonControl(currentControlID++, owner->WindowInstance(), _rect, _text);
 	_button->Create();
 	controls.push_back(_button);
+	return _button;
 }
-void BaseMenu::CreateLabel(const Rect& _rect, const wchar_t* _text)
+LabelControl* BaseMenu::CreateLabel(const Rect& _rect, const wchar_t* _text)
 {
 	LabelControl* _label = new LabelControl(currentControlID++, owner->WindowInstance(), _rect, _text);
 	_label->Create();
 	controls.push_back(_label);
+	return _label;
 }
-void BaseMenu::CreateTextField(const Rect& _rect, const wchar_t* _defaultText)
+TextFieldControl* BaseMenu::CreateTextField(const Rect& _rect, const wchar_t* _defaultText)
 {
 	TextFieldControl* _textField = new TextFieldControl(currentControlID++, owner->WindowInstance(), _rect, _defaultText);
 	_textField->Create();
 	controls.push_back(_textField);
+	return _textField;
 }
 CalendarControl* BaseMenu::CreateCalendar(const Rect& _rect)
 {
@@ -74,6 +75,13 @@ CalendarControl* BaseMenu::CreateCalendar(const Rect& _rect)
 	_calendar->Create();
 	controls.push_back(_calendar);
 	return _calendar;
+}
+ButtonBookingControl* BaseMenu::CreateBookingButton(const Rect& _rect, const wchar_t* _text, Booking* _booking)
+{
+	ButtonBookingControl* _button = new ButtonBookingControl(currentControlID++, owner->WindowInstance(), _rect, _text, _booking);
+	_button->Create();
+	controls.push_back(_button);
+	return _button;
 }
 #pragma endregion
 

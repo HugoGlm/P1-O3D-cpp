@@ -26,7 +26,7 @@ DateTime Booking::DepartureDate() const
 {
     return departureDate;
 }
-Client Booking::GetCllient() const
+Client Booking::GetClient() const
 {
     return client;
 }
