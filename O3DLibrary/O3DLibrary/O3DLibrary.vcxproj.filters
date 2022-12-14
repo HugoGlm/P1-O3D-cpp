@@ -127,9 +127,6 @@
     <Filter Include="Core\DateTime\TimeZoneName">
       <UniqueIdentifier>{ff95ab0b-0878-4cb2-962d-6e2554b3e64a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\DateTime\TimeZoneName\ETimeZoneName">
-      <UniqueIdentifier>{f8a066b9-f77f-463f-a9cc-e1dec4148c31}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -237,10 +234,7 @@
     <ClInclude Include="ClipBoard.h">
       <Filter>Core\ClipBoard</Filter>
     </ClInclude>
-    <ClInclude Include="ETimeZoneName.h">
-      <Filter>Core\DateTime\TimeZoneName\ETimeZoneName</Filter>
-    </ClInclude>
-    <ClInclude Include="TimeZoneName.h">
+    <ClInclude Include="TimeZone.h">
       <Filter>Core\DateTime\TimeZoneName</Filter>
     </ClInclude>
   </ItemGroup>
@@ -323,7 +317,7 @@
     <ClCompile Include="ClipBoard.cpp">
       <Filter>Core\ClipBoard</Filter>
     </ClCompile>
-    <ClCompile Include="TimeZoneName.cpp">
+    <ClCompile Include="TimeZone.cpp">
       <Filter>Core\DateTime\TimeZoneName</Filter>
     </ClCompile>
   </ItemGroup>

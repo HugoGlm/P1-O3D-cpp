@@ -1,10 +1,11 @@
 #pragma once
 #include "Object.h"
 #include "EDayOfWeek.h"
+#include <Windows.h>
 
 namespace Core
 {
-	class DateTime : public Object
+	class O3DLIBRARY_API DateTime : public Object
 	{
 #pragma region f/p
 	private:
@@ -18,31 +19,32 @@ namespace Core
 #pragma endregion
 #pragma region constructor
 	public:
-		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second);
-		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute);
-		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _year, const int _hour);
-		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _year);
-		O3DLIBRARY_API DateTime(const DateTime& _copy);
+		DateTime(const SYSTEMTIME& _time);
+		DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second);
+		DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute);
+		DateTime(const int _day, const int _month, const int _year, const int _hour);
+		DateTime(const int _day, const int _month, const int _year);
+		DateTime(const DateTime& _copy);
 #pragma endregion
 #pragma region methods
 	private:
-		O3DLIBRARY_API int CalculateDayOfWeek() const;
+		int CalculateDayOfWeek() const;
 	public:
-		O3DLIBRARY_API EDayOfWeek DayOfWeek() const;
-		O3DLIBRARY_API static Core::DateTime Now();
-		O3DLIBRARY_API void AddDay(const int _value);
-		O3DLIBRARY_API void AddMonth(const int _value);
-		O3DLIBRARY_API void AddYear(const int _value);
-		O3DLIBRARY_API void AddHour(const int _value);
-		O3DLIBRARY_API void AddMinute(const int _value);
-		O3DLIBRARY_API void AddSecond(const int _value);
-		O3DLIBRARY_API PrimitiveType::FString ToStringFormat(const PrimitiveType::FString& _format) const;
-		O3DLIBRARY_API PrimitiveType::Boolean Equals(const DateTime& _obj) const;
+		EDayOfWeek DayOfWeek() const;
+		static Core::DateTime Now();
+		void AddDay(const int _value);
+		void AddMonth(const int _value);
+		void AddYear(const int _value);
+		void AddHour(const int _value);
+		void AddMinute(const int _value);
+		void AddSecond(const int _value);
+		PrimitiveType::FString ToStringFormat(const PrimitiveType::FString& _format) const;
+		PrimitiveType::Boolean Equals(const DateTime& _obj) const;
 #pragma endregion
 #pragma region override
 	public:
-		O3DLIBRARY_API PrimitiveType::FString ToString() const override;
-		O3DLIBRARY_API PrimitiveType::Boolean Equals(const Object* _obj) const override;
+		PrimitiveType::FString ToString() const override;
+		PrimitiveType::Boolean Equals(const Object* _obj) const override;
 #pragma endregion
 
 	};

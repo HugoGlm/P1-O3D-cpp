@@ -12,6 +12,7 @@
 #include <MethodInfo.h>
 #include <ParameterInfo.h>
 #include <ClipBoard.h>
+#include <TimeZone.h>
 #include <Enum.h>
 #include <Window.h>
 #include <iostream>
@@ -57,7 +58,10 @@ ENUM(Test1, Aymeric = 1, Thibaud = 2, Romain, Benoit = 5, Pierre);
 
 int main()
 {
-    ClipBoard::Copy("P1");
+    TimeZone time = TimeZone(ETimeZoneName::Vladivostok);
+    LOG(time);
+
+    //ClipBoard::Copy("P1");
     
     /*std::cout << *Test::Giusy << std::endl;
     for (Test1 t : Test1Support::Value())

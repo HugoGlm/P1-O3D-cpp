@@ -4,6 +4,16 @@
 #include <ctime>
 
 #pragma region constructor
+Core::DateTime::DateTime(const SYSTEMTIME& _time)
+{
+	day = _time.wDay;
+	month = _time.wMonth;
+	year = _time.wYear;
+	hour = _time.wHour;
+	minute = _time.wMinute;
+	second = _time.wSecond;
+	dayOfWeek = (EDayOfWeek)CalculateDayOfWeek();
+}
 Core::DateTime::DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second)
 {
 	day = _day;

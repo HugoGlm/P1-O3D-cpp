@@ -35,6 +35,7 @@ namespace Core
 			static std::vector<std::string> Split(const std::string& _str, const char _c);
 			void Append(const char _char);
 			void Append(const FString& _value);
+			static FString Convert(const std::wstring& _wstring);
 			FString SubString(const int _begin, const int _end) const;
 			FString SubString(const int _begin) const;
 			FString Replace(const char _old, const char _new) const;
@@ -89,7 +90,7 @@ namespace Core
 			{
 				if (_str[i] == '{' && _str[i + 1] == '}')
 				{
-					_result.Append(_arguments[i]->ToString());
+					_result.Append(_arguments[_index]->ToString());
 					_index++, i++;
 				}
 				else _result.Append(_str[i]);
