@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5cf9ff15-956a-4abc-a3e5-671f8840f406}</ProjectGuid>
-    <RootNamespace>MapHachage</RootNamespace>
+    <ProjectGuid>{a3a6e513-6223-41d4-8626-4aaed9a09300}</ProjectGuid>
+    <RootNamespace>MapCorrection</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Map-Hachage.cpp" />
+    <ClCompile Include="KeyValuePair.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapCorrection.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KeyValuePair\KeyValuePair.h" />
-    <ClInclude Include="Map\Map.h" />
+    <ClInclude Include="KeyValuePair.h" />
+    <ClInclude Include="Map.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
