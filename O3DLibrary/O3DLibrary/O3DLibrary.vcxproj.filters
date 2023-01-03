@@ -127,6 +127,30 @@
     <Filter Include="Core\DateTime\TimeZoneName">
       <UniqueIdentifier>{ff95ab0b-0878-4cb2-962d-6e2554b3e64a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Utils">
+      <UniqueIdentifier>{0b373910-51ae-468a-9a61-4ff8a7312540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utils\Hash">
+      <UniqueIdentifier>{19878191-9be1-4d89-8d3f-eb8ab4e753c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collection">
+      <UniqueIdentifier>{c1c7d874-be03-4698-ac53-e9ee0b9bda3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collection\Map">
+      <UniqueIdentifier>{9e5de8b8-e04c-4ea7-8589-e8904989ee4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collection\Map\KeyValuePair">
+      <UniqueIdentifier>{110f857d-785e-4d25-8a81-b11bdf8a6b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net">
+      <UniqueIdentifier>{dd77ed40-91ce-4823-b393-74e091f5c48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net\WebClient">
+      <UniqueIdentifier>{13b63f48-307e-4fb0-9280-5c595f5bc9b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net\Uri">
+      <UniqueIdentifier>{6b1020b9-c1aa-438f-af5c-6ec98286c8f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -237,6 +261,21 @@
     <ClInclude Include="TimeZone.h">
       <Filter>Core\DateTime\TimeZoneName</Filter>
     </ClInclude>
+    <ClInclude Include="Hash.h">
+      <Filter>Core\Utils\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Core\Collection\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyValuePair.h">
+      <Filter>Core\Collection\Map\KeyValuePair</Filter>
+    </ClInclude>
+    <ClInclude Include="WebClient.h">
+      <Filter>Core\Net\WebClient</Filter>
+    </ClInclude>
+    <ClInclude Include="Uri.h">
+      <Filter>Core\Net\Uri</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -319,6 +358,12 @@
     </ClCompile>
     <ClCompile Include="TimeZone.cpp">
       <Filter>Core\DateTime\TimeZoneName</Filter>
+    </ClCompile>
+    <ClCompile Include="WebClient.cpp">
+      <Filter>Core\Net\WebClient</Filter>
+    </ClCompile>
+    <ClCompile Include="Uri.cpp">
+      <Filter>Core\Net\Uri</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

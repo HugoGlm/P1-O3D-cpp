@@ -11,33 +11,39 @@
 #include <BoxFile.h>
 #include <MethodInfo.h>
 #include <ParameterInfo.h>
+#include <Exception.h>
 #include <ClipBoard.h>
 #include <TimeZone.h>
 #include <Enum.h>
 #include <Window.h>
+#include <Map.h>
+#include <Uri.h>
+#include <WebClient.h>
 #include <iostream>
 #include <Windows.h> // pour la box
 #include <iomanip>
 
 using namespace Core::PrimitiveType;
+using namespace Core::Collection;
+using namespace Core::Net;
 using namespace Core::IO;
 using namespace Core;
 
 int ShowMessageBox()
 {
-    int msgBoxID = MessageBox(
-        NULL,
-        L"Alors vous allez bien ?",
-        L"Les P1 vous allez bien ?",
-        MB_ICONQUESTION | MB_YESNO // MB_ICONMASK = pas de logo
-    );
-    return msgBoxID;
+	int msgBoxID = MessageBox(
+		NULL,
+		L"Alors vous allez bien ?",
+		L"Les P1 vous allez bien ?",
+		MB_ICONQUESTION | MB_YESNO // MB_ICONMASK = pas de logo
+	);
+	return msgBoxID;
 }
 
 template<typename Base, typename Derived>
 static bool InstanceOf(const Derived*)
 {
-    return std::is_same<Base, Derived>::value;
+	return std::is_same<Base, Derived>::value;
 }
 
 #define instanceof(a, b) InstanceOf<a>(b)
@@ -58,73 +64,111 @@ ENUM(Test1, Aymeric = 1, Thibaud = 2, Romain, Benoit = 5, Pierre);
 
 int main()
 {
-    TimeZone time = TimeZone(ETimeZoneName::Vladivostok);
-    LOG(time);
+	try
+	{
+		Uri uri = Uri("https://s50.notube.io/download.php?token=f11212534b5bb7b69220a888e6c7e3eb");
+		WebClient _request = WebClient(uri);
+		_request.DownloadFile("C:/Users/GUIL2804/Pictures/toncul.mp4");
+	}
+	catch (const Exception& e)
+	{
+		LOG(e);
+	}
 
-    //ClipBoard::Copy("P1");
-    
-    /*std::cout << *Test::Giusy << std::endl;
-    for (Test1 t : Test1Support::Value())
-    {
-        std::cout << *t << std::endl;
-    }*/
+	/*try
+	{
+		Map<Integer, FString> map = Map<Integer, FString>
+		{
+			{0, "Hello"},
+			{1000, "World"}
+		};
 
-   /* A a;
-    MethodInfo<void, const FString&>* method = a.GetMethod<void, const FString&>("Test");
-    if (method == nullptr)
-    {
-        std::cout << "Function is null !";
-        return -4;
-    }
-    for (ParameterInfo _params : method->Parameters())
-    {
-        std::cout << "Type: " << _params.TypeName() << ", param name: " << _params.Name() << " position: " << _params.Position();
-    }*/
+		LOG(map[0]);
+		LOG(map[1000]);
 
-    /*Window window = Window(PrimitiveType::FString("Test"), 900, 800);
-    window.Open();*/
+		map.Remove(0);
 
-    /*object o = new Object();
-    DateTime* time = new DateTime(0, 0, 0);
-    if (instanceof(Object, o))
-    {
-        std::cout << "o is object" << std::endl;
-    }
+		LOG(map[0]);
+	}
+	catch (const Exception& e)
+	{
+		LOG(e);
+	}*/
 
-    if (instanceof(Object, time))
-    {
-        std::cout << "time is object" << std::endl;
-    }
+	/*Integer a = 50;
+	Integer b = 50;
+	Integer hash = a.GetHashCode();
+	LOG(hash);
+	Integer hash2 = b.GetHashCode();
+	LOG(hash2);*/
 
-    if (instanceof(DateTime, time))
-    {
-        std::cout << "time is DateTime" << std::endl;
-    }*/
+	/*TimeZone time = TimeZone(ETimeZoneName::Vladivostok);
+	LOG(time);*/
 
-    //ShowMessageBox();
+	//ClipBoard::Copy("P1");
 
-    /*BoxFile box = BoxFile("Gabriel path pick");
-    box.open();
-    LOG(box.Result());*/
+	/*std::cout << *Test::Giusy << std::endl;
+	for (Test1 t : Test1Support::Value())
+	{
+		std::cout << *t << std::endl;
+	}*/
 
-    /*DateTime date = DateTime(17, 11, 2022);
-    LOG(*date.DayOfWeek());
-    LOGWARNING(*date.DayOfWeek());
-    LOGERROR(*date.DayOfWeek());*/
+	/* A a;
+	 MethodInfo<void, const FString&>* method = a.GetMethod<void, const FString&>("Test");
+	 if (method == nullptr)
+	 {
+		 std::cout << "Function is null !";
+		 return -4;
+	 }
+	 for (ParameterInfo _params : method->Parameters())
+	 {
+		 std::cout << "Type: " << _params.TypeName() << ", param name: " << _params.Name() << " position: " << _params.Position();
+	 }*/
 
-    //Console::WriteLine(FString("Hello World"));
+	 /*Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+	 window.Open();*/
 
-    /*const FString _path = "C:\\Users\\GUIL2804\\AppData\\Local\\Programs\\Opera GX\\launcher.exe";
-    Core::Diagnostics::Process::Start(_path, "https://www.youtube.com");*/
+	 /*object o = new Object();
+	 DateTime* time = new DateTime(0, 0, 0);
+	 if (instanceof(Object, o))
+	 {
+		 std::cout << "o is object" << std::endl;
+	 }
 
-    /*std::cout << Environment::SpecialFolder(ESpecialFolder::Desktop) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::Programs) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::MyDocuments) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::MyMusic) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::MyVideo) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::LocalAppData) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::ProgramsFiles) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::MyPictures) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::Profile) << std::endl;
-    std::cout << Environment::SpecialFolder(ESpecialFolder::ProgramFilesx86) << std::endl;*/
+	 if (instanceof(Object, time))
+	 {
+		 std::cout << "time is object" << std::endl;
+	 }
+
+	 if (instanceof(DateTime, time))
+	 {
+		 std::cout << "time is DateTime" << std::endl;
+	 }*/
+
+	 //ShowMessageBox();
+
+	 /*BoxFile box = BoxFile("Gabriel path pick");
+	 box.open();
+	 LOG(box.Result());*/
+
+	 /*DateTime date = DateTime(17, 11, 2022);
+	 LOG(*date.DayOfWeek());
+	 LOGWARNING(*date.DayOfWeek());
+	 LOGERROR(*date.DayOfWeek());*/
+
+	 //Console::WriteLine(FString("Hello World"));
+
+	 /*const FString _path = "C:\\Users\\GUIL2804\\AppData\\Local\\Programs\\Opera GX\\launcher.exe";
+	 Core::Diagnostics::Process::Start(_path, "https://www.youtube.com");*/
+
+	 /*std::cout << Environment::SpecialFolder(ESpecialFolder::Desktop) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::Programs) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::MyDocuments) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::MyMusic) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::MyVideo) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::LocalAppData) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::ProgramsFiles) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::MyPictures) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::Profile) << std::endl;
+	 std::cout << Environment::SpecialFolder(ESpecialFolder::ProgramFilesx86) << std::endl;*/
 }

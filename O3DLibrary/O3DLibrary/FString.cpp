@@ -9,6 +9,7 @@ Core::PrimitiveType::FString const Core::PrimitiveType::FString::Empty = "";
 #pragma endregion
 
 #pragma region constructor/destructor
+Core::PrimitiveType::FString::FString() : FString("") { }
 Core::PrimitiveType::FString::FString(const char* _value)
 {
 	if (_value == nullptr) _value = "";

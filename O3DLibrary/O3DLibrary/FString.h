@@ -25,6 +25,7 @@ namespace Core
 
 #pragma region constructor/destructor
 		public:
+			FString();
 			FString(const char* _value);
 			FString(const FString& _copy);
 			FString(std::string::iterator _begin, std::string::iterator _end);
