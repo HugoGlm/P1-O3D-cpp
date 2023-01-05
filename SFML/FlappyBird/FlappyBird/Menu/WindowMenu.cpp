@@ -77,9 +77,9 @@ void WindowMenu::OnUpdate()
 	shapeStart->setPosition(250, 550);
 	shapeExit->setPosition(550, 550);
 
-	if (Input::IsClick(sf::Mouse::Left))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
-		if (!shapeStart->getLocalBounds())
+		if (!shapeStart->getLocalBounds().contains(sf::Vector2i localPosition = sf::Mouse::getPosition(window));
 			std::cout << "Start";
 	}
 }
