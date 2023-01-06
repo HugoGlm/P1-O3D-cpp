@@ -15,10 +15,3 @@ bool Input::IsKeyUp(const sf::Keyboard::Key& _key)
         return false;
     return _current->type == sf::Event::KeyReleased && _current->key.code == _key;
 }
-bool Input::IsClick(const sf::Mouse::Button& _button)
-{
-    const sf::Event* _current = Event::currentEvent;
-    if (_current == nullptr)
-        return false;
-    return _current->type == sf::Event::MouseButtonPressed && _current->key.code == _button;
-}

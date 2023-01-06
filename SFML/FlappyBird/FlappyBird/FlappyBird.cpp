@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Menu/WindowMenu.h"
-#include "Game/WindowGame/WindowGame.h"
+#include "Game/Window/Menu/WindowMenu.h"
 
 int main()
 {

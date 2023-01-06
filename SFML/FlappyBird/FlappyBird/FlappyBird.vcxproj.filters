@@ -21,7 +21,7 @@
     <ClCompile Include="Input\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu\WindowMenu.cpp">
+    <ClCompile Include="Game\Window\Menu\WindowMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Window\Window.cpp">
@@ -30,10 +30,10 @@
     <ClCompile Include="Object\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Score\Score.cpp">
+    <ClCompile Include="Game\Window\Score\WindowScore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\WindowGame\WindowGame.cpp">
+    <ClCompile Include="Game\Window\Game\WindowGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,25 +47,19 @@
     <ClInclude Include="Time\Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Menu\WindowMenu.h">
+    <ClInclude Include="Game\Window\Menu\WindowMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\Window\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Interface\IGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Object\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Score\Score.h">
+    <ClInclude Include="Game\Window\Score\WindowScore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Interface\IDrawable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\WindowGame\WindowGame.h">
+    <ClInclude Include="Game\Window\Game\WindowGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

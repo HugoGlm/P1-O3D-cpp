@@ -138,22 +138,20 @@
     <ClCompile Include="FlappyBird.cpp" />
     <ClCompile Include="Input\Input.cpp" />
     <ClCompile Include="Object\Object.cpp" />
-    <ClCompile Include="Game\Score\Score.cpp" />
+    <ClCompile Include="Game\Window\Score\WindowScore.cpp" />
     <ClCompile Include="Game\Window\Window.cpp" />
-    <ClCompile Include="Menu\WindowMenu.cpp" />
-    <ClCompile Include="Game\WindowGame\WindowGame.cpp" />
+    <ClCompile Include="Game\Window\Menu\WindowMenu.cpp" />
+    <ClCompile Include="Game\Window\Game\WindowGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event\Event.h" />
     <ClInclude Include="Input\Input.h" />
-    <ClInclude Include="Interface\IDrawable.h" />
-    <ClInclude Include="Interface\IGame.h" />
     <ClInclude Include="Object\Object.h" />
-    <ClInclude Include="Game\Score\Score.h" />
+    <ClInclude Include="Game\Window\Score\WindowScore.h" />
     <ClInclude Include="Time\Time.h" />
     <ClInclude Include="Game\Window\Window.h" />
-    <ClInclude Include="Menu\WindowMenu.h" />
-    <ClInclude Include="Game\WindowGame\WindowGame.h" />
+    <ClInclude Include="Game\Window\Menu\WindowMenu.h" />
+    <ClInclude Include="Game\Window\Game\WindowGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

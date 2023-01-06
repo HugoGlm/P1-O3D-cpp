@@ -1,7 +1,8 @@
 #include "WindowMenu.h"
-#include "../Input/Input.h"
-#include "../Time/Time.h"
-#include "../Event/Event.h"
+#include "../../../Input/Input.h"
+#include "../../../Time/Time.h"
+#include "../../../Event/Event.h"
+#include "../Game/WindowGame.h"
 #include <iostream>
 
 #pragma region constructor
@@ -10,7 +11,7 @@ WindowMenu::WindowMenu()
 	shapeBackground = new sf::RectangleShape(sf::Vector2f(WIDTH, HEIGHT));
 	shapeStart = new sf::RectangleShape(sf::Vector2f(150, 100));
 	shapeExit = new sf::RectangleShape(sf::Vector2f(150, 100));
-	circle = new sf::CircleShape(100.0f);
+	shapeBird = new sf::RectangleShape(sf::Vector2f(50, 50));
 	bird = new sf::Texture();
 	textureBackground = new sf::Texture();
 	textureStart = new sf::Texture();
@@ -20,7 +21,7 @@ WindowMenu::WindowMenu()
 
 	if (!bird->loadFromFile("../FP/flappy.png"))
 		std::cout << "Error Flappy bird !" << std::endl;
-	circle->setTexture(bird);
+	shapeBird->setTexture(bird);
 
 	if (!textureBackground->loadFromFile("../Background/Background_Flappy_Bird.png"))
 		std::cout << "Error Background !" << std::endl;
@@ -29,7 +30,7 @@ WindowMenu::WindowMenu()
 	if (!textureStart->loadFromFile("../Background/Bouton_Start.png"))
 		std::cout << "Error Bouton Start !" << std::endl;
 	shapeStart->setTexture(textureStart);
-	
+
 	if (!textureExit->loadFromFile("../Background/Bouton_Exit.png"))
 		std::cout << "Error Bouton Exit !" << std::endl;
 	shapeExit->setTexture(textureExit);
@@ -58,6 +59,8 @@ WindowMenu::~WindowMenu()
 	title = nullptr;
 	delete fontTitle;
 	fontTitle = nullptr;
+	delete fontScore;
+	fontScore = nullptr;
 }
 #pragma endregion
 
@@ -67,20 +70,33 @@ void WindowMenu::OnDraw()
 	Draw(shapeBackground);
 	Draw(shapeStart);
 	Draw(shapeExit);
-	Draw(circle);
 	Draw(title);
+	Draw(shapeBird);
 }
 void WindowMenu::OnUpdate()
 {
 	title->setPosition(300, 150);
-	circle->setPosition(375, 250);
+	shapeBird->setPosition(400, 300);
 	shapeStart->setPosition(250, 550);
 	shapeExit->setPosition(550, 550);
 
+	// Start
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
-		if (!shapeStart->getLocalBounds().contains(sf::Vector2i localPosition = sf::Mouse::getPosition(window));
-			std::cout << "Start";
+		sf::Vector2i localPosition = sf::Mouse::getPosition(*window);
+		if (shapeStart->getGlobalBounds().contains(sf::Vector2f(localPosition)))
+		{
+			Close();
+			windowGame = new WindowGame();
+			windowGame->Open();
+		}
+	}
+	//Exit
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	{
+		sf::Vector2i localPosition = sf::Mouse::getPosition(*window);
+		if (shapeExit->getGlobalBounds().contains(sf::Vector2f(localPosition)))
+			Close();
 	}
 }
 #pragma endregion

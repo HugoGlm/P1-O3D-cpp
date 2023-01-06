@@ -11,8 +11,8 @@ private:
 	float width = 900;
 	float height = 800;
 	const char* title = "Flappy Bird";
-	sf::RenderWindow* window = nullptr;
 protected:
+	sf::RenderWindow* window = nullptr;
 	bool eventIfNotFocus = false;
 #pragma endregion
 #pragma region constructor
