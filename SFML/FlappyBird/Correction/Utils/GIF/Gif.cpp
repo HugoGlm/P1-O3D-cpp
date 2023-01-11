@@ -1,5 +1,8 @@
 #include "Gif.h"
+#define STB_IMAGE_IMPLEMENTATION
+#define STBI_ONLY_GIF
 
+#include "std_image.h"
 
 Gif::Gif(const char* _path)
 {

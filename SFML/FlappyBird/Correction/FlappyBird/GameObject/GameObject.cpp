@@ -13,8 +13,7 @@ GameObject::GameObject(const GameObject& _copy)
 }
 GameObject::~GameObject()
 {
-	delete drawable;
-	drawable = nullptr;
+	
 }
 #pragma endregion
 

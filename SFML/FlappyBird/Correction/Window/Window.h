@@ -44,7 +44,7 @@ protected:
 	virtual void InitMenus();
 	virtual void OnDraw() = 0;
 	virtual void OnUpdate() = 0;
-	virtual void onReceiveEvent(const sf::Event& _event);
+	virtual void OnReceiveEvent(const sf::Event& _event);
 #pragma endregion
 
 };

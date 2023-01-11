@@ -7,7 +7,7 @@ FB_Label::FB_Label(Window* _owner, const char* _text) : FB_UIElement(_owner)
 	text = new sf::Text();
 	text->setString(_text);
 	font = new sf::Font();
-	if (!font->loadFromFile("C:/Users/GUIL2804/source/repos/P1-O3D-cpp/SFML/FlappyBird/Fonts/aAbsoluteEmpire.ttf"))
+	if (!font->loadFromFile("C:/Users/GUIL2804/source/repos/P1-O3D-cpp/SFML/FlappyBird/FlappyBirdBg/aAbsoluteEmpire.ttf"))
 	{
 		Free();
 		return;
@@ -40,6 +40,10 @@ void FB_Label::SetCharacterSize(const int _size)
 void FB_Label::SetColor(const sf::Color _color)
 {
 	text->setFillColor(_color);
+}
+void FB_Label::SetText(const char* _text)
+{
+	text->setString(_text);
 }
 #pragma endregion
 

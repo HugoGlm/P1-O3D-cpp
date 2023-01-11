@@ -38,7 +38,7 @@ void Window::Update()
 			if (!window->hasFocus() && !eventIfNotFocus)
 				continue;
 			Event::currentEvent = &_event;
-			onReceiveEvent(_event);
+			OnReceiveEvent(_event);
 			break;
 		}
 		UIElementManager::Instance()->Update();
@@ -84,7 +84,7 @@ void Window::Draw(sf::Drawable* _drawable)
 {
 	window->draw(*_drawable);
 }
-void Window::onReceiveEvent(const sf::Event& _event)
+void Window::OnReceiveEvent(const sf::Event& _event)
 {
 	if (_event.type == sf::Event::Closed)
 		Close();

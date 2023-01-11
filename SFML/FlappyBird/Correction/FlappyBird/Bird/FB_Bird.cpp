@@ -28,7 +28,14 @@ FB_Bird::~FB_Bird()
 #pragma region override
 void FB_Bird::OnUpdate()
 {
+	if (isDead)
+		return;
 	sprite->setPosition(Mathf::Lerp(sprite->getPosition(), sprite->getPosition() + sf::Vector2f(0, GRAVITY), BIRD_SPEED_GRAVITY * Time::deltaTime));
+	if (sprite->getPosition().y <= 0 || sprite->getPosition().y >= windowSize.y - sprite->getGlobalBounds().height)
+	{
+		Die();
+		return;
+	}
 	const float _elapsed = lastjumpTimer.getElapsedTime().asSeconds();
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
@@ -43,8 +50,12 @@ void FB_Bird::OnUpdate()
 }
 void FB_Bird::OnCollisionEnter(GameObject* _other)
 {
+	Die();
+}
+void FB_Bird::Die()
+{
 	if (isDead)
-		return; 
+		return;
 	isDead = true;
 	OnDie.Invoke();
 }
@@ -55,6 +66,10 @@ sf::FloatRect FB_Bird::GetGlobalBounds() const
 sf::Vector2f FB_Bird::Position() const
 {
 	return sprite->getPosition();
+}
+void FB_Bird::SetWindowSize(const sf::Vector2f& _size)
+{
+	windowSize = _size;
 }
 #pragma endregion
 

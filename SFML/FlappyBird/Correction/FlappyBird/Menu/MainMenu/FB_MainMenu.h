@@ -1,5 +1,6 @@
 #pragma once
 #include "../../../Window/Menu/BaseMenu.h"
+#include "../../../Utils/GIF/Gif.h"
 
 class FB_Button;
 class FB_Image;
@@ -9,9 +10,10 @@ class FB_MainMenu : public BaseMenu
 #pragma region f/p
 private:
 	FB_Image* logoTitle = nullptr;
-	FB_Image* background = nullptr;
 	FB_Button* playButton = nullptr;
 	FB_Button* scoreBoardButton = nullptr;
+	sf::Sprite* gifSprite = nullptr;
+	Gif gif = Gif("C:/Users/GUIL2804/source/repos/P1-O3D-cpp/SFML/FlappyBird/FlappyBirdBg/nyan-cat-gif.gif");
 #pragma endregion
 #pragma region constructor
 public:

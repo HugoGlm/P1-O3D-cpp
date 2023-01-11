@@ -26,6 +26,10 @@ void FB_GameObjectManager::Update()
 		gameobjects[i]->OnUpdate();
 	}
 }
+void FB_GameObjectManager::Destroy(GameObject* _gameObject)
+{
+	objectToDestroy.push_back(_gameObject);
+}
 void FB_GameObjectManager::Draw(Window* _window)
 {
 	const size_t _size = gameobjects.size();
@@ -45,6 +49,24 @@ void FB_GameObjectManager::CheckCollision()
 			_b->OnCollisionEnter(_a);
 		}
 	}
+}
+void FB_GameObjectManager::DestroyAllRequests()
+{
+	for (GameObject* _object : objectToDestroy)
+	{
+		UnRegister(_object);
+	}
+	objectToDestroy.clear();
+}
+void FB_GameObjectManager::DestroyAllObjects()
+{
+	for (GameObject* _object : gameobjects)
+	{
+		delete _object;
+		_object = nullptr;
+	}
+	objectToDestroy.clear();
+	gameobjects.clear();
 }
 #pragma endregion
 

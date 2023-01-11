@@ -69,6 +69,18 @@
     <ClCompile Include="Utils\GIF\Gif.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyBird\Pipe\FB_Pipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Manager\Texture\FB_TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Score\FB_Score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Menu\GameOverMenu\FB_GameOverMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object\Object.h">
@@ -135,6 +147,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\GIF\std_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Pipe\FB_Pipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Manager\Texture\FB_TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Score\FB_Score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Menu\GameOverMenu\FB_GameOverMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\DataBase\DataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,6 +8,8 @@ FB_MainMenu::FB_MainMenu(Window* _owner) : BaseMenu(_owner)
 {
 	InitLogoTitle();
 	InitPlayButton();
+	/*gifSprite = new sf::Sprite();
+	gifSprite->setScale(sf::Vector2f(0.2f, 0.2f));*/
 }
 FB_MainMenu::~FB_MainMenu()
 {
@@ -47,6 +49,7 @@ FB_Button* FB_MainMenu::ScoreBoardButton() const
 void FB_MainMenu::Draw()
 {
 	BaseMenu::Draw();
+	/*gif.Update(*gifSprite);
+	owner->Draw(gifSprite);*/
 }
 #pragma endregion
-
